@@ -1,0 +1,2271 @@
+Tue Jul 11 19:33:20 2023
+Windows-10-10.0.22621
+Ren'Py 8.1.1.23060707
+ 
+
+Bootstrap to the start of init.init. took 0.03s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.03s
+Loading script. took 0.20s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.02s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.20s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 13.52s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.03s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.20s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 17.00s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 83.63s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.03s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+
+File "game/script.rpy", line 28: expected statement.
+    ha 
+       ^
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start. took 0.28s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 92.82s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.03s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.02s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 120.18s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.20s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 240.86s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.20s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 245.64s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 342.26s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 377.13s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 384.90s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 480.00s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.20s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 564.57s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 674.69s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+
+File "game/script.rpy", line 52: expected statement.
+    ws: "They're on vacation leave right now."
+      ^
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start. took 0.27s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1015.94s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.02s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1336.81s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1359.66s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1694.11s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.20s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1701.89s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1754.86s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1767.16s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.20s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1799.05s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1855.93s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1883.44s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.20s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Bootstrap to the start of init.init. took 1915.68s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1943.02s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1962.84s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+
+File "game/script.rpy", line 50: expected menuitem
+    if goode_and_dunn "Goode and Dunn?":
+    ^
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start. took 0.26s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 1993.12s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.02s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 2014.53s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 2070.49s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 50, in script
+    menu:
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\ast.py", line 1922, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\exports.py", line 1072, in menu
+    condition = renpy.python.py_eval(condition)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 61, in <module>
+    "Smith and Wesson?" if smith_and_wesson:
+NameError: name 'smith_and_wesson' is not defined
+
+While running game code:
+  File "game/script.rpy", line 50, in script
+    menu:
+  File "game/script.rpy", line 61, in <module>
+    "Smith and Wesson?" if smith_and_wesson:
+NameError: name 'smith_and_wesson' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 2097.81s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 54, in script
+    menu:
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\ast.py", line 1922, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\exports.py", line 1072, in menu
+    condition = renpy.python.py_eval(condition)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 70, in <module>
+    "Abbott and Costello?" if abbott_and_costello:
+NameError: name 'abbott_and_costello' is not defined
+
+While running game code:
+  File "game/script.rpy", line 54, in script
+    menu:
+  File "game/script.rpy", line 70, in <module>
+    "Abbott and Costello?" if abbott_and_costello:
+NameError: name 'abbott_and_costello' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 2105.61s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 2108.84s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 2124.13s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 55, in script
+    menu:
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\ast.py", line 1922, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\exports.py", line 1072, in menu
+    condition = renpy.python.py_eval(condition)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 92, in <module>
+    "Bert and Ernie?" if bert_and_ernie:
+NameError: name 'bert_and_ernie' is not defined
+
+While running game code:
+  File "game/script.rpy", line 55, in script
+    menu:
+  File "game/script.rpy", line 92, in <module>
+    "Bert and Ernie?" if bert_and_ernie:
+NameError: name 'bert_and_ernie' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 2201.15s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.20s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 2261.08s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 2289.95s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Bootstrap to the start of init.init. took 2349.06s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Bootstrap to the start of init.init. took 2661.80s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 2695.21s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 2698.42s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Bootstrap to the start of init.init. took 4936.29s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 5022.44s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 5203.50s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 5360.46s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 5390.85s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 5422.71s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 5450.23s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 5973.35s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\curti\\AppData\\Roaming/RenPy/backups\\RenpyFuckabout':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.19s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 531.41'
+Display Info: None
+Screen sizes: virtual=(1080, 1920) physical=(1158, 2058) drawable=(1158, 2058)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+
+Full traceback:
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\main.py", line 684, in main
+    renpy.persistent.update(True)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\persistent.py", line 401, in update
+    save()
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\persistent.py", line 419, in save
+    renpy.loadsave.location.save_persistent(compressed)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\savelocation.py", line 545, in save_persistent
+    l.save_persistent(data)
+  File "Q:\RenPy\renpy-8.1.1-sdk\renpy\savelocation.py", line 374, in save_persistent
+    with open(fn_tmp, "wb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\curti\\code\\renpy-fuckabout\\RenpyFuckabout\\game\\saves\\persistent.1689129200.tmp'
+
+While running game code:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\curti\\code\\renpy-fuckabout\\RenpyFuckabout\\game\\saves\\persistent.1689129200.tmp'

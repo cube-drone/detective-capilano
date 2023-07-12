@@ -1,0 +1,6 @@
+.vscode
+*.rpyc
+*-dists
+cache
+saves
+*.save
