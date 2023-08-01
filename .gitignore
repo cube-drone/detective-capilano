@@ -4,3 +4,7 @@
 cache
 saves
 *.save
+*.xmp
+*.pkf
+*log.txt
+*traceback.txt

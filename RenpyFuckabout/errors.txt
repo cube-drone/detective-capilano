@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 50: expected menuitem
-    if goode_and_dunn "Goode and Dunn?":
-    ^
+File "game/script.rpy", line 284: EOL while scanning string literal
+    Character("Crimeputer,
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Jul 11 20:06:03 2023
+Sat Jul 29 23:48:35 2023

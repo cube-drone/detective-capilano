@@ -30,7 +30,16 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-    honk honk fart
+    
+    cube-drone.com
+    
+    @cube-drone@mastodon.social
+
+    Music care of Kevin MacLeod,
+    https://incompetech.com/music/royalty-free/music.html
+
+    SFX care of kenney.nl and freesound.org
+
 """)
 
 
@@ -38,7 +47,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "VerticalAndroid"
+define build.name = "Capilano"
 
 
 ## Sounds and music ############################################################
@@ -121,7 +130,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 30
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
@@ -181,6 +190,8 @@ init python:
 
     build.classify('**~', None)
     build.classify('**.bak', None)
+    build.classify('**.wav', None) # these are used to make sound but they're too big to include
+    build.classify('**.psd', None) # no psd for u
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
