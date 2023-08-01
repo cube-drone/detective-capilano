@@ -1,4 +1,8 @@
 ﻿# TODO: Detective Capilano is red green colorblind
+# TODO: crimefighting bazooka
+# TODO: more jokes in the becky phase, it drags a bit
+
+# becky is actually "becky and also becky"? 
 
 init python: 
     import random
@@ -228,6 +232,7 @@ define ha = Character("Chief Dasse",
 define becky = Character("Becky Segsihan",
     what_font="fonts/Delius-Regular.ttf",
     who_font="fonts/Delius-Regular.ttf",
+                                 # curopal, sneaky snake
     what_color=color("#ff007e"), # path, freedom and han solo
     who_color=color("#ff007e"),
     callback=steel_voice
@@ -235,8 +240,8 @@ define becky = Character("Becky Segsihan",
 define ws = Character("Assistant Wayland Smunders",
     what_font="fonts/Rajdhani-Regular.ttf",
     who_font="fonts/Rajdhani-Bold.ttf",
-    what_color=color("#b769ff"), # blit, The Downer
-    who_color=color("#b769ff"),
+    what_color=color("#786dff"), # stacks, the know-it-all
+    who_color=color("#786dff"),
     callback=pizz_voice,
     what_slow_cps=40,
     what_size=45,
@@ -245,8 +250,8 @@ define ws = Character("Assistant Wayland Smunders",
 define parm = Character("Paramedic",
     what_font="fonts/Jost-Regular.ttf",
     who_font="fonts/Jost-Bold.ttf",
-    what_color=color("#786dff"), # stacks, the know-it-all
-    who_color=color("#786dff"),
+    what_color=color("#b769ff"), # blit, The Downer
+    who_color=color("#b769ff"),
     callback=pizz_voice
 )
 define trfc = Character("Jr. Officer Jemby Nichols",
@@ -268,7 +273,7 @@ define z = Character("Zip",
 define tim = Character("Timothy Victrola",
     what_font="fonts/Oxygen-Regular.ttf",
     who_font="fonts/Oxygen-Bold.ttf",
-    what_color=color("#01fff8"), 
+    what_color=color("#01fff8"), # zariel, the absent
     who_color=color("#01fff8"),
     callback=pizz_voice
 )
