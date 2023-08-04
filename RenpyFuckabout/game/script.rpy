@@ -205,7 +205,7 @@ define hm = Character("Hank Maxhank",
     image="hank",
     callback=hit_voice
 )
-define ap = Character("Ann Portent",
+define annp = Character("Ann Portent",
     what_font="fonts/Marcellus-Regular.ttf", 
     who_font="fonts/Marcellus-Regular.ttf",
     what_color=color("#72a9ff"), # misk
@@ -1974,22 +1974,30 @@ label ann_office:
     "The woman sitting at the desk is in her fifties, a thin, stern, angular looking woman in an immaculate
         high-collared dress. This woman looks like she's made of iron."
     
-    ap "You are soaking wet. Don't stand on the rug, please, it's a genuine Calypsan."
+    show ann
+    annp "You are soaking wet. Don't stand on the rug, please, it's a genuine Calypsan."
+    hide ann
 
     sc "Oh, I'm sorry."
 
     if not hasCueBall:
-        ap "And... your smell. Well, I suppose you can't do anything about that, but you must understand
+        show ann disgust
+        annp "And... your smell. Well, I suppose you can't do anything about that, but you must understand
                 that you smell of gasoline and garbage."
+        hide ann
             
         sc "Actually, kerosene and dumpster, ma'am. It's been a busy afternoon."
 
     if hasBike:
         play sound "sounds/bike.ogg"
-        ap "My security team tells me that you parked a children's bicycle outside, and that you were in a hurry 
+        show ann
+        annp "My security team tells me that you parked a children's bicycle outside, and that you were in a hurry 
                 to speak with me."
+        hide ann
     else:
-        ap "My security team tells me that you are in a hurry to speak with me."
+        show ann
+        annp "My security team tells me that you are in a hurry to speak with me."
+        hide ann
 
     sc "I'm Detective Susan Capilano, with the Northwestica Police Department."
 
@@ -1997,13 +2005,18 @@ label ann_office:
         "She takes a moment to flash her badge, adding some credulity to her statement."    
         badge "Bonjour."
 
-    ap "I know. You wouldn't have been allowed entrance if we didn't know exactly who you were, of course."
+    show ann hand
+    annp "I know. You wouldn't have been allowed entrance if we didn't know exactly who you were, of course."
 
-    ap "Ann Portent, acting CEO of Megamax News."
+    show ann
+    annp "Ann Portent, acting CEO of Megamax News."
+    hide ann
 
     sc "Nice to meet you."
 
-    ap "I'm sure that it is. May I ask what, {i}exactly{/i} the problem is?"
+    show ann
+    annp "I'm sure that it is. May I ask what, {i}exactly{/i} the problem is?"
+    hide ann
     
     "Detective Capilano adopts a look that is both serious and morose, the Bad News Look that police officers
         have to learn."
@@ -2012,30 +2025,40 @@ label ann_office:
 
     "Detective Capilano hands Mrs. Portent a plastic bag containing the ID from the crime scene."
 
-    ap "Yes, that's my Tim."
+    show ann
+    annp "Yes, that's my Tim."
+    hide ann
 
     sc "I'm... sorry to have to tell you this, but he's been found, dead, this morning."
 
+    show ann shock
     "Ann looks shocked."
 
-    ap "And you're ... sure it was him?"
+    annp "And you're ... sure it was him?"
+    hide ann
 
     sc "We'll need you to identify the body but we're pretty certain that it was, indeed, him."
 
+    show ann sad
     "Ann Portent has a demeanor as cold and professional as hardened steel, but this visibly rattles
         her, if just for a moment."
+    hide ann
     
     sc "I'm sorry."
 
-    ap "But... he was so young! What happened?"
+    show ann shock
+    annp "But... he was so young! What happened?"
+    hide ann
 
     sc "He was found dead in his car this morning, in an event that was clearly staged to look like a car crash.
             But we have reason to believe that this may have been a homicide."
     
+    show ann angry
     "The look on Ann's face shifts - this time to what seems to be white hot rage, only just concealed."
 
-    ap "Ah, so then would I be right to assume that you are a homicide detective for the city?  
+    annp "Ah, so then would I be right to assume that you are a homicide detective for the city?  
             And you have some questions for me?"
+    hide ann
 
     if hasCueBall:
         cb "You don't need her to answer any questions. I will answer any questions you have."
@@ -2047,7 +2070,9 @@ label ann_office:
     else: 
         sc "Yes. Very sharp, Mrs. Portent."
 
-        ap "Well, I'm an open book."
+        show ann hand
+        annp "Well, I'm an open book."
+        hide ann
 
     jump ann_questions
 
@@ -2070,25 +2095,31 @@ label ann_questions:
             $ askedWhereabouts = True
             sc "When was the last time you saw your husband?"
 
-            ap "Early this morning, we had breakfast together. This would have been at - 6AM?"
+            show ann
+            annp "Early this morning, we had breakfast together. This would have been at - 6AM?"
+            hide ann
 
             sc "Quite early indeed."
 
-            ap "We had smoothies together. Tim said that he had \"something to take care of\" which,     
+            show ann
+            annp "We had smoothies together. Tim said that he had \"something to take care of\" which,     
                     in retrospect, seems kind of ominous. I left for work."
 
-            ap "If you check with the gateman at our home, he'll be able to verify that I left for work
+            annp "If you check with the gateman at our home, he'll be able to verify that I left for work
                     after breakfast."
             
-            ap "Presumably Tim left after I did. The gateman should be able to let you know what time that
+            annp "Presumably Tim left after I did. The gateman should be able to let you know what time that
                     happened, as well."
 
-            ap "Tim would hit the gym after breakfast most mornings."
+            annp "Tim would hit the gym after breakfast most mornings."
+            hide ann
 
             sc "And what did {i}you{/i} do after that?"
 
-            ap "I've spent the whole morning at work. You can confirm that with my secretary, should you wish,
+            show ann hand
+            annp "I've spent the whole morning at work. You can confirm that with my secretary, should you wish,
                     she's been with me the entire time."
+            hide ann
             jump ann_questions
         
         "Ask about {b}Alibi{/b}" if not askedAlibi and askedWhereabouts:
@@ -2098,12 +2129,16 @@ label ann_questions:
 
             sc "And you have people who can vouch for your whereabouts the rest of the day."
 
-            ap "Yes."
+            show ann
+            annp "Yes."
+            hide ann
 
             sc "If I were trying to build a case against you, Mrs. Portent - and I assure you, I'm not -
                     that would make it very difficult."
             
-            ap "...ok. Well, I'm glad that's settled."
+            show ann
+            annp "...ok. Well, I'm glad that's settled."
+            hide ann
 
             notepad "... concrete alibi."
 
@@ -2113,30 +2148,33 @@ label ann_questions:
             $ askedAgeDifference = True
             sc "I don't mean to pry, but there's a fairly significant age difference between you and your husband."
 
-            ap "Oh, yes."
+            show ann
+            annp "Oh, yes."
 
-            ap "Something about age differences like ours - people somehow think that we don't notice it, or that
+            annp "Something about age differences like ours - people somehow think that we don't notice it, or that
                     it's somehow taboo to bring up with us, but it's not like we aren't painfully aware of how
                     it comes off."
             
-            ap "Sometimes we'll be out having dinner and the waiter will think he's my {i}son{/i}."
+            annp "Sometimes we'll be out having dinner and the waiter will think he's my {i}son{/i}."
 
-            ap "The long and the short of it is - we have good rapport. I mean - obviously he likes the financial 
+            annp "The long and the short of it is - we have good rapport. I mean - obviously he likes the financial 
                     stability, the incredible vacations, the nice clothing - but I also feel like the two
                     of us have a lot of fun together."
             
-            ap "I like his optimism, his boundless enthusiasm, he's got a way of looking at the world that makes
+            annp "I like his optimism, his boundless enthusiasm, he's got a way of looking at the world that makes
                     it feel brand new, and I can feel that with him."
             
-            ap "And it's rare to find a man who isn't a little
+            show ann hand
+            annp "And it's rare to find a man who isn't a little
                     bit threatened by {i}all this{/i}. He's impressed! Supportive!" # she says, gesturing around
             
-            ap "You know, there are men you can be vulnerable with, and men you can be {i}invulnerable{/i} with,
+            annp "You know, there are men you can be vulnerable with, and men you can be {i}invulnerable{/i} with,
                     and with him it felt like a bit of both."
 
-            # wistful smile
-            ap "And there's genuine sexual chemistry - something about men my age, they're a bit {i}tired out{/i},
+            show ann dirty
+            annp "And there's genuine sexual chemistry - something about men my age, they're a bit {i}tired out{/i},
                     if you know what I mean."
+            hide ann
             
             "Susan Capilano is happy to report that she does not know what Ann means."
             
@@ -2151,15 +2189,18 @@ label ann_questions:
 
             sc "This is going to seem incredibly personal and not terribly appropriate, but I promise that
                     it's relevant: did you and Mr. Victrola use contraception?"
-            
-            ap "I ... really don't see how that's any of your business, but no."
 
-            # sadness
-            ap "At this point in my life a child is increasingly unlikely - and if it {i}did{/i} happen,     
+            show ann disgust            
+            annp "I ... really don't see how that's any of your business, but no."
+
+            show ann sad
+            annp "At this point in my life a child is increasingly unlikely - and if it {i}did{/i} happen,     
                     well, that would be a blessing, not a curse."
             
-            ap "We'd even been talking about some of the more esoteric options like adoption or
+            show ann
+            annp "We'd even been talking about some of the more esoteric options like adoption or
                     in-vitro fertilization if things didn't... coalesce, in the next few years."
+            hide ann
             
             notepad "Curious. Why would Timothy have freshly-purchased condoms in his wallet, then?"
 
@@ -2175,16 +2216,20 @@ label ann_questions:
 
             sc "You're so put together, I was wondering if you might have some tips on hair color I could use."
 
-            ap "Oh, my - I didn't want to comment on your hair - but, if your wife brought it up - "
+            show ann
+            annp "Oh, my - I didn't want to comment on your hair - but, if your wife brought it up - "
 
+            show ann hand
             "Mrs. Portent produces, as if by magic, a business card, and hands it to Detective Capilano."
 
-            ap "This is my colorist and stylist, Sseven - they're a little bit on the pricier side but they are
+            show ann
+            annp "This is my colorist and stylist, Sseven - they're a little bit on the pricier side but they are
                     an absolute miracle-worker. I've been completely grey for years and they always do an 
                     incredible job."
 
-            ap "They're usually booked - months ahead of time - but I think if you were to visit their salon,
+            annp "They're usually booked - months ahead of time - but I think if you were to visit their salon,
                     they'd make a special exception for you. You know - emergency, and all."
+            hide ann
 
             "Detective Capilano is already mentally crumpling up the business card and tossing it into a 
                 wastebasket."
@@ -2193,7 +2238,7 @@ label ann_questions:
                 carkeys "Sseven can go pound dirt."
 
             if hasBadge:
-                badge "Detective Capilano thinks that the grey in her hair makes her look distinguished."
+                badge "The grey in your hair makes her look distinguished."
             
             notepad "Ann could {i}absolutely{/i} be the source of an errant grey hair -
                         with her hair having been done recently, there might be a better candidate, though."
@@ -2204,23 +2249,28 @@ label ann_questions:
             $ askedFinances = True
             sc "You seem to be doing pretty well for yourself."
 
-            ap "Oh, very. News is a booming industry, Detective Capilano."
+            show ann
+            annp "Oh, very. News is a booming industry, Detective Capilano."
+            hide ann
 
             sc "In cases of marriages of, uh, wildly differing means - uh, what I'm trying to say is,   
                     if your relationship with Mr. Victrola were to end acrimoniously - "
             
-            ap "I see what you're getting at, Detective Capilano - a relationship on the rocks and I'm
+            show ann
+            annp "I see what you're getting at, Detective Capilano - a relationship on the rocks and I'm
                     offing my husband to protect my fortune?"
                     
-            ap "The thing is, though, I have excellent lawyers and an
+            show ann hand
+            annp "The thing is, though, I have excellent lawyers and an
                     ironclad prenuptual agreement. Worst-case scenario in a divorce, Tim walks away     
                     with a nice beach house and I'm no more than {i}slightly inconvenienced{/i}."
             
-            ap "Best-case scenario - say, for example, infidelity from my young husband - well, Tim would have nothing
+            annp "Best-case scenario - say, for example, infidelity from my young husband - well, Tim would have nothing
                     left to his name but the clothes on his back."
             
-            ap "If anything, the way our marriage was set up, you'd expect to find {i}me{/i} mysteriously
+            annp "If anything, the way our marriage was set up, you'd expect to find {i}me{/i} mysteriously
                     washing up the river - he stood to inherit quite a fortune in that case."
+            hide ann
             
             notepad "No financial incentive for her to kill him."
             
@@ -2230,13 +2280,17 @@ label ann_questions:
             sc "This is just a standard question that we ask in homicide cases involving couples, but, would
                     you have any reason to believe that your husband might be {i}cheating{/i} on you?"
             
-            ap "Absolutely out of the question. I know, beyond a shadow of a doubt, that Tim could not possibly 
+            show ann
+            annp "Absolutely out of the question. I know, beyond a shadow of a doubt, that Tim could not possibly 
                     be cheating on me."
+            hide ann
             
             sc "Oh? I ask this question fairly often and I {i}rarely{/i} hear anybody {i}that{/i} certain."
 
-            ap "I'd prefer not to go into the details, but I am 100 percent confident that we're {b}in the clear{/b} 
+            show ann
+            annp "I'd prefer not to go into the details, but I am 100 percent confident that we're {b}in the clear{/b} 
                     on that matter."
+            hide ann
 
             notepad "Curious. Fidelity could {i}easily{/i} be called into question."
             notepad "Why is she so sure that Timothy was {b}in the clear{/b}?"
@@ -2249,19 +2303,25 @@ label ann_questions:
             play music "music/Farting Around.mp3"
             sc "A friendly bout of arm wrestling."
 
-            ap "You're on, noodle-arms."
+            show ann armwrestle
+            annp "You're on, noodle-arms."
 
+            with hpunch
             sc "HNNNNNNNGH"
 
-            ap "HNNNNNNGHGHG"
+            with hpunch
+            annp "HNNNNNNGHGHG"
 
+            with hpunch
             sc "HNNNGGHGHGHGHGG"
 
-            ap "HNNNNGGHGHG"
+            with hpunch
+            annp "HNNNNGGHGHG"
             
+            with hpunch
             sc "HNNNGGHGHGHGHGGGHGHGHG"
 
-            ap "HNNGG"
+            annp "HNNGG"
 
             sc "Ha ha! I win!"
 
@@ -2287,12 +2347,16 @@ label ann_questions:
 
             sc "What was Tim wearing when you saw him this morning?"
 
-            ap "A baby-blue Yuyuyuzu track-suit, over a plain white undershirt."
+            show ann
+            annp "A baby-blue Yuyuyuzu track-suit, over a plain white undershirt."
+            hide ann
 
             sc "Yuyuyuzu?"
 
-            ap "Soft, comfortable, high-end athletic clothing for housewives, househusbands 
+            show ann
+            annp "Soft, comfortable, high-end athletic clothing for housewives, househusbands 
                 and the business-averse."
+            hide ann
 
             if hasBelt:
                 belt "Gross. Timothy could have died with some {i}style{/i}. A nice belt and some slacks, maybe."
@@ -2300,15 +2364,19 @@ label ann_questions:
 
             sc "Was he fond of formal-wear?"
 
-            ap "Oh, no. I've had some lovely shirts and suits made for him, but aside from dates and 
+            show ann
+            annp "Oh, no. I've had some lovely shirts and suits made for him, but aside from dates and 
                 special occasions, I don't think I've ever seen him wear them."
+            hide ann
 
             sc "When you had shirts made for him - were there any details that would identify those
                     clothes as uniquely his?"
 
-            ap "Yes, actually - he had a long torso and short arms, so all of his shirts have their
+            show ann hand
+            annp "Yes, actually - he had a long torso and short arms, so all of his shirts have their
                     arms taken in. I have that done with a lot of his shirts, actually - he looks like
                     a toddler when his shirt arms are too long."
+            hide ann
 
             "Between those two details, Detective Capilano thinks that she can rule out Tim as 
                 the owner of the shirt she found in the alleyway."
@@ -2319,34 +2387,46 @@ label ann_questions:
 
             sc "Did Timothy wear a watch?"
 
-            ap "Oh, yes. As a wedding gift I bought him a Painblanc Sub-Mariner with a military strap 
+            show ann
+            annp "Oh, yes. As a wedding gift I bought him a Painblanc Sub-Mariner with a military strap 
                     and a sapphire bezel, with our names engraved on the back. He hasn't taken it off,
                     since."
 
-            ap "I think he showers with it on. He was wearing it this morning, I'm sure."
+            annp "I think he showers with it on. He was wearing it this morning, I'm sure."
+            hide ann
 
             if not hasBelt:
                 sc "A ... Paulblart Submarine? I'm not familiar with that brand of watch. I'm not a watch enthusiast -"
 
-                ap "Horologist"
+                show ann
+                annp "Horologist"
+                hide ann
 
                 sc "I'm not a, uh, fortune teller, either."
 
-                ap "No, a horologist is a fan of watches."
+                show ann
+                annp "No, a horologist is a fan of {i}watches{/i}."
+                hide ann
 
-                sc "Which horologist is a fan of watches?"
+                sc "{i}Which{/i} horologist is a fan of watches?"
 
-                ap "{b}All of them{/b}."
+                show ann idiot
+                annp "{b}All of them{/b}."
+                hide ann
 
                 sc "Well, that's a strange coincidence."
 
+                show ann
                 sc "Anyhow, as I was saying - not familiar with a Paulblart Submarine - is it a very expensive watch?"
+                hide ann
 
-                ap "Well, that's a relative question."
+                annp "Well, that's a relative question."
 
-                ap "I think a Painblanc Sub-Mariner might cost about as much as a small commuter sedan? 
+                show ann hand
+                annp "I think a Painblanc Sub-Mariner might cost about as much as a small commuter sedan? 
                         But no, in the grand scale of watches
                         it's not an unusually expensive one."
+                hide ann
             else: 
                 belt "A Painblanc Sub-Mariner? That's an unbelievably expensive watch."
 
@@ -2359,55 +2439,75 @@ label ann_questions:
 
             sc "You said that Tim goes to the gym most mornings?"
 
-            ap "Yes, the Frances Dicken University gym. "
+            show ann
+            annp "Yes, the Frances Dicken University gym. "
+            hide ann
 
             sc "Is he a student there?"
 
-            ap "Not currently - he finished his Master's in Fine Arts last year - but that's still
+            show ann
+            annp "Not currently - he finished his Master's in Fine Arts last year - but that's still
                     one of the closer, nicer gyms near us."
+            hide ann
             
             sc "I'm sure with your resources you could put a gym in your own home."
 
-            ap "There's a rock-climbing wall at the gym - you need a partner for that. Plus, he likes
+            show ann
+            annp "There's a rock-climbing wall at the gym - you need a partner for that. Plus, he likes
                     having an excuse to hang out at the university, even after his graduation. 
                     Lots of friends there."
+            hide ann
             
             sc "Friends, you say? I'm going to want to interview some of them about all of this, if you
                     could tell me anything about them."
             
-            ap "Well, there's his personal trainer - red-haired fellow. Fiery temper. I think his name's
+            show ann
+            annp "Well, there's his personal trainer - red-haired fellow. Fiery temper. I think his name's
                     {b}Pat, or Patty or Petey or something{/b}. Tim talks about him all of the time - really gets him
                     fired up."
+            hide ann
             
-            ap "Then, there's his climbing instructor, {b}Becky{/b}."
+            show ann disgust
+            annp "Then, there's his climbing instructor, {b}Becky{/b}."
+            hide ann
 
             "She says the name {i}Becky{/i} with the kind of cold iciness one would reserve for a
                 bitter rival."
             
-            ap "Becky with the good hair. Tim doesn't talk about her at all - I had to find out about
+            show ann
+            annp "Becky with the good hair. Tim doesn't talk about her at all - I had to find out about
                     her on my own."
+            hide ann
             
             if askedFidelity:
                 sc "You mentioned, earlier, how confident you were that Tim {i}isn't{/i} cheating on you."
 
-                ap "Oh, I {i}am{/i}. I am a Cadillero S-Class Super-Luxury - that doesn't mean I can't feel
+                show ann
+                annp "Oh, I {i}am{/i}. I am a Cadillero S-Class Super-Luxury - that doesn't mean I can't feel
                         a little irritated that he spends so much of his time with a little sports coupe."
+                hide ann
             
             sc "So would you say you were {i}concerned{/i} about their close relationship?"
 
-            ap "Yes, but I managed to overcome it."
+            show ann hand
+            annp "Yes, but I managed to overcome it."
+            hide ann
 
             notepad "How did Ann get over her jealousy about Becky?"
             
             jump ann_questions
         "Okay, that's enough questions." if askedFidelity and askedGym and askedWatchTan:
-            ap "Wonderful."
+            show ann
+            annp "Wonderful."
+            hide ann
 
             jump ann_problems
 
 label ann_problems:
 
-    ap "If you'll give me just a moment to use the ladies' room."
+    show ann
+    annp "If you'll give me just a moment to use the ladies' room."
+    hide ann
 
     "Mrs. Portent retreats, briefly, to her executive bathroom."
 
@@ -2416,58 +2516,78 @@ label ann_problems:
         a howl of rage, and sadness, followed by some soft sobbing. Then, a short pause."
     stop sound
     
+    show ann mussed
     "Mrs. Portent returns to the room, as calm, cool, and composed as she has been this entire time.
         Her eyes are a touch redder, but her makeup remains crisp and perfect."
 
-    ap "Now, Detective Capilano - I'm sure you'll agree that getting to the crux of this matter is 
+    annp "Now, Detective Capilano - I'm sure you'll agree that getting to the crux of this matter is 
             of the utmost importance."
     
-    # rage
-    ap "If I find out who did this I'm going to - "
+    show ann angry
+    annp "If I find out who did this I'm going to - "
 
+    show ann dirty
     # composure
-    ap "If I find out who did this I'm going to promptly report them to the police."
+    annp "If I find out who did this I'm going to promptly report them to the police."
+    hide ann
     
     if hasBadge: 
         badge "She wants {i}blood{/i} and she has significant resources. 
                     When you find the killer, it might be wise to consider protective custody."
     
-    ap "But - for my own peace of mind - I have a private security company that I'd like you to work
+
+    show ann mussed
+    annp "But - for my own peace of mind - I have a private security company that I'd like you to work
             with while addressing this case."
+    hide ann
     
     if hasCueBall:
         cb "This is Hank Maxhank's company. You'll need to pretend that you don't want her to 
                 ask him to join the case."
 
-    ap "While I'm sure that the police department has {i}ample{/i} resources for every high-profile 
+    show ann mussed
+    annp "While I'm sure that the police department has {i}ample{/i} resources for every high-profile 
             homicide that comes along, a little extra muscle wouldn't hurt."
+    hide ann
 
     if hasBike:
-        ap "You did, I'll note, cruise up to my office in a Twillmann KidBike."
+        show ann mussed
+        annp "You did, I'll note, cruise up to my office in a Twillmann KidBike."
+        hide ann
 
         play sound "sounds/bike.ogg"
         sc "Actually, it's a Tonko L'il Funboy."
 
-        ap "And that's... better?"
+        show ann mussed
+        annp "And that's... better?"
+        hide ann
 
         sc "They're actually quite a bit cheaper. Twillmann is a luxury brand for white collar families. 
                 Fenders, brakes, they've got the whole package. Now, a Tonko, that's just 
                 a clump of steel bars hastily welded together and painted a bright color."
         
-        ap "My point."
+        show ann hand
+        annp "My point."
+        hide ann
     else:
-        ap "You did, I'll note, cruise up to my office damp and smelling of kerosene and trash."
+        show ann hand
+        annp "You did, I'll note, cruise up to my office damp and smelling of kerosene and trash."
+        hide ann
     
     sc "The Northwestica Police Department is usually fairly resistant to, uh, outside involvement in our cases?"
 
-    ap "Balderdash. I'll speak to your chief. I'm sure that the prospect of having the most prominent news outlet   
+    show ann mussed
+    annp "Balderdash. I'll speak to your chief. I'm sure that the prospect of having the most prominent news outlet   
             in the city covering this case {i}sympathetically{/i} will be enough to {i}move the needle{/i}."
+    hide ann
 
     sc "I'd really prefer if you didn't - I have a {i}method{/i} for cases and I tend to prefer to work 
             alone. If you wouldn't mind."
     
-    ap "I {b}would{/b} mind. My man is absolutely the {b}best private detective in the business{/b}, and his company, 
+    show ann mussed
+    annp "I {b}would{/b} mind. My man is absolutely the {b}best private detective in the business{/b}, and his company, 
             Black Swan Securitas, has been in close partnership with our news agency for some time."
+    hide ann
 
     if hasCarKeys:
         carkeys "I'd like to propose a close partnership with my whole ass."
@@ -2482,32 +2602,42 @@ label ann_problems:
             "Don't kill her quite yet.":
                 gun "This case is turning out to be so boring. If you don't shoot someone soon I'm going to go off in your jacket or something."
 
-    ap "If you'll wait in the lobby, I'll have my man over in the next half an hour. With a {i}car{/i}."
+    show ann mussed
+    annp "If you'll wait in the lobby, I'll have my man over in the next half an hour. With a {i}car{/i}."
 
-    ap "I'll tell him to look for you downstairs. We're done, here."
+    annp "I'll tell him to look for you downstairs. We're done, here."
+    hide ann
 
     if not hasCueBall:
         sc "Oh, if I may ask - is there a phone in the lobby that I can use? I have a few calls of my own to make."
 
-        ap "There's a bank of payphones near the entrance."
+        show ann mussed
+        annp "There's a bank of payphones near the entrance."
+        hide ann
 
-    ap "Oh - and just one more thing."
+    show ann mussed
+    annp "Oh - and just one more thing."
+    hide ann
         
     sc "Yes?"
 
     # rage
-    ap "If I find out that you're not co-operating with my man, or if you don't have a head for me inside of a week?    
+    show ann angry
+    annp "If I find out that you're not co-operating with my man, or if you don't have a head for me inside of a week?    
             I will {b}end{/b} you, Detective Capilano. Your career will be {i}over{/i}."
     
     "This is absolutely grief talking, but it's a credible threat nevertheless."
 
     # rage and sadness
     if hasBike:
-        ap "I'll even find a way to take your ... stupid... little... bike - "
+        show ann sad
+        annp "I'll even find a way to take your ... stupid... little... bike - "
 
     "She's having trouble getting through this next threat. The weight of what's happened to her is starting to hit."
 
-    ap "I - can't - you - "
+    show ann tears
+    annp "I - can't - you - "
+    hide ann
 
     sc "I'll, uh, let myself out."
 
