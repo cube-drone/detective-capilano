@@ -1971,10 +1971,10 @@ label ann_office:
 
     play music "music/Ethernight Club.mp3"
     
+    show ann
     "The woman sitting at the desk is in her fifties, a thin, stern, angular looking woman in an immaculate
         high-collared dress. This woman looks like she's made of iron."
     
-    show ann
     annp "You are soaking wet. Don't stand on the rug, please, it's a genuine Calypsan."
     hide ann
 
@@ -2032,7 +2032,6 @@ label ann_office:
     sc "I'm... sorry to have to tell you this, but he's been found, dead, this morning."
 
     show ann shock
-    "Ann looks shocked."
 
     annp "And you're ... sure it was him?"
     hide ann
@@ -2054,7 +2053,6 @@ label ann_office:
             But we have reason to believe that this may have been a homicide."
     
     show ann angry
-    "The look on Ann's face shifts - this time to what seems to be white hot rage, only just concealed."
 
     annp "Ah, so then would I be right to assume that you are a homicide detective for the city?  
             And you have some questions for me?"
@@ -2416,10 +2414,9 @@ label ann_questions:
 
                 sc "Well, that's a strange coincidence."
 
-                show ann
                 sc "Anyhow, as I was saying - not familiar with a Paulblart Submarine - is it a very expensive watch?"
-                hide ann
 
+                show ann
                 annp "Well, that's a relative question."
 
                 show ann hand
@@ -2483,8 +2480,11 @@ label ann_questions:
                 sc "You mentioned, earlier, how confident you were that Tim {i}isn't{/i} cheating on you."
 
                 show ann
-                annp "Oh, I {i}am{/i}. I am a Cadillero S-Class Super-Luxury - that doesn't mean I can't feel
-                        a little irritated that he spends so much of his time with a little sports coupe."
+                annp "Oh, I {i}am{/i}. If you'll forgive the car metaphor, I am a Cadillero S-Class Super-Luxury - 
+                        that doesn't mean I can't feel
+                        a little irritated that I see him spending so much of his time with a little sports coupe."
+
+                annp "They are, however, {i}simply climbing partners{/i}, I'm certain."
                 hide ann
             
             sc "So would you say you were {i}concerned{/i} about their close relationship?"
@@ -2528,7 +2528,7 @@ label ann_problems:
 
     show ann dirty
     # composure
-    annp "If I find out who did this I'm going to promptly report them to the police."
+    annp "If I find out who did this I'm going to promptly report them to the police, of course."
     hide ann
     
     if hasBadge: 
