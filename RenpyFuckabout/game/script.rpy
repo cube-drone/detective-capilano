@@ -2950,11 +2950,13 @@ label pat:
     
     sc "Hello - are you Pete?"
 
+    show pat
     pat "Pat - I'm Pat. But, uh, everyone calls me \"Red\"."
 
-    "Pat is a large young man, wearing a muscle shirt that says \"Beef City\" on it. He has braided
-        red hair and a tattoo of an asian character on his bicep. His arm is also, visibly, in
+    "Pat is a large young man, wearing a muscle shirt that says \"Beef\" on it. He has braided
+        red hair and a tattoo of a hanzi or kanji character on his bicep. His arm is also, visibly, in
         a sling."
+    hide pat
 
     sc "I'm Detective Capilano, from the Northwestica PD - and this is Hank Maxhank, private investigator."
 
@@ -2962,7 +2964,9 @@ label pat:
     hm "Hi."
     hide hank
 
+    show pat
     pat "What's this about? I'm with a client."
+    hide pat
 
     "The client is a sweaty, doughy looking student, currently struggling to do his medicine ball squats."
 
@@ -2972,51 +2976,70 @@ label pat:
 
     "The young man skitters away."
 
+    show pat
     pat "This had better be important: he owes me dozens more squats."
 
     # narrows his eyes, slight zoom in
+    show pat serious
     pat "And I intend to collect."
 
     # narrows his eyes, slight zoom in again
+    show pat serious bam
     pat "With interest."
     
     # narrows his eyes, slight zoom in again again
+    show pat serious bam bam
     pat "Old school."
+
+    show pat serious bam bam bam
+    pat "You're a little close to my face, there, bud."
 
     "Pat looks at Detective Capilano, who is still very damp from the rain."
 
     pat "You know, the gym has towels you could probably use."
+    hide pat
 
     sc "I'll keep that in mind - but before any toweling, I'd like to ask you about a Mr. Timothy Victrola."
 
+    show pat bump
     pat "Oh! Timbo! He's my BOY."
 
     "Pat bumps his chest with his fist."
 
+    show pat
     pat "We meet up a few times a week to work on his delts, his quads, his lats, his squats, his dips, and his alts."
+    hide pat
             
     sc "I'm sorry to say this, but - Timothy Victrola has been found dead, just today."
 
+    show pat serious
     pat "... oh."
 
     pat "Huh."
 
+    show pat curious
     pat "Quick question - if you owe somebody money, what happens if they die? Do you just not owe them
             that money any more?"
+    hide pat
     
     show hank
     hm "Was the debt part of a contract or was it an informal handshake deal?"
     hide hank
 
+    show pat curious
     pat "Handshake deal."
+    hide pat
 
     show hank expository
     hm "Unless someone knows about it, you're probably in the clear."
     hide hank
 
+    show pat
     pat "Score."
 
+    show pat serious
     pat "Sorry to hear about Tim, though."
+    hide pat
 
     jump pat_questions
 
@@ -3035,22 +3058,31 @@ label pat_questions:
             hm "Did you owe {i}money{/i} to Mister Victrola?"
             hide hank
 
+            show pat
             pat "Uh, yeah, a couple of thousand dollars. It was for my business."
+            hide pat
 
             sc "Your... business?"
 
+            show pat
             pat "Oh, this is good - I wanted to start a pet store slash tattoo parlour."
+            hide pat
 
             sc "That seems like too many concepts in one place."
 
+            show pat
             pat "I'd call it \"Pat's Cats and Tats\"."
+            hide pat
 
             sc "That's a pretty solid joke. Ha. So what was the business, {i}really{/i}?"
 
+            show pat
             pat "I ... I'm not sure if I understand. That was it."
+            hide pat
 
             sc "Wait, really? You actually tried to open a pet adoption center, and tattoo parlour?"
 
+            show pat
             pat "Yeah."
 
             pat "I mean, obviously the idea {i}started{/i} as a silly rhyme."
@@ -3061,27 +3093,37 @@ label pat_questions:
 
             pat "So if you're spending that time with a bunch of adorable cats and classy hats, by the
                     time you leave you're definitely going to want to buy a cat, or a hat, or both, right?"
+            hide pat
 
             sc "Do you have any tattooing experience?"
 
+            show pat
             pat "Not as such, but I figured I could learn as I went."
+            hide pat
 
             sc "How about experience with animals?"
 
+            show pat
             pat "We had a family dog when I was a kid."
+            hide pat
 
             sc "Have you run a business before?"
 
+            show pat
             pat "Well, I run the gym's concession bar sometimes."
+            hide pat
 
             sc "And it didn't work out?"
 
+            show pat
             pat "I couldn't even get the business license. Something about health codes."
+            hide pat
 
             show hank confused
             hm "So, Tim fronted you the cash for this ... {i}endeavor{/i}?"
             hide hank
 
+            show pat
             pat "He loaned me quite a bit of money for early business development, yeah."
 
             pat "Tim was kind of a visionary - to be honest, a lot of his money went into these big planning
@@ -3089,11 +3131,13 @@ label pat_questions:
             pat "I broke the news to him a few weeks back that the license
                     didn't go through at our big Waterpark Funzone meeting."
             
+            show pat serious
             pat "It was a somber day at the Splishsplash Mountain."
 
             pat "I figured this thing was a cash train to money-town, and I'd be able to pay him back
                     no problem, but ... well, actually, after the business fell through, it's been
                     pretty hard to put that money together."
+            hide pat
             
             "It's not smart to admit to a police officer that you had a large, off-the-books, outstanding debt 
                 to a recent murder victim."
@@ -3104,21 +3148,60 @@ label pat_questions:
             $ askedTattoo = True
             sc "Can I see that tattoo you have on your bicep?"
 
-            pat "Of course. The tattoo artist says it means \"strength\"."
+            show pat flex
+            pat "Of course."
 
-            "Detective Capilano is relatively certain that this symbol means \"meat\". She has the tact not to mention it, though."
+            show pat flex bam
+
+            "The tattoo looks worse up close, scraggly. There's some evidence of keloid scars under the tattoo, as if it were either
+                applied very clumsily or not cared for after application."
+            
+            "Remember Detective Capilano's TATTOO TIPZ:"
+
+            "1. Look at your tattoo artist's portfolio up front. No rash decisions! You want to be in love with their art style."
+
+            "2. Don't get flash from off of the wall. A marijuana leaf or a Playhouse Bunny tattoo is tacky. Work with them to develop a design that's meaningful to you!"
+
+            "3. A reputable tattoo artist will be using disposable guns and will work hard to maintain a sterile environment."
+
+            "4. Don't drink and get tattooed: not only is it a bad life decision, you'll bleed way more and actually get a {i}worse{/i} tattoo!"
+
+            "5. Aftercare is key! Not only will an infection hurt, it will also badly damage the final appearance of the tattoo!"
+
+            "Detective Capilano's TATTOO TIPZ are brought to you by the patchy, blotchy dolphin that she had drunkenly tattooed on her calf when she was 23."
+
+            "This is only important to note because it seems like Pat, also, did not follow Detective Capilano's TATTOO TIPZ: this looks like the result of a rash decision."
+
+            pat "It means \"strength\"."
+            hide pat
 
             show hank smug
-            hm "I'm pretty sure that that's the symbol for \"soup\"."
+            hm "Oh, do you speak a second language?"
             hide hank
             
-            pat "Nah, it's definitely \"strength\". Why would I get \"soup\" tattooed on my arm?"
+            show pat flex bam
+            pat "No, but the tattoo artist said it means \"strength\" and I trust him."
+            
+            "Detective Capilano is relatively certain that this symbol actually means \"meat\". She has the tact not to mention it, though."
+            hide pat
 
-            show hank what
-            hm "Out of love for soup?"
-            hide hank
+            sc "Strength? You must be very strong, then."
 
-            pat "I guess?"
+            show pat
+            pat "Oh, I am! That's why I got the tattoo - so that people would {i}know{/i}."
+            hide pat
+
+            sc "But only people who can read the character."
+            
+            show pat
+            pat "But I translate it for everybody else, so they know what it means."
+            hide pat
+
+            sc "Ah, thus forming a foolproof system for letting people know that you are strong. A property that you otherwise wouldn't be able to telegraph."
+
+            show pat
+            pat "Pretty much!"
+            hide pat
 
             jump pat_questions
         
@@ -3126,36 +3209,46 @@ label pat_questions:
             $ askedJob = True
             sc "What do you do, here, for the gym?"
 
+            show pat
             pat "Oh, I take every shift they'll give me. I'm a personal trainer, I run classes,
                     I'll wipe down the equipment, sometimes I even run concession."
+            hide pat
 
             show hank accusatory
             hm "Seems like you're pretty hard up for money."
             hide hank
 
+            show pat
             pat "Yeah, it's pretty tough to make ends meet. My tennis scholarship ran out 
                     and just making student loan payments is wiping me out pretty hard."
 
             pat "I've been really, really trying to lead the Dance Workout Jam Session, but 
                     Seamus has that totally buttoned up."
+            hide pat
             
             show hank confused
             hm "Seamus?"
             hide hank
 
+            show pat
             pat "Yeah, that's him, over there."
+            hide pat
 
             jump seamus
         "Look Pat in the {b}Eyes{/b}":
             $ askedEyes = True
             "Detective Capilano looks Pat deep in the eyes, trying to get a fix on him as a person."
 
+            show pat
             pat "Staring contest? Let's go!"
 
+            show pat serious bam
+            "..."
+
+            show pat serious bam bam 
             "No thoughts, head empty."
 
-            "Detective Capilano has a hard time suspecting Pat, he's got intense Golden Retriever
-                energy."
+            hide pat
 
             jump pat_questions
 
@@ -3169,17 +3262,22 @@ label pat_questions:
             hm "Your arm's in a sling, there, huh?"
             hide hank
 
+            show pat curious
             pat "Yeah, I hurt it a few days back while I was training Soft Serve over there."
 
             pat "I can get him to come tell you about it if you want."
+            hide pat
 
             show hank no
             hm "No need-"
             hide hank
             
+            show pat
             pat "Nah, it's no problem."
 
+            with hpunch
             pat "HEY, SOFT SERVE! COME OVER HERE AND TELL THEM ABOUT MY ARM!"
+            hide pat
 
             "The client from earlier walks back."
 
@@ -3191,7 +3289,9 @@ label pat_questions:
 
             client "He really threw himself at it trying to get it open. Dislocated his shoulder."
 
+            show pat
             pat "He's a lot stronger than he looks."
+            hide pat
 
             sc "That's a pull door."
 
@@ -3205,27 +3305,35 @@ label pat_questions:
             hm "Can I ask about your whereabouts for the last several hours?"
             hide hank
 
+            show pat
             pat "Yeah - I woke up at 10, had a healthy breakfast of juice - and -"
+            hide pat
 
             sc "Wait - juice?"
 
+            show pat
             pat "Yeah, I'm on a juice cleanse. Trying to get all of the toxins out of my system."
 
             pat "I've got a juice guy - you buy these juices and for a few days you drink nothing
                 but juice, and you don't eat anything at all."
             
             pat "Basically everything inside your body comes out of your body. Including the {i}toxins{/i}."
+            hide pat
 
             sc "Toxins like what?"
 
+            show pat
             pat "Well, you know, we eat all of this processed food, and we know that processed food is full
                 of {i}chemicals{/i} and the cleanse gets the chemicals {i}out{/i}."
+            hide pat
 
             sc "What kind of chemicals?"
 
+            show pat
             pat "Like, you know how when you buy store bread and it lasts for weeks, but homemade bread goes 
                 stale in only a few days? That's because of the {i}chemicals{/i}. Don't want those building
                 up in your system." 
+            hide pat
 
             sc "Uh-huh."
 
@@ -3233,31 +3341,81 @@ label pat_questions:
             hm "Detective Capilano - could we move it along? The young man was telling us about his day."
             hide hank
 
+            show pat
             pat "So, I drink my morning juice, I spend some time in the bathroom - I've got the squirts
                     real bad from the cleanse - and then I jogged to work, changed out of my wet clothes,
                     and started my shift at noon."
             
             pat "I've been here ever since."
+            hide pat
 
             show hank idk
             hm "Did you talk to anybody this morning? Anybody who can verify where you've been?"
             hide hank
 
+            show pat
             pat "No, not really."
+            hide pat
 
             jump pat_questions
 
         "Okay, we're done here." if askedPatDebts and askedArm:
             sc "Okay, big guy, I think we're done, here."
 
+            show pat
+            pat "Nice talkin' to you two!"
+            hide pat
+
             "Detective Capilano and Hank Maxhank walk out of earshot."
 
             jump pat_complete
         
 
+image seamus_animated:
+    "seamus.png"
+    pause 0.568
+    "seamus 2.png"
+    pause 0.568
+    "seamus 3.png"
+    pause 0.568
+    "seamus 4.png"
+    pause 0.568
+    "seamus 5.png"
+    pause 0.568
+    "seamus 6.png"
+    pause 0.568
+    "seamus 7.png"
+    pause 0.568
+    "seamus 10.png"
+    pause 0.568
+    "seamus 8.png"
+    pause 0.568
+    "seamus 9.png"
+    pause 0.568
+    "seamus 2.png"
+    pause 0.568
+    "seamus 3.png"
+    pause 0.568
+    "seamus 4.png"
+    pause 0.568
+    "seamus 6.png"
+    pause 0.568
+    "seamus.png"
+    pause 0.568
+    "seamus 5.png"
+    pause 0.568
+    "seamus 10.png"
+    pause 0.568
+    "seamus 4.png"
+    pause 0.568
+    "seamus 8.png"
+    pause 0.568
+    repeat
+
 label seamus:
     scene bg vending machine
     play music "music/Club Seamus.mp3"
+    show seamus_animated
     "Seamus is currently dancing like nobody is watching next to a vending machine."
 
     "Literally nobody is around. Seamus is doing this for Seamus."
@@ -3288,6 +3446,7 @@ label seamus:
 
     sc "Okay."
 
+    hide seamus_animated
     scene bg gym
     play music "music/Late Night Radio.mp3"
 
