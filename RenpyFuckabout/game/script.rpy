@@ -179,6 +179,10 @@ init python:
 # name of the character.
 
 define narrator = Character(None, 
+    what_font="fonts/LibreBaskerville-Regular.ttf",
+    who_font="fonts/LibreBaskerville-Bold.ttf",
+    what_color=color("#ffdcdd"),
+    who_color=color("#ffdcdd"),
     callback=bit_voice,
 )
 
@@ -220,7 +224,7 @@ define pat = Character("Pat Haring",
     who_color=color("#82ff00"),
     callback=steel_voice
 )
-define ha = Character("Chief Dasse",
+define ha = Character("The Chief",
     what_font="fonts/Literata-Regular.ttf",
     who_font="fonts/Literata-Bold.ttf",
     what_color=color("#01fe0b"), # cystam, The Man
@@ -277,6 +281,11 @@ define tim = Character("Timothy Victrola",
     who_color=color("#01fff8"),
     callback=pizz_voice
 )
+
+define yougot = Character("You Got:",
+    what_slow_cps=5
+) 
+# props to your mother
 define notepad = Character("Notepad",
     callback=notepad_voice,
 )
@@ -290,9 +299,6 @@ define clock = Character("Clock",
     callback=clock_voice,
 )
 define crimeputer = Character("Crimeputer",
-    callback=bit_voice,
-)
-define beer = Character("Beer",
     callback=bit_voice,
 )
 define badge = Character("Badge",
@@ -325,11 +331,6 @@ define dressshirt = Character("Kerosene-Soaked Dress Shirt",
     callback=bit_voice,
 )
 
-define yougot = Character("You Got:",
-    what_slow_cps=5
-) 
-
-# props to your mother
 define car = Character("Toyomi Paradise",
     what_font="fonts/Staatliches-Regular.ttf",
     who_font="fonts/Staatliches-Regular.ttf",
@@ -412,41 +413,88 @@ label start:
 
     scene bg precinct int
 
-    "A serious looking police chief is sitting at her desk. The desk itself is clean, organized, and utterly 
-        devoid of modern technology. Instead, there sits a large bakelite touch-tone phone. Behind her are 
+    "A serious looking police chief is sitting at their desk. The desk itself is clean, organized, and utterly 
+        devoid of modern technology. Instead, there sits a large bakelite touch-tone phone. Behind them are 
         framed awards and medals."
 
-    "The police chief sitting at the desk is wearing a crisp, pressed uniform with a lot of very official looking bits
-        and bangles on it."
-    
     # rain's quieter, we're indoors
     play ambient "ambient/rain_smaller.ogg" volume 0.5
 
     "A thin, hawkish man in a blue shirt walks in, a worried look on his face."
 
+    show chief
     ha "Smunders!"
+    hide chief
 
+    show smunders
     ws "Yes?"
+    hide smunders
 
+    show chief curious
     ha "What's with the low quality of the {i}images{/i}? Don't games like this usually have {i}graphics{/i}?"
+    hide chief
 
-    ws "(checking his notes) - Ah, yes, in order to complete the game on schedule, art assets had to be fudged pretty significantly."
+    show smunders clipboard
+    ws "Ah, yes, in order to complete the game on schedule, art assets had to be fudged."
+    hide smunders
 
-    ha "Unfortunate. Anyways..."
+    show chief curiouser
+    ha "How {b}much{/b} fudge are we talking about here?"
+    hide chief
 
-    # ws "Chief Dasse - Chief Dasse!"
-    
-    ha "What is it?"
+    show smunders clipboard
+    ws "Significant."
 
+    ws "Very significant fudging, sir. According to my numbers, every possible corner was cut."
+    hide smunders
+
+    show chief curiouser still
+    ha "Okay, what about a branching narrative? We were still able to fit in one of those, right?"
+    hide chief
+
+    show smunders clipboard
+    ws "No, sir. No room in the budget. All narrative decisions are completely cosmetic."
+    hide smunders
+
+    show chief curious
+    ha "How cosmetic?"
+    hide chief
+
+    show smunders clipboard
+    ws "They affect {i}details of what happens{/i} but not the {i}outcome{/i}." 
+    hide smunders
+
+    menu:
+        "Completely unacceptable":
+            show smunders
+            ws "My hands are tied, sir - we have to make do with what we can."
+            hide smunders
+        "I suppose we'll have to make do.":
+            show smunders clipboard exactly
+            ws "Exactly, sir - we don't have a choice any more than this narrative does." 
+            hide smunders
+
+    show chief angry
+    ha "Unfortunate. Anyways - why are you in my office?"
+    hide chief
+
+    show smunders
     ws "We have a, uh, routine traffic fatality, but the officer on the scene has requested that we send a detective."
+    hide smunders
 
+    show chief curious
     ha "Something suspicious about the circumstances, hm?"
+    hide chief
 
+    show smunders
     ws "Yes - but it's a highway accident, so the city will be breathing down our neck if we can't clear the scene quickly."
+    hide smunders
 
+    show chief curious
     ha "So we need a detective right {i}now{/i}, then?"
 
     ha "How about..."
+    hide chief
 
     jump how_about
 
@@ -465,81 +513,176 @@ label how_about:
 
     menu: 
         "Goode and Dunn?" if goode_and_dunn:
+            show smunders
             ws "Goode and Dunn? They're on vacation leave right now."
+            hide smunders
             $ goode_and_dunn = False
             jump how_about
         
         "Briggs and Stratton?" if briggs_and_stratton:
+            show smunders
             ws "Briggs and Stratton? I already checked with them, they've got engine trouble."
+            hide smunders
             $ briggs_and_stratton = False
             jump how_about
         
         "Smith and Wesson?" if smith_and_wesson:
+            show smunders
             ws "Smith and Wesson? I can't get a hold of them, they've been at the shooting range all day."
+            hide smunders
             $ smith_and_wesson = False
             jump how_about
         
         "Abbott and Costello?" if abbott_and_costello:
+            show smunders clipboard
             ws "Abbott and Costello? On administrative leave after they got in that big scrap at the baseball field."
+            hide smunders
+
+            show chief curiouser
             ha "Big scrap at the {i}baseball field?{/i}"
+            hide chief
+            
+            show smunders clipboard
             ws "One of them got Lieutenant Hu's name wrong, again."
+            hide smunders
+            
+            show chief curiouser still
             ha "Hu?"
+            hide chief
+
+            show smunders clipboard exactly
             ws "Exactly, sir."
+            hide smunders
             $ abbott_and_costello = False
             jump how_about
         
         "Hall and Oates?" if hall_and_oates:
+            show smunders
             ws "Hall and Oates? They left the force, sir, to become private eyes."
+            hide smunders
+            
+            show chief
             ha "That's unfortunate. Watch out, boys - that life'll chew you up."
+            hide chief
+
             $ hall_and_oates = False
             jump how_about
         
         "Astaire and Rogers?" if astaire_and_rogers:
+            show smunders
             ws "Astaire and Rogers? They're tapped out, sir."
+            hide smunders
+
+            show chief angry
             ha "Damn."
+            hide chief
+
             $ astaire_and_rogers = False
             jump how_about
         
         "Bert and Ernie?" if bert_and_ernie:
+
+            show smunders clipboard
             ws "Bert and Ernie? They're getting married this week, sir."
+            hide smunders
+            
+            show chief happy
             ha "Oh. Wonderful. Have you remembered to send them flowers and a card, from the precinct?"
+            hide chief
+            
+            show smunders clipboard exactly
             ws "Of course, sir."
+            hide smunders
             $ bert_and_ernie = False
+            
             jump how_about
 
         "Dorian and Turk?" if dorian_and_turk:
+            show smunders suspicious
             ws "Dorian and Turk? You don't want to put those scrubs on a real case."
+            hide smunders
+
             $ dorian_and_turk = False
             jump how_about
 
         "Ferrell and O'Teri?" if ferrell_and_oteri:
+            show smunders suspicious
             ws "No."
+            hide smunders
+            
+            show chief
             ha "... Wise."
+            hide chief
+
             $ ferrell_and_oteri = False
             jump how_about
         
         "Hamm and Deggs?" if hamm_and_deggs:
+            show smunders clipboard
             ws "Hamm and Deggs? They're a good pair - I'm sure they'd be able to turn this over, easy."
+            hide smunders
+
+            show chief
             ha "Yeah. Why are you waffling, then? Let's use them!"
+            hide chief
+
+            show smunders clipboard
             ws "But they're busy with a case right now, for that baseball team - the Holland A's."
             ws "We've also got them on the Ashley Brown murder."
+            hide smunders
+            
+            show chief
             ha "Okay, gotcha, Hamm and Deggs are too busy with Holland A's and Ash Brown."
+            hide chief
+            
+            show smunders clipboard exactly
             ws "Exactly, sir."
+            hide smunders
+
             $ hamm_and_deggs = False
             jump how_about
         
         "Capilano?":
+            show smunders suspicious
             ws "Detective Capilano? Really? Is she... the {i}best{/i} choice for this?"
+            hide smunders
+
             if not hamm_and_deggs and not ferrell_and_oteri and not dorian_and_turk and not bert_and_ernie and not astaire_and_rogers and not hall_and_oates and not abbott_and_costello and not smith_and_wesson and not briggs_and_stratton and not goode_and_dunn:
+                show chief curious
                 ha "It sounds like she's our {b}only{/b} choice for this."
+                hide chief
             else: 
+                show chief
                 ha "She's a good cop, even if her methods are a little unorthodox."
+                hide chief
+            
+            show smunders
             ws "Well, I suppose. I'll get her on the phone."
+            hide smunders
+
+            show chief curiouser
             ha "On the phone? Is she not in today?"
+            hide chief
+
+            show smunders
             ws "She should be, but she's late. {i}Again{/i}."
+            hide smunders
+            
+            show chief curiouser still
             ha "How often would you say that she's late to work, Smunders?"
+            hide chief
+
+            show smunders
             ws "I wouldn't say that I can recall her being on time for work, ever, sir."
+            hide smunders
+            
+            show chief angry
             ha "Hm. Noted."
+
+            show chief
+            ha "Anyways, call her and let her know about {i}the situation.{/i}"
+            hide chief
+
             jump start_home
             
 
@@ -549,8 +692,8 @@ label start_home:
 
     scene bg apartment int
 
-    "We cut to the interior of an extremely messy apartment. The television, again, helps to establish
-        the time frame by being a behemoth of wood and chrome with a tiny screen."
+    "We cut to the interior of an extremely messy apartment. The television helps to establish
+        the time frame by virtue of being a behemoth of wood and chrome with a tiny screen."
     
     "A woman is sleeping,
         face-down, fully clothed, on the ugliest chesterfield you have ever seen. In front of her is a
@@ -577,7 +720,9 @@ label start_home:
 
     sc "Hello?"
 
+    show smunders phone
     ws "You're late for work, Ms. Capilano."
+    hide smunders
 
     "Detective Capilano looks at the clock on the wall."
     
@@ -586,55 +731,90 @@ label start_home:
     
     sc "{i}groggily{/i} who is this? Smunders?"
 
+    show smunders phone
     ws "Yes, it's me. {i}Smunders{/i}."
+    hide smunders
 
     sc "Smunders?"
 
+    show smunders smunders
     ws "{i}Smunders.{/i}"
+    hide smunders
+
+    sc "{b}Smunders?{/b}"
+    
+    show smunders smunders smunders
+    ws "{i}{b}Smunders!{/b}{/i}"
+    hide smunders
+    
+    sc "{b}Smunders?{/b}"
+    
+    show smunders smunders smunders smunders
+    with hpunch
+    ws "{i}{b}Smunders!{/b}{/i}"
+    hide smunders
+
 
     sc "You {i}know{/i} that I was up until 3AM last night on the Vengabus file, right?"
     
     sc "Everybody was {i}jumping{/i}. I have a terrible headache."
 
+    show smunders phone
     ws "I didn't know that, no. In any case, I'm not concerned with how late you stay at work.
             The day starts at 7:00AM - sharp."
+    hide smunders
 
     # eye roll
     sc "Okay, Wayland, I'll be right in."
 
+    show smunders smunders
     ws "Did you just roll your eyes at me?"
+    hide smunders
 
     "How did he know that?"
     
+    show smunders phone
     ws "Anyways - don't come in to the precinct - we need you at Beresford and 48th. There's been a traffic accident."
+    hide smunders
 
     sc "Don't we have, like, traffic cops for that kind of thing?"
 
+    show smunders phone
     ws "We do. They've requested a detective. You're it, Capilano."
+    hide smunders
 
     sc "Hngh. Okay. I'll be there in ten minutes."
 
+    show smunders smunders
     ws "Make it five. The whole mess needs to be sorted as quickly as possible or Traffic is gonna have our asses on
             platters."
+    hide smunders
 
+    show smunders smunders smunders
     ws "It's going to be an all-you can eat buffet. Of ass-platters. Heaped tall with asses, the asses of
             everyone on the force."
     
+    show smunders smunders smunders smunders
     ws "I want to impress upon you exactly how ass-laden these platters will be if you are not at this crime
             scene in {b}five minutes{/b}."
+    hide smunders
 
     sc "Okay, so, it's real important that I get down there soon."
 
+    show smunders smunders smunders
     ws "Yes, Detective Capilano."
+    hide smunders
 
     sc "I'm not entirely dressed, yet."
 
+    show smunders phone
     ws "Oh, and I know how you just {i}love{/i} to stand on decorum. I bet your collar isn't even pressed." 
     
     ws "Let's just say that, this time, you have special dispensation from the top to show up 
             as your {i}usual rumpled self{/i}."
 
     ws "Just... make sure to bring a tie and your badge, okay?"
+    hide smunders
     
     sc "Gotcha."
 
@@ -647,7 +827,7 @@ label start_home:
 
     "The thing is, the TV isn't on."
 
-    "That's the weird thing about Detective Capilano. All kinds of objects just... talk to her. Unprompted."
+    sc "Things are talking to me again. Great."
 
     "She should talk about this with a doctor, but, to be honest, they'd probably put her on 
         a bunch of lithium, and Detective Capilano has had it with how {i}loud{/i} heavy metals can be."
@@ -737,20 +917,25 @@ label apartment:
             if hasCueBall:
                 cb "This egg roll has no bearing on the case."
             
-            badge "Very fortunately for Detective Capilano's sanity, food doesn't speak to her."
+            badge "Oh, come on, that was the exact same amount of fanfare I just got. I am a useful tool and that is nothing
+                    more than a greasy deep-fried rice-wrapper stuffed with shredded cabbage."
+
+            badge "It doesn't even talk!"
+
+            sc "Food never does. Don't know why. I'm glad, though. That'd be uncomfortable."
             
             $ apartmentThingsLeft = apartmentThingsLeft - 1
 
-            if hasCatLuck:
+            if hasCatLuck and apartmentThingsLeft > 0:
                 "Hey, your {b}Magic Cue Ball{/b} is in the fridge!"
 
             jump apartment
         "Go back to the fridge and have a {b}Beer{/b}" if hasBadge and not isHydrated and apartmentThingsLeft > 0:
-            beer "Detective Capilano. I respect your lack of deference to professionalism but you just woke up."
+            badge "Detective Capilano. I respect your lack of deference to professionalism but you just woke up."
             sc "Aw, come on - I'm thirsty and I don't have time to make a coffee."
-            beer "Have water, then."
+            badge "Have water, then. You are an officer of the law and I won't have you day-drinking on the job."
             sc "Water tastes like {i}nothing{/i}."
-            beer "It's good for you."
+            badge "It's good for you."
             sc "Okay. I guess."
             "Detective Capilano has a long, refreshing drink of regular-ass water, directly from the tap."
 
@@ -760,9 +945,6 @@ label apartment:
             play music "music/I Got A Stick.mp3"
             yougot "Hydrated!"
             play music "music/Grand Dark Waltz Moderato.mp3"
-
-            sc "You know, I still think that it's weird that you're so judgy about day-drinking."
-            beer "Hey - I can party. But you see the sticker on my side that says \"drink responsibly\"? I take that seriously."
             
             jump apartment
         "Look for her {b}Cat{/b}" if not hasCatLuck:
@@ -773,18 +955,18 @@ label apartment:
             play sound "sounds/meow.ogg" volume 0.5
             z " ~ ~ miau! ~ ~ :3"
             "Zip is usually content to sit at the window and watch the day go by while Detective Capilano works."
-            if hasBadge:
-                badge "Detective Capilano found Zip on her first week on the force. He's almost 18 years old now - ancient, 
-                            in cat years."
-                badge "He's content to wait the day out here, watching out the window for his own perps, 
-                            but leaving the house without giving Zip a little chin scritch is bad luck."
+            
+            "Detective Capilano found Zip on her first week on the force. He's almost 18 years old now - ancient, 
+                in cat years."
+            "He's content to wait the day out here, watching out the window for his own perps, 
+                but leaving the house without giving Zip a little chin scritch is bad luck."
             
             play sound "sounds/purr.ogg"
             z "{i}( * happy rumbling * ) :3 {/i}"
             $ hasCatLuck = True
             $ lookedForZip = True
             
-            if hasBadge:
+            if hasBadge and apartmentThingsLeft > 0:
                 "Zip gets up and dashes behind the television."
                 "While he's back there, he knocks a dusty old cueball out, which rolls into the middle of the living room."
                 badge "This is the {b}Magic Cueball{/b}."
@@ -810,9 +992,12 @@ label apartment:
             if hasBadge:
                 badge "I don't understand why you have to be so salty all the time."
                 carkeys "Here's what {i}you{/i} sound like: meh meh meh, meh meh meh meh."
-            elif hasBelt:
-                belt "Language, keys."
+            
+            if hasBelt:
+                belt "Language, keys. This is a woman of taste and class."
                 carkeys "Piss off, leatherboy."
+                belt "... I would be angrier at you if I did not like the sound of \"leatherboy\" so much. 
+                            Keep calling me that, it is definitely working for me."
             
             play music "music/I Got A Stick.mp3"
             yougot "Foulmouthed Car Keys!"
@@ -831,9 +1016,11 @@ label apartment:
         "Look for her {b}Belt{/b}" if not hasBelt and apartmentThingsLeft > 0:
             "It's between the couch cushions. Detective Capilano must have taken it off in the night."
             sc "Good thing I found this! Wouldn't want my pants to fall down at an inopportune time during the case!"
-            belt "Yes, that's exactly what I'm great at. Touching your body. Coming on. Coming... off."
+            belt "Oh, yes, oui, that is exactly what I am great at, mon cherie. Touching your body. Coming on. Coming... off."
 
             sc "You're a wierd little guy, belt."
+
+            belt "Come, now. Touch me to your waist. Let our erotic dance {i}begin{/i}."
 
             $ hasBelt = True
 
@@ -867,8 +1054,6 @@ label apartment:
             
             if hasCueBall:
                 cb "Put down the cigarettes. Your lung damage is getting to the point where it's nearly irreversible."
-
-                cb "I need you alive."
 
                 cigarettes "She knows. She doesn't care. Our love is too strong."
 
@@ -1094,23 +1279,31 @@ label beresford:
 
     "A junior police officer and a paramedic are gathered around a car that has very badly crashed."
 
+    show paramedic
     parm "Call it - he's dead."
+    hide paramedic
 
     trfc "Oh, no. You - barely even got in there, are you sure?"
 
+    show paramedic eyebrow
     parm "Are you new here, kid? The steering wheel's gone clean through his chest. He's not gonna walk that off."
+    hide paramedic
 
     # trfc finds something suspicious
     trfc "This is... very strange, for a traffic accident."
 
+    show paramedic eyebrow
     parm "What do you mean?"
+    hide paramedic
 
     "The junior police officer reaches down."
 
     trfc "Well, for one, most people in traffic accidents aren't driving with a pet cinder block 
         next to their gas pedal."
 
+    show paramedic
     parm "You think this was a homicide?"
+    hide paramedic
 
     trfc "It could be. I'm gonna call it in."
     
@@ -1118,21 +1311,28 @@ label beresford:
     "The junior police officer heads to the squad car."
     
     #angry
+    show paramedic
+    with hpunch
     parm "- HEY, YOU GUYS ARE REALLY HELPING, I'M SURE THE HONKING WILL CLEAN UP THE CRASH FASTER -"
+    hide paramedic
 
     "The junior police officer returns."
 
+    show paramedic
     parm "How long does this usually take? I've got to bag up the body, and the traffic department's already
         giving us dirty looks about clearing this road."
+    hide paramedic
     
     trfc "I don't know, this is the first time I've requested a detective. Dispatch says that they should have
         someone out in five minutes or so."
     
     trfc "..."
 
+    show paramedic
     parm "..."
 
     parm "So... we just wait?"
+    hide paramedic
 
     trfc "Yeah."
 
@@ -1143,15 +1343,21 @@ label beresford:
     if isLate:
         trfc "...doopa doo"
 
+        show paramedic
         parm "tum wee tiddly tum tee too"
+        hide paramedic
 
         trfc "God, this is taking forever... cigarette?"
 
+        show paramedic eyebrow
         parm "Nah, I don't smoke. That stuff'll kill you."
+        hide paramedic
 
         trfc "Well, so will an entire steering column driven through your chest."
 
+        show paramedic eyebrow
         parm "You don't see me smoking entire steering columns, either, do you?"
+        hide paramedic
 
         trfc "Okay, okay."
 
@@ -1160,52 +1366,70 @@ label beresford:
         scene bg car crash fire 1
         "The victim's car lights on fire."
 
+        show paramedic
         parm "So... you're a cop, huh?"
+        hide paramedic
 
         trfc "Yeah."
 
+        show paramedic
         parm "I guess that's kind of the opposite of a paramedic."
+        hide paramedic
 
         trfc "How do you mean?"
 
+        show paramedic
         parm "Well, like, I try to keep people alive and, uh..."
+        hide paramedic
 
         trfc "I {i}also{/i} try to keep people alive?"
 
         scene bg car crash fire 2
+        show paramedic eyebrow
         parm "Okay, I'm going to put this a different way. All of the tools I carry are for healing people.
                 All of the tools you carry are for..."
+        hide paramedic
 
         trfc "... I'm not sure what you're getting at."
 
+        show paramedic eyebrow
         parm "It's your job to threaten people with violence. Shoot them, sometimes."
+        hide paramedic
 
         trfc "Yeah, bad people."
 
+        show paramedic eyebrow
         parm "Are they all bad people, though?"
+        hide paramedic
 
         trfc "Well, I wouldn't shoot them if they weren't bad."
 
         "The fire is getting pretty bad."
 
+        show paramedic nonplussed
         parm "Ah, so you're the decider, here. "
         
         parm "Good thing you have that comprehensive knowledge of the law and
             philosophy and human psychology and lie detection, "
             
-        parm "so that you can know who's bad, and shoot them."
+        parm "so that you can know who's bad, and {b}shoot them{/b}."
+        hide paramedic
 
         trfc "Well, {i}I've{/i} never shot anyone."
 
         trfc "Anyways, I'm not the one who makes the decisions. I just enforce {i}the law{/i}."
 
+        show paramedic eyebrow
         parm "And who does {i}the law{/i} serve?"
 
         parm "Look - I'm sorry I brought this up. Do you smell kerosene? I smell kerosene."
+        hide paramedic
 
         trfc "Nah, I don't smell anything."
         
+        show paramedic
         parm "Where is that detective? It's been ages."
+        hide paramedic
 
         trfc "You figure they'd have shown by now."
 
@@ -1290,9 +1514,9 @@ label beresford:
         if isLate:
             "... \"very late\"... \"exploded, sir\"... \"yup, evidence completely destroyed\""
         
-        "The junior traffic cop jogs back to the crime scene"
+        "The junior traffic cop jogs back to the crime scene."
 
-        sc "Yeah, she checks out. A detective from the station."
+        trfc "Yeah, she checks out. A detective from the station."
 
     if hasGun:
         gun "He doesn't respect you. I can smell it. Shoot him. Shoot him right in his stupid face."
@@ -1313,9 +1537,13 @@ label beresford:
     sc "So, what's the situation, here?"
 
     if isLate:
-        trfc "Oh, you - I guess you just missed it. The car with the dead guy in it just exploded."
+        trfc "Oh, you - I guess you just missed it. The dead guy just exploded."
+        
+        trfc "Well, uh, to be clear, the car with the dead guy in it, uh, was the part that - exploded."
 
+        show paramedic
         parm "If you had just arrived, like, five minutes earlier - that would have made a {i}huge{/i} difference."
+        hide paramedic
 
         trfc "Yeah, that was a really consequential five minutes!"
 
@@ -1431,13 +1659,17 @@ label beresford:
 
         trfc "Oh, I know. There are a {i}lot{/i} of car crashes."
 
+        show paramedic
         parm "Yeah, we have to deal with this kind of thing on the regular."
+        hide paramedic
 
         if hasBike:
             sc "Honestly, I'm feeling a little better about my decision to bike here, right now."
 
+            show paramedic eyebrow
             parm "Oh, no, cars hit bikes all the time. If anything, that's much worse. 
                 You ever see a guy tangled up in a wheel-well?"
+            hide paramedic
 
             sc "Once, but it was a murder investigation. Hot tip: don't piss off bus drivers. 
                 Especially don't piss them off if you're 
@@ -1449,14 +1681,18 @@ label beresford:
 
         trfc "Fresh out."
 
+        show paramedic
         parm "I've got some. Here, take these."
+        hide paramedic
         
         play sound "sounds/snap.ogg"
         "Detective Capilano puts on the gloves."
 
         sc "What is that {i}smell{/i}?"
 
+        show paramedic eyebrow
         parm "Dead guy?"
+        hide paramedic
 
         sc "No, it's... something different. Anyways - "
 
@@ -1476,7 +1712,9 @@ label beresford:
 
         trfc "Neat!"
 
+        show paramedic nonplussed
         parm "Neat?"
+        hide paramedic
 
         sc "Now, down here - look at his wrist. A tan line for a watch - but no watch!"
 
@@ -1733,11 +1971,11 @@ label dumpster:
 
         sc "If I had something long and rope-like, I could loop it around that ladder and pull it down."
 
-        belt "Oh! Oh! Use me! I can help with that!"
+        belt "Oh! Oh! Let me be at your service, madame! I can be of assistance!"
 
         sc "Okay, pants, I need you to hold for just a moment while I do something clever with this belt."
 
-        belt "Pants don't talk!"
+        belt "We both know that the pants are too cotton-headed to speak."
 
         sc "I still don't always get the logic around which objects talk and which ones don't."
 
@@ -1748,6 +1986,10 @@ label dumpster:
 
         "She pulls the ladder down to the ground and climbs to the top, looking around the fire exit for
             clues."
+
+        belt "Do not forget to reattach me to your beautiful waist."
+
+        # sc rolls her eyes
         
         sc "Huh. Would you look at that?"
 
@@ -4807,7 +5049,7 @@ label hank_office_quick_ending:
     gun "Oh, your hand is warm. I'm ready to roll."
 
     sc "I know that you've been blackmailing Timothy Victrola. That you've been keeping two files on him - 
-            one for Ann, and one for - the blackmail."
+            one for Ann, and one for - {i}the blackmail{/i}."
     
     show hank confused
     hm "And how in the world could you possibly know that?"
@@ -4815,7 +5057,9 @@ label hank_office_quick_ending:
 
     sc "Ball logic."
 
+    show hank confused
     hm "Ball logic?"
+    hide hank
 
     sc "It's a police term. It means I'm on the ball, and I have you dead to rights."
 
@@ -4852,7 +5096,7 @@ label hank_office_quick_ending:
 
     gun "Oh, sweet rapture."
 
-    hide hank shot through the heard
+    hide hank
 
     sc "...huh. Well, I guess that's sorted, then."
 

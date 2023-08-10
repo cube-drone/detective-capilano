@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 284: EOL while scanning string literal
-    Character("Crimeputer,
+File "game/script.rpy", line 1284: expected 'image_name_component' not found.
+    hide
+        ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sat Jul 29 23:48:35 2023
+Thu Aug 10 02:09:15 2023
