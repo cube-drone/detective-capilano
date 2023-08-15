@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1284: expected 'image_name_component' not found.
+File "game/script.rpy", line 1363: expected 'image_name_component' not found.
+    hide
+        ^
+
+File "game/script.rpy", line 1367: expected 'image_name_component' not found.
+    hide
+        ^
+
+File "game/script.rpy", line 1375: expected 'image_name_component' not found.
     hide
         ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Thu Aug 10 02:09:15 2023
+Tue Aug 15 01:37:17 2023

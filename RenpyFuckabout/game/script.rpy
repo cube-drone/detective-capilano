@@ -2,7 +2,7 @@
 # TODO: crimefighting bazooka
 # TODO: more jokes in the becky phase, it drags a bit
 
-# becky is actually "becky and also becky"? 
+# TODO: set up a brick joke in the apartment at the beginning, pay it off at the end
 
 init python: 
     import random
@@ -236,7 +236,6 @@ define ha = Character("The Chief",
 define becky = Character("Becky Segsihan",
     what_font="fonts/Delius-Regular.ttf",
     who_font="fonts/Delius-Regular.ttf",
-                                 # curopal, sneaky snake
     what_color=color("#ff007e"), # path, freedom and han solo
     who_color=color("#ff007e"),
     callback=steel_voice
@@ -291,7 +290,6 @@ define notepad = Character("Notepad",
 )
 define cb = Character("Magic Cue Ball",
 )
-define cinderblock = Character("Cinder Block",)
 define phone = Character("Phone",
     callback=phone_voice,
 )
@@ -1257,6 +1255,14 @@ label car:
     
     jump beresford
 
+image jemby_light:
+    "jemby light 1.png"
+    pause 0.2
+    "jemby light 2.png"
+    pause 0.2
+    "jemby light 3.png"
+    pause 0.2
+    repeat
 
 label beresford:
     # we jump back in time a little bit here, to Traffic Cop Jemby discovering some stuff at the crime
@@ -1283,29 +1289,39 @@ label beresford:
     parm "Call it - he's dead."
     hide paramedic
 
+    show jemby serious
     trfc "Oh, no. You - barely even got in there, are you sure?"
+    hide jemby
 
     show paramedic eyebrow
     parm "Are you new here, kid? The steering wheel's gone clean through his chest. He's not gonna walk that off."
     hide paramedic
 
     # trfc finds something suspicious
+    show jemby serious
     trfc "This is... very strange, for a traffic accident."
+    hide jemby
 
     show paramedic eyebrow
     parm "What do you mean?"
     hide paramedic
 
+    show jemby lean
     "The junior police officer reaches down."
+    hide jemby
 
+    show jemby cinder
     trfc "Well, for one, most people in traffic accidents aren't driving with a pet cinder block 
         next to their gas pedal."
+    hide jemby
 
     show paramedic
     parm "You think this was a homicide?"
     hide paramedic
 
+    show jemby
     trfc "It could be. I'm gonna call it in."
+    hide jemby
     
     scene bg car crash squad
     "The junior police officer heads to the squad car."
@@ -1323,10 +1339,12 @@ label beresford:
         giving us dirty looks about clearing this road."
     hide paramedic
     
+    show jemby
     trfc "I don't know, this is the first time I've requested a detective. Dispatch says that they should have
         someone out in five minutes or so."
     
     trfc "..."
+    hide jemby
 
     show paramedic
     parm "..."
@@ -1334,34 +1352,65 @@ label beresford:
     parm "So... we just wait?"
     hide paramedic
 
+    show jemby serious
     trfc "Yeah."
+    hide jemby
+
+    show paramedic
+    parm "It's really wet out today."
+    hide paramedic
+    
+    show jemby serious
+    trfc "It sure is."
+    hide jemby
+
+    show paramedic
+    parm "Why the sunglasses, then?"
+    hide paramedic
+
+    show jemby serious
+    trfc "I think they give me an air of authority."
+    hide jemby
+    
+    show paramedic eyebrow
+    parm "..."
+    hide paramedic
 
     "About five minutes of awkward small talk later..."
 
     # if isLate, have Jemby waiting a little too long and accidentally lighting the car on fire,
     #  ruining a whole bunch of evidence
     if isLate:
+        show jemby doopa doo
         trfc "...doopa doo"
+        hide jemby
 
         show paramedic
         parm "tum wee tiddly tum tee too"
         hide paramedic
 
+        show jemby doopa doo
         trfc "God, this is taking forever... cigarette?"
+        hide jemby
 
         show paramedic eyebrow
         parm "Nah, I don't smoke. That stuff'll kill you."
         hide paramedic
 
+        show jemby
         trfc "Well, so will an entire steering column driven through your chest."
+        hide jemby
 
         show paramedic eyebrow
         parm "You don't see me smoking entire steering columns, either, do you?"
         hide paramedic
 
+        show jemby
         trfc "Okay, okay."
 
+        show jemby_light
         "The junior traffic cop pulls out a cigarette, lights it, and takes a puff."
+        hide jemby
 
         scene bg car crash fire 1
         "The victim's car lights on fire."
@@ -1370,19 +1419,25 @@ label beresford:
         parm "So... you're a cop, huh?"
         hide paramedic
 
+        show jemby cigarette
         trfc "Yeah."
+        hide jemby
 
         show paramedic
         parm "I guess that's kind of the opposite of a paramedic."
         hide paramedic
 
+        show jemby cigarette
         trfc "How do you mean?"
+        hide jemby
 
         show paramedic
         parm "Well, like, I try to keep people alive and, uh..."
         hide paramedic
 
+        show jemby cigarette
         trfc "I {i}also{/i} try to keep people alive?"
+        hide jemby
 
         scene bg car crash fire 2
         show paramedic eyebrow
@@ -1390,19 +1445,25 @@ label beresford:
                 All of the tools you carry are for..."
         hide paramedic
 
+        show jemby cigarette
         trfc "... I'm not sure what you're getting at."
+        hide jemby
 
         show paramedic eyebrow
         parm "It's your job to threaten people with violence. Shoot them, sometimes."
         hide paramedic
 
+        show jemby cigarette
         trfc "Yeah, bad people."
+        hide jemby
 
         show paramedic eyebrow
         parm "Are they all bad people, though?"
         hide paramedic
 
+        show jemby cigarette
         trfc "Well, I wouldn't shoot them if they weren't bad."
+        hide jemby
 
         "The fire is getting pretty bad."
 
@@ -1415,9 +1476,11 @@ label beresford:
         parm "so that you can know who's bad, and {b}shoot them{/b}."
         hide paramedic
 
+        show jemby cigarette
         trfc "Well, {i}I've{/i} never shot anyone."
 
         trfc "Anyways, I'm not the one who makes the decisions. I just enforce {i}the law{/i}."
+        hide jemby
 
         show paramedic eyebrow
         parm "And who does {i}the law{/i} serve?"
@@ -1425,15 +1488,20 @@ label beresford:
         parm "Look - I'm sorry I brought this up. Do you smell kerosene? I smell kerosene."
         hide paramedic
 
+        show jemby cigarette
         trfc "Nah, I don't smell anything."
+        hide jemby
         
         show paramedic
         parm "Where is that detective? It's been ages."
         hide paramedic
 
+        show jemby cigarette
         trfc "You figure they'd have shown by now."
 
+        show jemby serious
         "The junior traffic cop flicks his cigarette."
+        hide jemby
 
         play sound "sounds/explosion.ogg"
         with vpunch
@@ -1443,7 +1511,9 @@ label beresford:
         $ carExploded = True
 
         scene bg car crash fire 4
+        show jemby holy shit
         trfc "Holy shit!"
+        hide jemby
 
     if hasBike:
         play sound "sounds/bike.ogg"
@@ -1470,7 +1540,9 @@ label beresford:
     
     "All of this would seem a lot cooler if Detective Capilano wasn't absolutely drenched."
 
+    show jemby serious
     trfc "Who are you?"
+    hide jemby
 
     sc "Detective Susan Capilano."
 
@@ -1480,23 +1552,31 @@ label beresford:
         
         badge "Hello, young man."
 
+        show jemby
         trfc "Wait, {i}the{/i} Detective Susan Capilano?"
+        hide jemby
 
         sc "(sheepishly) that's me, yeah."
 
+        show jemby
         trfc "We studied one of your cases in basic training."
+        hide jemby
 
         "Detective Capilano is visibly smug about this."
 
         sc "Was it \"The Case of the Jade Monkey\"? \"The Case of the Sizzling Sazerac\"? \"Death Lends a Hand\"?"
 
+        show jemby serious
         trfc "It was \"The Case of the Mishandled Evidence Leading To a Full Acquittal\"."
+        hide jemby
 
         "This deflates Detective Capilano somewhat."
     else:
+        show jemby serious
         trfc "... a detective? Really? Cool, cool cool cool."
 
         trfc "Do you mind if I just jog to the squad car for a quick second? I think I might have... left it on."
+        hide jemby
 
         "Detective Capilano nods but the junior traffic cop is already jogging to his car."
 
@@ -1513,10 +1593,14 @@ label beresford:
 
         if isLate:
             "... \"very late\"... \"exploded, sir\"... \"yup, evidence completely destroyed\""
+        "... \"smunders?\""
+        "... \"smunders.\""
         
         "The junior traffic cop jogs back to the crime scene."
 
+        show jemby
         trfc "Yeah, she checks out. A detective from the station."
+        hide jemby
 
     if hasGun:
         gun "He doesn't respect you. I can smell it. Shoot him. Shoot him right in his stupid face."
@@ -1528,47 +1612,70 @@ label beresford:
                     jump shooting_game_over                
             "He can live.":
                 gun "Aww. Why did you even bring me if you aren't going to kill some people."
-                notepad "I don't like you hanging out with gun, he's a psychopath."
-
-    sc "Honestly, with all this traffic, if I'd have tried to drive I'd have been much worse off."
-
-    trfc "Yeah, it's a real snarl."
+                if hasBadge: 
+                    badge "I don't like you hanging out with gun, he's a psychopath."
+                else:
+                    badge "I don't like you hanging out with gun, he's a psychopath."
 
     sc "So, what's the situation, here?"
 
     if isLate:
+        show jemby
         trfc "Oh, you - I guess you just missed it. The dead guy just exploded."
         
         trfc "Well, uh, to be clear, the car with the dead guy in it, uh, was the part that - exploded."
+        hide jemby
 
         show paramedic
         parm "If you had just arrived, like, five minutes earlier - that would have made a {i}huge{/i} difference."
         hide paramedic
 
+        show jemby
         trfc "Yeah, that was a really consequential five minutes!"
+        hide jemby
 
         sc "... oh, no."
 
+        show jemby
         trfc "You're not going to get any information out of that body or that car, now."
+        hide jemby
 
         sc "I can ask you a few questions, though - would that be okay?"
 
+        show jemby
         trfc "Of course - uh, but, keep in mind that we've got a mounting clean-up and traffic situation that's just
             getting worse with each passing moment."
+        hide jemby
         
+    show jemby
     trfc "The car crash, over here - I think it was staged."
+    hide jemby
 
     sc "Staged?"
 
+    show jemby cinder
     trfc "I found a cinder block next to the gas pedal."
+    hide jemby
 
-    cinderblock "CINDER BLOG!"
+    show paramedic nonplussed
+    parm "Are you just carrying that around with you, now?"
+    hide paramedic
+
+    show jemby cinder
+    trfc "It's evidence!"
+
+    trfc "{i}Don't listen to him baby, I'm gonna call you Cindy.{/i}"
+    hide jemby
 
     sc "Hm, okay."
     
+    show jemby
+    trfc "And look at the positioning of the car, here - "    
+    hide jemby
+    
     scene bg crash diagram car
 
-    trfc "And look at the positioning of the car, here - "    
+    trfc "..."
 
     scene bg crash diagram car bad
 
@@ -1584,14 +1691,10 @@ label beresford:
         control - it seems like they just took a straight line from that alley, across the road, directly into
         this pole, without flinching."
 
-    sc "I still don't see what's suspicious about that."
-
-    trfc "Well, that would be consistent with the theory that the driver was unconscious or dead, and the cinder block
+    trfc "That would be consistent with the theory that the driver was unconscious or dead, and the cinder block
         was doing the driving."
     
-    cinderblock "CINDER BLOG!!!!"
-    
-    sc "I'm pulling your leg - obviously that's all suspicious as hell."
+    sc "Obviously that's all suspicious as hell."
 
     trfc "Exactly!"
  
@@ -1602,23 +1705,31 @@ label beresford:
 
     sc "That's some clever sleuthing, there, gumshoe."
 
+    show jemby
     "Jemby looks smug."
+    hide jemby
 
     "Detective Capilano looks at the car for a moment and jots down some notes."
 
     notepad "'88 Cadillero Allstar. Got your game on. Go, play."
 
+    show jemby
     trfc "Expensive vehicle?"
+    hide jemby
 
     sc "Oh yeah. They're popular mid-life-crisis-mobiles among bank managers and upper management types."
 
     sc "Heated leather seats, V-12 engine, hundreds of horses, they even come with cup-holders. The works."
 
+    show jemby
     trfc "Imagine: being able to put a cup down in your car without it tipping over."
+    hide jemby
 
     sc "I know, it seems like an impossible dream, but the engineers at Cadillero have cracked it."
 
+    show jemby
     trfc "Magical."
+    hide jemby
 
     if hasCueBall:
         cb "Here's the scoop. The body belonged to a man named Timothy Victrola. He was killed by one 
@@ -1630,7 +1741,9 @@ label beresford:
 
         "The junior traffic cop holds up a wallet in a plastic bag."
 
+        show jemby
         trfc "Before I thought it was a homicide investigation I nabbed it, yeah."
+        hide jemby
         
         sc "Good man. Let me take a look at that."
         
@@ -1646,18 +1759,24 @@ label beresford:
     if not isLate and not hasCueBall:
         sc "Can I see the body?"
 
+        show jemby
         trfc "It's kinda gruesome - but yeah."
+        hide jemby
 
         scene bg car crash right
         "They walk over to the car's window."
 
         sc "Wow. That's... incredibly graphic."
 
+        show jemby
         trfc "I'm sure as a homicide detective you've seen it all."
+        hide jemby
 
         sc "I've definitely seen some things but I'm going to level with you: car crash victims are... up there, y'know?"
 
+        show jemby
         trfc "Oh, I know. There are a {i}lot{/i} of car crashes."
+        hide jemby
 
         show paramedic
         parm "Yeah, we have to deal with this kind of thing on the regular."
@@ -1679,7 +1798,9 @@ label beresford:
 
         sc "Do you have some gloves I could borrow?"
 
+        show jemby
         trfc "Fresh out."
+        hide jemby
 
         show paramedic
         parm "I've got some. Here, take these."
@@ -1703,14 +1824,18 @@ label beresford:
 
         sc "Okay, look at this - under the head, here, on the neck."
 
+        show jemby
         trfc "Wow, that's a really distinctive bruising pattern. Not from the crash?"
+        hide jemby
 
         sc "It could be, but this looks an awful lot like he was strangled. By two hands, crushing his windpipe, 
             from the front."
         
         $ hasStrangulation = True
 
+        show jemby
         trfc "Neat!"
+        hide jemby
 
         show paramedic nonplussed
         parm "Neat?"
@@ -1720,7 +1845,9 @@ label beresford:
 
         $ hasWatchTan = True
 
+        show jemby
         trfc "So he wasn't wearing a watch when he died? You've cracked the case, Sherlock!"
+        hide jemby
 
         sc "Well, why wasn't he wearing it? It's worth noticing, at least."
         
@@ -1749,7 +1876,9 @@ label beresford:
 
         sc "Hey, for our own safety, let's all back away from the car right now."
 
+        show jemby
         trfc "Huh? Why's that?"
+        hide jemby
 
         sc "That smell - I think that's kerosene. Someone's been pouring kerosene all over the backseat of this car."
 
@@ -1759,7 +1888,9 @@ label beresford:
 
     sc "Can you get the fire department? I think we'll need them before we continue."
 
+    show jemby
     trfc "Oh, yeah, that's a good idea."
+    hide jemby
 
     "While he jogs to the police cruiser to call for the fire department, Detective Capilano pulls out her 
         notepad and angles around the car to get a look at the back."
@@ -1772,14 +1903,18 @@ label beresford:
 
     sc "If you're done with the fire department, could you run these plates? It'd be good to know who the victim was."
     
+    show jemby
     trfc "Way ahead of you. The car's driver, one Timothy Victrola, age 26. Ownership is registered to an Ann Portent,
         who I believe is his spouse."
+    hide jemby
 
     sc "If it's registered to Mrs. Portent, how did you know {i}his{/i} name?"
 
     "The junior traffic cop holds up a wallet in a plastic bag."
 
+    show jemby wallet
     trfc "Before I thought it was a homicide investigation I nabbed his ID."
+    hide jemby
     
     sc "Good man. Let me take a look at that."
         
@@ -1821,6 +1956,8 @@ label wallet:
             "\"Fitness Dicken U\""
             if hasBelt:
                 belt "Heheheheheh." 
+                if hasBadge:
+                    badge "Perv."
             
             sc "Gym membership. He seems in pretty good shape, I guess that tracks."
             play sound "sounds/casino/cardPlace1.ogg"
@@ -1835,12 +1972,16 @@ label wallet:
             play sound "sounds/casino/cardPlace2.ogg"
 
             notepad "Matte black Dining Club Card, name: \"Timothy Victrola\" "
-            notepad "Heavier than a usual, might be made with actual metal."
+            notepad "Heavier than a usual credit card, might be made with actual metal."
             if hasBadge:
                 badge "The name and account number are embossed on - this is necessary for the carbon-paper imprint machine   
                     used by retailers to be able to quickly copy the details on the card."
             sc "Wow, credit card."
+            
+            show jemby
             trfc "Must be a real fancy boy."
+            hide jemby
+            
             jump wallet
         "Look at the {b}Money{/b}" if not lookedAtMoney:
             $ lookedAtMoney = True
@@ -1861,18 +2002,24 @@ label beresford_2:
     else:
         scene bg car crash
     
+    show jemby
     trfc "Learn anything useful from the wallet?"
+    hide jemby
 
     sc "Not sure."
 
     sc "Ok! I'm just going to go poke around that alley."
 
+    show jemby
     trfc "The alley over there?"
+    hide jemby
 
     sc "Yeah - I think you'd agree that if this car drove in a straight line from anywhere, it would have been
             from over there, right?"
 
+    show jemby
     trfc "Yup. What are you looking for?"
+    hide jemby
 
     sc "I'll know it when I see it."
 
@@ -3137,6 +3284,14 @@ label gym:
         
         sc "Look at this, an olympic length swimming pool, a weight room, and a full rock climbing wall, the works!"
 
+        sc "And over there, another olympic length swimming pool. And another one over there! Next to that sign, with directions... to the additional swimming pools?"
+
+        show hank confused
+        hm "Why do they have so many olympic length swimming pools in here?"
+        hide hank
+
+        sc "I don't know."
+
         show hank expository
         hm "This reminds me of the gym at my old alma mater."
         hide hank
@@ -3729,17 +3884,21 @@ label becky:
 
     sc "Hello - Becky? Climbing instructor?"
 
+    show becky
     becky "Yes, that's me. How can I help you?"
 
-    "Becky appears to be quite young - college aged. Dark hair, in a ponytail. 
+    "Becky appears to be quite young - college aged. Dark hair, in a short cut, cropped to the side. 
         She's wearing a gym uniform - comfortable
-        athletic clothing with the university's logo on it. She has a climbing harness around her waist."
+        athletic clothing. She has a climbing harness around her waist."
+    hide becky
 
     if hasBelt:
         belt "A climbing harness is like a belt, but with {i}even more belt{/i} around the legs."
         belt "This has been: belt facts."
     
+    show becky
     "Becky smells like soap and fresh shampoo."
+    hide becky
 
     sc "I'm Detective Capilano, from the Northwestica PD - and this is Hank Maxhank, PI."
 
@@ -3766,18 +3925,24 @@ label becky:
         if hasCarKeys:
             carkeys "Fuckin' nailed it."
 
+    show becky
     becky "Wait, you're PD and he's a PI? How does {i}that{/i} work?"
+    hide becky
 
     sc "We're still working out the details."
 
+    show becky
     becky "You're very ... damp."
+    hide becky
 
     sc "Noted."
 
     sc "We have bad news for you - about a client of this gym. Timothy Victrola."
 
     # clasping her hands over her mouth
+    show becky gasp
     becky "Oh, no."
+    hide becky
 
     sc "I'm sorry to have to be the bearer of bad news, but we believe that he may have been murdered."
     
@@ -3789,11 +3954,15 @@ label becky:
 
     sc "Can you confirm that you were Mr. Victrola's climbing instructor?"
 
+    show becky gasp
     becky "Yeah - I am." 
+    hide becky
     
     sc "So, how long was Timothy coming to climbing practice with you?"
 
+    show becky
     becky "About six months."
+    hide becky
 
     jump becky_questions
 
@@ -3801,6 +3970,7 @@ define askBeckySmell = False
 define askBeckyStrength = False
 define askBeckyDanger = False
 define askBeckyCheating = False
+define askBeckySeduce = False
 define askBeckyMurder = False
 label becky_questions:
     menu: 
@@ -3810,22 +3980,30 @@ label becky_questions:
 
             sc "Seems like a lot of exertion, all this climbing. You seem fresh as a daisy, though."
 
+            show becky
             becky "Well, my shift only started at one - I had a shower before work. "    
+            hide becky
 
             "To wash off rain, blood, and kerosene? Or just to freshen up?"
 
             sc "Oh. What were you doing this morning?"
 
+            show becky
             becky "A friend dropped me off at the university this morning, she clocks in earlier than I do,
                     so I took a walk around the quad and then settled into the library for some homework."
+            hide becky
             
             sc "A walk? Today? Wouldn't you get wet?"
 
+            show becky
             becky "The outer ring of the quad is covered, so no."
+            hide becky
 
             sc "Then, after that?"
 
+            show becky
             becky "I came back to the gym, showered, and changed into my work clothes. Then I started work."
+            hide becky
 
             notepad "Weak alibi. No eyewitnesses until 1:00. Dry all day."
 
@@ -3835,33 +4013,46 @@ label becky_questions:
             $ askBeckyStrength = True
             sc "Climbing gym - that's really impressive. You climb this wall?"
 
+            show becky
             becky "Among others, yes."
+            hide becky
 
             sc "How hard is this wall? Like, on a scale from one to ten?"
 
+            show becky fifteen
             becky "Actually, if you're climbing, it's a scale from one to fifteen."
+            hide becky
 
             sc "Why is that?"
 
+            show becky no
             becky "Well, fifteen is {i}five harder{/i} than ten." 
+            show becky
 
             sc "Well, yes, but then you could have just made {i}ten{/i} the hardest."
 
+            show becky fifteen
             becky "But fifteen is {b}five harder{/b}."
+            hide becky
 
-            # exasperated
-            sc "Okay."
+            sc "Wait, how did you do that thing with your hands?"
+            
+            show becky no
+            becky "What thing?" 
+            show becky
 
-            becky "This wall has a few different challenge ratings - you can vary how 
+            show becky
+            becky "Anyways, this wall has a few different challenge ratings - you can vary how 
                 hard your climb is by choosing which colors you're allowed to grab
                 and which route you take up the wall."
 
             becky "If you go up the easy way, and use all of the colors? That's a four -
                 a child could do it."
                
-            beck "On the other hand, if you go up to the left, and 
+            becky "On the other hand, if you go up to the left, and 
                 you only use the orange handholds, it's a thirteen - which is a difficult
                 and technical climb."
+            hide becky
 
             "Detective Capilano looks up at the harder path. There don't seem to be enough
                 orange handholds for a person to actually be able to climb up this way."
@@ -3869,19 +4060,22 @@ label becky_questions:
             sc "It looks like in order to get up that way, you'd have to be able to pull
                     up your entire body-weight, one handed."
 
-            # becky guns
+            show becky guns
             becky "Oh, yeah. I can do it."
+            hide becky
 
             if hasStrangulation: 
                 "Her grip strength must be incredible."
 
             sc "Could Timothy?"
 
+            show becky
             becky "No, he was never in the kind of shape where he could climb a thirteen.
                 He's got solid fundamentals and he's pretty fit but he wasn't really strong
                 enough - and he weighs a lot more than I do."
+            hide becky
 
-            notepad "Becky much stronger than Timothy."
+            notepad "Becky much, {b}much{/b} stronger than Timothy."
 
             jump becky_questions
 
@@ -3890,15 +4084,18 @@ label becky_questions:
             sc "Would you say there are a lot of climbing accidents on the wall? It seems
                     like someone could get really hurt doing this."
 
+            show becky
             becky "Oh, it's very safe, if you're adhering to the safety protocols."
             
             becky "Of course, it's {i}possible{/i} to get very hurt if there's an equipment failure."
         
             becky "But everyone who climbs checks their equipment regularly."
+            hide becky
             
             sc "So if you wanted to hurt a fellow climber, you'd just have to sabotage the equipment? 
                     How hard would that be?"
 
+            show becky
             becky "Oh, not hard at all - their life is in your hands in some sense, while you're belaying for them.
                         You'd just have to do it very badly, let them fall, fail to catch them."
             
@@ -3908,6 +4105,7 @@ label becky_questions:
             becky "All bets are off if you're on an actual mountain, of course."
 
             becky "Wait - did Tim die in a climbing accident?"
+            hide becky
 
             show hank confused
             hm "No, a car accident. I don't know why we're talking about this at all."
@@ -3933,13 +4131,17 @@ label becky_questions:
             hm accusatory "Where were you {i}really{/i}, this morning?"
             hide hank
 
+            show becky irritated
             becky "At the library."
+            hide becky
 
             show hank accusatory
             hm "A likely story. Can anyone - {i}verify{/i} that you were at the library?"
             hide hank
 
+            show becky shrug
             becky "Probably {i}someone{/i}? Maybe you should go to the library and ask around."
+            hide becky
 
             show hank shrug
             hm "She's got me there, hoss. It's airtight."
@@ -3949,27 +4151,80 @@ label becky_questions:
 
             jump becky_questions
 
+        "{b}Seduce{/b} Becky" if hasBelt and not askBeckySeduce:
+            $ askBeckySeduce = True
+
+            belt "This woman is beautiful. You must make her yours."
+
+            if hasBadge:
+                badge "She's a suspect in an active murder case. Keep it in your pants, belt."
+                
+            belt "Unf unf unf."
+
+            condoms "We agree."
+
+            if hasBadge:
+                badge "You wouldn't even be involved!"
+
+                condoms "We get excited easily!"
+
+            if hasGun:
+                gun "Show her the gun. Women who are afraid for their lives are more {i}pliable{/i}."
+                
+                if hasBadge:
+                    badge "Like I said, sociopath."
+                    
+                    gun "I ought to shoot you for saying that."
+            
+            notepad "She's easily 20 years younger than you, don't be gross."
+
+            belt "Love knows no age barrier."
+
+            notepad "It absolutely does."
+
+            sc "I think that the notepad is right."
+
+            show hank confused
+            hm "... You ... think that the notepad is right?"
+            hide hank
+
+            sc "Oh, I - uh - made a note here about what I was going to have for dinner, and I agreed with it."
+
+            show hank friendly
+            hm "... you're an odd duck, aren't you, detective." 
+            hide hank
+
+            jump becky_questions
+
         "Ask about {b}Cheating{/b}" if not askBeckyCheating:
             $ askBeckyCheating = True
             sc "Your relationship with Tim - could you talk about that?"
 
+            show becky irritated
             becky "What relationship? I was his climbing instructor."
+            hide becky
 
             sc "You know, it's strange - I was wondering if you could help me explain this - 
                     he had your phone number in his wallet at time of death."
 
+            show becky no
             becky "Probably to set up appointments with the gym?"
+            hide becky
 
             sc "Your home phone number."
 
             # shrug
+            show becky shrug
             becky "Huh. How'd that get there?"
+            hide becky
 
             show hank idk
             hm "Maybe Tim looked her up in the phone directory."
             hide hank
 
+            show becky shrug
             becky "Yeah, maybe he did."
+            hide becky
 
             "Detective Capilano {i}knows{/i} that there's more going on here, but it's going
                 to take more pressure to get her to crack."
@@ -3980,7 +4235,7 @@ label becky_questions:
 
             "We will?"
 
-            notepad "Hank interfering. Ditch hank."
+            notepad "Hank interfering. Ditch Hank."
 
             jump becky_questions
 
@@ -3992,16 +4247,20 @@ label becky_questions:
             "Becky doesn't appear to have a purse with her, or any pockets."
 
             if hasBelt:
-                belt "See, this is why you want belted pants with some {i}capacity{/i}."
+                belt "See, this is why you want {i}belted{/i} pants with some {i}capacity{/i}."
 
             sc "Becky, this is just a standard procedural thing we have to do, but could I take a quick look
                     at your identification?"
 
+            show becky shrug
             becky "I don't have it with me, it's in my locker."
+            hide becky
 
             sc "Okay, let's go."
 
+            show becky shrug
             becky "Right now?"
+            hide becky
 
             sc "Yeah, right now."
 
@@ -4010,13 +4269,17 @@ label becky_questions:
 label beckyLocker: 
     "Standing outside the locker rooms, Becky stops for a second."
 
+    show becky irritated
     becky "Sorry, Mr. Maxhank, this is a ladies only locker room."
+    hide becky
 
     show hank
     hm "This is a very serious investigation, I should be included."
     hide hank
 
+    show becky irritated
     becky "And who are you again? A private citizen?"
+    hide becky
 
     show hank angry
     hm "I'll wait out here."
@@ -4028,7 +4291,9 @@ label beckyLocker:
 
     sc "Wow, what gratuitous and excessive college nudity we're looking at right now."
 
-    becky "Why are those two having a pillow fight? How did they even get those?"
+    show becky
+    becky "Why are those two having a pillow fight? Did they bring those from home?"
+    hide becky
 
     "They are both joking. If, perhaps, one had hoped to see a display of gratuitous and 
         excessive college nudity,
@@ -4041,17 +4306,20 @@ label beckyLocker:
     "The two walk by a series of lockers. There are numbered lockers for the gym's members,
         but the staff lockers are further in the back and labeled by name."
 
+    show becky
     becky "This is my locker."
+    hide becky
 
     "Becky opens the locker. Inside is a purse and a change of clothes."
 
     "She rifles through the purse to find her identification - but while she's doing this,
         Detective Capilano reaches over and grabs her change of clothes."
 
+    show becky irritated
     becky "Hey - "
+    hide becky
 
-    sc "I'm sorry, I understand this is inappropriate, but I can't help but notice that this
-            is a large, baby-blue Yuyuyuzu hoodie."
+    sc "I can't help but notice that this is a large, baby-blue Yuyuyuzu hoodie."
 
     "Detective Capilano checks the tag."
 
@@ -4063,65 +4331,91 @@ label beckyLocker:
 
     yuyuyuzu "No, I haven't. We got to go jogging around the quad this morning, though!"
 
+    show becky irritated
     becky "I already told you, no - the quad's covered, so I stayed dry."
+    hide becky
 
     sc "You know, it's strange - Timothy was wearing a shirt just like this when he died.
             Same brand, and size, and everything."
 
+    show becky
     becky "Oh, this {i}is{/i} his shirt."
+    hide becky
 
     sc "In your locker?"
 
+    show becky blank
     becky "I was ... {i}borrowing{/i} it."
+    hide becky
 
     sc "It can't possibly be the same one that's headed to the morgue right now."
 
+    show becky shrug
     becky "... he had a few of this shirt. You know, in case of stains, or sudden accidents."
+    hide becky
 
     sc "Or losing them at the gym?"
 
     sc "So, you have his sweater. You said earlier that your relationship was -"
 
+    show becky
     becky "Strictly professional, yes. He just - left it behind."
+    hide becky
 
     sc "Odd of you to have kept it rather than returning it to him."
 
+    show becky shrug
     becky "Sure, but that's what happened. You, uh, needed to see my identification?"
+    hide becky
 
     sc "Yes, please."
 
+    show becky id
     becky "Here."
+    hide becky
 
     sc "\"Rebecca Segsihan\", Age 24 - wait, this isn't a driver's license. It's just a student card."
 
+    show becky id
     becky "I never got my driver's license. I can't afford a car, anyways - what would be the point 
         of even learning?"
+    hide becky
     
     sc "Well, you might drive {i}someday{/i}."
 
+    show becky shrug
     becky "I can learn {i}then{/i}, seems like."
+    hide becky
     
     sc "There's just one more bit of information I need - could you write down your phone number for me?
             We might have some more questions for you, later."
 
     play sound "sounds/writing.ogg"
 
+    show becky shrug
     becky "Okay..."
+    hide becky
 
+    show becky
     becky "Here you are."
+    hide becky
     
     stop sound
 
+    show becky irritated
     becky "... wait, don't you already have my phone number? You told me that Timothy had it in his wallet."
+    hide becky
 
     sc "Yes, but now I can compare the two. What do you know - would you look at this? A perfect match."
 
     sc "I'm extremely curious to discover how Mr. Victrola looked up your name in a phone directory,
             then wrote down your phone number in {b}your{/b} handwriting. What a talented young man."
     
+    show becky blank
     becky "That's a bit of a dirty trick."
 
     becky "Should I have a lawyer? Should I be talking to you with a lawyer right now?"
+    hide becky
 
     "I'm going to interrupt, here. Yes. Becky should absolutely be talking to a lawyer. Everyone we've talked to
         should have been talking to a lawyer. You should always, ALWAYS have a lawyer."
@@ -4130,23 +4424,31 @@ label beckyLocker:
 
     "Yet. Not formally a suspect yet."
 
+    show becky shrug
     becky "So maybe I wrote down the number for him. I don't remember."
+    hide becky
 
     sc "That seems like it would indicate a more than merely professional relationship."
 
+    show becky irritated
     becky "Even so - nothing happened."
+    hide becky
 
     "Detective Capilano does not believe her, but it doesn't seem like this line of questioning
         is going to lead any further."
 
     sc "Well, I guess we've stood around this locker room long enough. Shall we go?"
 
+    show becky
     becky "Sure."
+    hide becky
 
     "Becky locks up her purse and her clothing, and the two of them return to the locker 
         room entrance."
 
+    show becky
     becky "Where's your friend?"
+    hide becky
 
     sc "I'm not sure. I figured he'd be waiting out here for us."
 
@@ -4156,7 +4458,9 @@ label beckyLocker:
     hm "Oh - sorry, I just had to drop a few kids off at the pool."
     hide hank
 
+    show becky irritated
     "Becky grimaces."
+    hide becky
 
     sc "I think we've tormented poor Ms. Segsihan enough for one day, wouldn't you say?"
 
