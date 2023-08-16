@@ -4797,6 +4797,16 @@ label securitas:
 
     jump flashback
 
+
+image tim_feet:
+    "tim feet.png"
+    pause 0.2
+    "tim feet 2.png"
+    pause 0.2
+    "tim feet 3.png"
+    pause 0.2
+    repeat
+
 label flashback: 
     play music "music/Limit 70.mp3"
     stop ambient_2
@@ -4805,31 +4815,36 @@ label flashback:
 
     "A seedy motel on the outskirts of town."
 
+    show tim
     tim "Mr. Maxhank - I think I know why you've invited me here."
+    hide tim
 
     # guilty hm, wearing the shirt
     show hank friendly
     hm "I imagined you might."
     hide hank
 
+    show tim
     tim "You've been... following me? For some time?"
+    hide tim
 
     show hank shrug
     hm "Yes, on an assignment from your wife."
     hide hank
 
-    # tim looks crestfallen
+    show tim crestfallen
     tim "So you know..."
+    hide tim
 
     show hank conspiratorial
     hm "Everything."
     hide hank
 
+    show tim crestfallen
     tim "I've brought money - a lot of money."
+    hide tim
 
     show hank no
-    "Hank holds up his hand, as if to say \"no\"."
-
     hm "Not what this is about, Tim."
     hide hank
 
@@ -4839,60 +4854,78 @@ label flashback:
             shown to Ms. Portent. The one that reports no wrongdoing whatsoever."
     hide hank
 
+    show tim crestfallen
     tim "... wait, what?"
+    hide tim
 
     show hank friendly
     hm "You're totally in the clear."
     hide hank
 
-    # relief, confusion
+    show tim
     tim "But... why?"
+    hide tim
 
     show hank friendly
     hm "I've done you a favour, I was hoping you might do one for me."
     hide hank
 
     # suspicious
+    show tim
     tim  "Oh?"
+    hide tim
 
     show hank conspiratorial
     hm "Your wife, she handles a lot of pretty high profile news in this town. Does she
             ever talk about it with you?"
     hide hank
     
+    show tim
     tim "Sometimes, yes."
+    hide tim
 
     show hank conspiratorial
     hm "As a private investigator, having access to a... insider, someone privy to breaking
             news, before it even breaks - well, that could be {i}very{/i} valuable."
     hide hank
 
+    show tim sus
     tim "You... want me to spy on my wife for you?"
+    hide tim
 
     show hank idk
     hm "I'm not sure if I'd put it that way, Mr. Victrola. I would simply like to be
-            kept... in the loop, about important happenings about town."
+            kept... in the loop, about important happenings."
+    hm "Particularly ones having to do with my clients."
     hide hank
 
-    # tim looks disgusted
+    show tim angry
     tim "No. Hard no."
+    hide tim
 
     show hank confused
     hm "Huh. Considering the situation, that was a pretty quick \"no\"."
 
-    hm "You know, considering how rude you've been, I might be inclined to cave and 
+    hm "You know, seeing how rude you've been, I might be inclined to cave and 
             let Ann see the real file. Some juicy stuff in here."
+    
+    hm "In particular this picture of you attempting a position that one might charitably
+            call \"the wheelbarrow\"."
+
     hide hank
 
+    show tim angry
     tim "I don't care."
     
     tim "I'll tell her first. "
     
     tim "She'll be hurt but she's a big girl: she'll get over it."
+    hide tim
     
     stop music
     stop ambient
 
+    show tim determined
     tim "It was a dalliance, a fling - maybe she'll forgive me. Maybe she won't."
     
     tim  "But do you know what Ann would {i}never{/i} forgive? If I threatened 
@@ -4902,7 +4935,9 @@ label flashback:
             she'll believe me about this little swindle you're trying to pull, here."
     
     play sound "sounds/stress.ogg"
+
     tim "She's a powerful woman, Mr. Maxhank. I imagine a pretty big client of yours."
+    hide tim
 
     show hank angry
     hm "You can't."
@@ -4920,23 +4955,33 @@ label flashback:
     with hpunch
 
     "Tim flails for his gun but can't reach it."
+    hide hank
+
+    show tim_feet
     tim "hnngghghk"
+    hide tim_feet
     with hpunch
 
+    show hank strangling bam
     hm "Hold still."
     with hpunch
 
     "Hank picks Tim up, off of the ground."
     with hpunch
+    hide hank
 
+    show tim_feet
     tim "hgghhhh"
     with vpunch
 
     hm "You know the thing about blackmail? Sometimes people don't {i}want{/i} to be blackmailed."
 
     hm "It's an ugly industry."
+    hide tim_feet
 
+    show tim dead
     "Tim slumps, unconscious."
+    hide tim 
     
     show hank straightening
     hm "I have a reputation to protect, you know."
