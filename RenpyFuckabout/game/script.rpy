@@ -709,14 +709,18 @@ label start_home:
 
     phone "DAMN RIGHT! GET YOUR HEAD IN THE GAME!"
 
+    show detective notie faceplam
     sc "Okay, okay, dang. Geez."
 
-    "The woman uncomfortably peels herself off of the couch. She has short hair, a slim build, and a leather
-        jacket that probably smells like a grown-ass adult just slept in it."
+    "The woman uncomfortably peels herself off of the couch. She has short hair, a slim build, and a trench-coat
+        that probably smells like a grown-ass adult just slept in it."
 
+    show detective notie phone
     "She picks up the phone."
 
     sc "Hello?"
+    
+    hide detective
 
     show smunders phone
     ws "You're late for work, Ms. Capilano."
@@ -727,35 +731,44 @@ label start_home:
     clock "It's 1:02. You're not just
         late for work, you're {i}very, very{/i} late for work."
     
+    show detective notie phone
     sc "{i}groggily{/i} who is this? Smunders?"
+    hide detective
 
     show smunders phone
     ws "Yes, it's me. {i}Smunders{/i}."
     hide smunders
 
+    show detective smunders
     sc "Smunders?"
+    hide detective
 
     show smunders smunders
     ws "{i}Smunders.{/i}"
     hide smunders
 
+    show detective smunders smunders
     sc "{b}Smunders?{/b}"
+    hide detective
     
     show smunders smunders smunders
     ws "{i}{b}Smunders!{/b}{/i}"
     hide smunders
     
+    show detective smunders smunders smunders
     sc "{b}Smunders?{/b}"
+    hide detective
     
     show smunders smunders smunders smunders
     with hpunch
     ws "{i}{b}Smunders!{/b}{/i}"
     hide smunders
 
-
+    show detective notie phone
     sc "You {i}know{/i} that I was up until 3AM last night on the Vengabus file, right?"
     
     sc "Everybody was {i}jumping{/i}. I have a terrible headache."
+    hide detective
 
     show smunders phone
     ws "I didn't know that, no. In any case, I'm not concerned with how late you stay at work.
@@ -763,7 +776,9 @@ label start_home:
     hide smunders
 
     # eye roll
+    show detective notie phone eyeroll
     sc "Okay, Wayland, I'll be right in."
+    hide detective
 
     show smunders smunders
     ws "Did you just roll your eyes at me?"
@@ -775,13 +790,17 @@ label start_home:
     ws "Anyways - don't come in to the precinct - we need you at Beresford and 48th. There's been a traffic accident."
     hide smunders
 
+    show detective notie phone irritated
     sc "Don't we have, like, traffic cops for that kind of thing?"
+    hide detective
 
     show smunders phone
     ws "We do. They've requested a detective. You're it, Capilano."
     hide smunders
 
+    show detective notie phone irritated
     sc "Hngh. Okay. I'll be there in ten minutes."
+    hide detective
 
     show smunders smunders
     ws "Make it five. The whole mess needs to be sorted as quickly as possible or Traffic is gonna have our asses on
@@ -797,13 +816,17 @@ label start_home:
             scene in {b}five minutes{/b}."
     hide smunders
 
+    show detective notie phone irritated
     sc "Okay, so, it's real important that I get down there soon."
+    hide detective
 
     show smunders smunders smunders
     ws "Yes, Detective Capilano."
     hide smunders
 
+    show detective notie phone irritated
     sc "I'm not entirely dressed, yet."
+    hide detective
 
     show smunders phone
     ws "Oh, and I know how you just {i}love{/i} to stand on decorum. I bet your collar isn't even pressed." 
@@ -814,9 +837,11 @@ label start_home:
     ws "Just... make sure to bring a tie and your badge, okay?"
     hide smunders
     
+    show detective notie phone
     sc "Gotcha."
 
     "Hanging up the phone, Detective Capilano looks around her dingy apartment. Where {i}is{/i} that badge?"
+    hide detective
 
     "The TV is in the corner. An ad blares in the background: \"This morning you've got time for a hot, 
         home-cooked breakfast! Delicious and piping hot in only three microwave minutes!\""
