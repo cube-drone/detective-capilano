@@ -2,17 +2,28 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1363: expected 'image_name_component' not found.
-    hide
-        ^
-
-File "game/script.rpy", line 1367: expected 'image_name_component' not found.
-    hide
-        ^
-
-File "game/script.rpy", line 1375: expected 'image_name_component' not found.
-    hide
-        ^
+File "game/script.rpy", line 5025: end of line expected.
+(Perhaps you left out a ' at the end of the first line.)
+    // actually you're holding that picture sideways
+    
+        hide hank
+    
+        show tim angry
+        tim "I don't care."
+                        ^
+        
+        tim "I'll tell her first. "
+        
+        tim "She'll be hurt but she's a big girl: she'll get over it."
+        hide tim
+        
+        stop music
+        stop ambient
+    
+        show tim determined
+        tim "It was a dalliance, a fling - maybe she'll forgive me. Maybe she won't."
+        
+        tim  "But do you know what Ann would {i}never{/i} forgive? If I threatened 
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Aug 15 01:37:17 2023
+Sun Aug 20 03:06:50 2023

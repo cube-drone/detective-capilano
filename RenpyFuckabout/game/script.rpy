@@ -286,54 +286,118 @@ define yougot = Character("You Got:",
 ) 
 # props to your mother
 define notepad = Character("Notepad",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=notepad_voice,
 )
 define cb = Character("Magic Cue Ball",
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
 )
 define phone = Character("Phone",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=phone_voice,
 )
 define clock = Character("Clock",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=clock_voice,
 )
 define crimeputer = Character("Crimeputer",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=bit_voice,
 )
 define badge = Character("Badge",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=badge_voice,
 )
 define belt = Character("Belt",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=belt_voice,
 )
 define cigarettes = Character("Cigarettes",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=snake_voice,
 )
 define gun = Character("Gun",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=snake_voice,
 )
 define carkeys = Character("Car Keys",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=keys_voice,
 )
 define bike = Character("Bike",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=bike_voice,
 )
 define gum = Character("Gum",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
     callback=gum_voice,
 )
-define yuyuyuzu = Character("Yuyuyuzu Hoodie")
-define plant = Character("Obvious Plant")
+define yuyuyuzu = Character("Yuyuyuzu Hoodie",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
+)
+define plant = Character("Obvious Plant",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
+)
 define condoms = Character("Condoms",
     callback=condoms_voice,
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
 )
 define dressshirt = Character("Kerosene-Soaked Dress Shirt",
     callback=bit_voice,
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
 )
 
 define car = Character("Toyomi Paradise",
-    what_font="fonts/Staatliches-Regular.ttf",
-    who_font="fonts/Staatliches-Regular.ttf",
-    what_color=color("#efefef"), # grey
-    who_color=color("#efefef")
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
 )
 # one-off joke characters
 # WEALTHY DOWAGER
@@ -361,6 +425,38 @@ define client = Character("Soft Serve Steve",
     what_size=45,
     who_size=55,
 )
+
+image yougot:
+    "yougot 1.png"
+    pause 0.248
+    "yougot 2.png"
+    pause 0.248
+    "yougot 3.png"
+    pause 0.248
+    "yougot 4.png"
+    pause 0.248
+    "yougot 5.png"
+    pause 0.248
+    "yougot 6.png"
+    pause 0.248
+    "yougot 3.png"
+    pause 0.248
+    "yougot 1.png"
+    pause 0.248
+    "yougot 2.png"
+    pause 0.248
+    "yougot 1.png"
+    pause 0.248
+    "yougot 2.png"
+    pause 0.248
+    "yougot 3.png"
+    pause 0.248
+    "yougot 3.png"
+    pause 0.248
+    "yougot 3.png"
+    pause 0.248
+    repeat
+
 
 
 define hasTie = False
@@ -840,23 +936,40 @@ label start_home:
     show detective notie phone
     sc "Gotcha."
 
-    "Hanging up the phone, Detective Capilano looks around her dingy apartment. Where {i}is{/i} that badge?"
+    show detective notie
+    "Hanging up the phone, Detective Capilano looks around her dingy apartment. Where {i}is{/i} that tie?"
     hide detective
 
-    "The TV is in the corner. An ad blares in the background: \"This morning you've got time for a hot, 
-        home-cooked breakfast! Delicious and piping hot in only three microwave minutes!\""
-    
-    "\"Look! It comes with a toy!\""
+    show tie
+    tie "I'm draped over the couch!"
+    hide tie
 
-    "The thing is, the TV isn't on."
-
+    show detective notie
     sc "Things are talking to me again. Great."
+    hide detective
 
     "She should talk about this with a doctor, but, to be honest, they'd probably put her on 
         a bunch of lithium, and Detective Capilano has had it with how {i}loud{/i} heavy metals can be."
     
-    jump apartment
+    "Detective Capilano puts on the tie, tying her look together somewhat."
+    
+    show detective
+    sc "I guess... "
+    show detective puts on sunglasses
+    sc "...it's a tie."
+    hide detective
+    
+    "The idea of a talking tie is stolen, whole-cloth, from the game \'Disco Elysium\'. Here, though, instead of 
+        being an avatar of the main character's passionate imagination and wild side, this tie is simply 
+        a tie that happens to be able to talk."
+    
+    "This is intended to illustrate the central conceit of this story: objects speak to Detective Capilano."
 
+    show detective
+    sc "Now I just need to grab my badge, and maybe a few other things, before I head out."
+    hide detective
+
+    jump apartment
 
 define apartmentThingsLeft = 3
 
@@ -880,31 +993,22 @@ label apartment:
             "In one corner, an old cat is having a nap in a basket."
             "Home, sweet home."
             jump apartment
-        "Look for her {b}Tie{/b}" if not lookedForTie and apartmentThingsLeft > 0:
-            "I'm going to level with you: Detective Capilano lost her tie many, many years ago. It's not going to turn up now."
-            "The detective doesn't even bother to look for her tie, it would be a waste of time."
-            $ lookedForTie = True
-            
-            if hasCueBall:
-                cb "The tie is currently located in a thrift store, where it is hanging on the rack, for sale."
-                sc "Huh. Well I guess that solves {i}that{/i} mystery."
-            
-            jump apartment
         "Look for her {b}Notepad{/b}" if not lookedForNotepad and apartmentThingsLeft > 0:
             "This one's a freebie. Detective Capilano's notepad is in her breast pocket, {i}always{/i}."
             $ lookedForNotepad = True
 
-            notepad "Are we gonna solve a case?"
-
-            sc "We sure are, pal."
-
-            notepad "Solve a case! Solve a case!"
-
-            sc "Calm down. We haven't even started yet."
-
             play music "music/I Got A Stick.mp3"
+            show yougot
             yougot "A notepad that you already had!"
+            hide yougot
             play music "music/Grand Dark Waltz Moderato.mp3"
+            
+            notepad "Notepad located in breast pocket."
+            notepad "Reliable. Keeps important details recorded for later."
+
+            show detective
+            sc "Calm down. We haven't even started yet."
+            hide detective
             
             jump apartment
         "Look for her {b}Badge{/b}" if not hasBadge and apartmentThingsLeft > 0:
@@ -1162,9 +1266,6 @@ label apartment:
         "Leave":
             if hasCueBall and not hasGun:
                 cb "I told you to get your gun."
-                jump apartment
-            if not hasCatLuck:
-                "Detective Capilano {i}always{/i} has time to give her cat a little goodbye before she hits the road."
                 jump apartment
             if apartmentThingsLeft > 0 and not isLate:
                 "Look, Detective Capilano is in a {i}real hurry{/i} - there's no time to stand around grabbing random objects."
@@ -4936,6 +5037,8 @@ label flashback:
     
     hm "In particular this picture of you attempting a position that one might charitably
             call \"the wheelbarrow\"."
+    
+    # actually you're holding that picture sideways
 
     hide hank
 
@@ -5042,8 +5145,7 @@ label hank_office:
     hm "Sit down, please."
     hide hank
 
-    "There's an empty dry-cleaning bag on one of the chairs. Detective Capilano moves it aside 
-        and takes a seat."
+    "There's an empty dry-cleaning bag on one of the chairs. Detective Capilano moves it aside and takes a seat."
     
     show hank expository
     hm "You know, I used to be a police officer, before I struck out on my own as a private detective."
