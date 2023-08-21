@@ -345,6 +345,13 @@ define gun = Character("Gun",
     who_font="fonts/RobotoSlab-Bold.ttf",
     callback=snake_voice,
 )
+define tie = Character("Tie",
+    what_color=color("#fdffd9"),
+    who_color=color("#fdffd9"),    
+    what_font="fonts/RobotoSlab-Medium.ttf",
+    who_font="fonts/RobotoSlab-Bold.ttf",
+    callback=snake_voice,
+)
 define carkeys = Character("Car Keys",
     what_color=color("#fdffd9"),
     who_color=color("#fdffd9"),    
@@ -455,6 +462,17 @@ image yougot:
     pause 0.248
     "yougot 3.png"
     pause 0.248
+    repeat
+
+image detective_looking:
+    "detective small lookleft.png"
+    pause 0.5
+    "detective small lookright.png"
+    pause 0.5
+    "detective small lookleft question.png"
+    pause 0.5
+    "detective small lookright question.png"
+    pause 0.5
     repeat
 
 
@@ -785,6 +803,7 @@ label start_home:
     play music "music/Grand Dark Waltz Moderato.mp3"
 
     scene bg apartment int
+    with wipeleft
 
     "We cut to the interior of an extremely messy apartment. The television helps to establish
         the time frame by virtue of being a behemoth of wood and chrome with a tiny screen."
@@ -797,21 +816,34 @@ label start_home:
 
     sc "Guh."
 
+    show bgoverlay quiet
+    with dissolve
+
+    show prop phone
+    with hpunch
     phone "ANSWER ME, COWARD!"
+    hide prop
 
     sc "Nghuh."
 
     "Look, if Detective Capilano doesn't pick up the phone, we can't get this story started. Up! UP!"
 
-    phone "DAMN RIGHT! GET YOUR HEAD IN THE GAME!"
+    show prop phone
+    phone "RING RING! ALSO RING!"
+    hide prop
 
     show detective notie faceplam
+    with easeinbottom
     sc "Okay, okay, dang. Geez."
 
     "The woman uncomfortably peels herself off of the couch. She has short hair, a slim build, and a trench-coat
         that probably smells like a grown-ass adult just slept in it."
 
+    hide detective
+    with easeoutleft
+
     show detective notie phone
+    with easeinright
     "She picks up the phone."
 
     sc "Hello?"
@@ -824,36 +856,52 @@ label start_home:
 
     "Detective Capilano looks at the clock on the wall."
     
+    show prop clock
     clock "It's 1:02. You're not just
         late for work, you're {i}very, very{/i} late for work."
+    hide prop
     
     show detective notie phone
     sc "{i}groggily{/i} who is this? Smunders?"
     hide detective
+    with easeoutright
 
     show smunders phone
+    with easeinleft
+    with zoomin
     ws "Yes, it's me. {i}Smunders{/i}."
     hide smunders
+    with easeoutleft
 
     show detective smunders
+    with easeinright
     sc "Smunders?"
     hide detective
+    with easeoutright
 
     show smunders smunders
+    with easeinleft
     ws "{i}Smunders.{/i}"
     hide smunders
+    with easeoutleft
 
     show detective smunders smunders
+    with easeinright
     sc "{b}Smunders?{/b}"
     hide detective
+    with easeoutright
     
     show smunders smunders smunders
+    with easeinleft
     ws "{i}{b}Smunders!{/b}{/i}"
     hide smunders
+    with easeoutleft
     
     show detective smunders smunders smunders
+    with easeinright
     sc "{b}Smunders?{/b}"
     hide detective
+    with easeoutright
     
     show smunders smunders smunders smunders
     with hpunch
@@ -873,14 +921,19 @@ label start_home:
 
     # eye roll
     show detective notie phone eyeroll
+    "The detective rolls her eyes."
+
     sc "Okay, Wayland, I'll be right in."
     hide detective
 
     show smunders smunders
+    with hpunch
     ws "Did you just roll your eyes at me?"
     hide smunders
 
+    show detective notie phone irritated
     "How did he know that?"
+    hide detective
     
     show smunders phone
     ws "Anyways - don't come in to the precinct - we need you at Beresford and 48th. There's been a traffic accident."
@@ -935,29 +988,31 @@ label start_home:
     
     show detective notie phone
     sc "Gotcha."
-
-    show detective notie
-    "Hanging up the phone, Detective Capilano looks around her dingy apartment. Where {i}is{/i} that tie?"
     hide detective
 
-    show tie
+    show detective_looking
+    "Hanging up the phone, Detective Capilano looks around her dingy apartment. Where {i}is{/i} that tie?"
+    hide detective_looking
+
+    show prop tie
     tie "I'm draped over the couch!"
-    hide tie
+    hide prop tie
 
     show detective notie
     sc "Things are talking to me again. Great."
-    hide detective
 
     "She should talk about this with a doctor, but, to be honest, they'd probably put her on 
         a bunch of lithium, and Detective Capilano has had it with how {i}loud{/i} heavy metals can be."
     
+    show detective straightening
     "Detective Capilano puts on the tie, tying her look together somewhat."
-    
-    show detective
-    sc "I guess... "
-    show detective puts on sunglasses
-    sc "...it's a tie."
     hide detective
+    
+    show detective sunglasses prep
+    sc "I guess... "
+    show detective sunglasses
+    play sound "sounds/belt.ogg"
+    sc "...it's a tie."
     
     "The idea of a talking tie is stolen, whole-cloth, from the game \'Disco Elysium\'. Here, though, instead of 
         being an avatar of the main character's passionate imagination and wild side, this tie is simply 
@@ -965,113 +1020,179 @@ label start_home:
     
     "This is intended to illustrate the central conceit of this story: objects speak to Detective Capilano."
 
-    show detective
+    show detective straightening
     sc "Now I just need to grab my badge, and maybe a few other things, before I head out."
     hide detective
+
+    hide bgoverlay
 
     jump apartment
 
 define apartmentThingsLeft = 3
 
+define lookedAround = False
 define lookedForTie = False
 define lookedForNotepad = False
 define lookedForUmbrella = False
 define isLate = False
 
-label apartment:
+label apartment:    
+
+    show bgoverlay quiet
 
     if apartmentThingsLeft > 0:
-        "Detective Capilano is real short on time: She's only going to be able to grab a few things before she goes.\n
+        "Detective Capilano is short on time: She's only going to be able to grab a few things before she goes.\n
         {b}[apartmentThingsLeft]{/b} things, to be exact."
     else:
         "Detective Capilano is out of time to grab random objects from her home. It's time to get on the road."
 
     menu: 
-        "Just look around":
+        "Just look around" if not lookedAround:
+            $ lookedAround = True
+            hide bgoverlay
             "This apartment is dated and dingy, a small studio apartment with a lot of cigarette stains."
             "The kitchen hosts a dirty pile of old take-out containers and empty beer bottles."
             "In one corner, an old cat is having a nap in a basket."
             "Home, sweet home."
+            show bgoverlay quiet
             jump apartment
         "Look for her {b}Notepad{/b}" if not lookedForNotepad and apartmentThingsLeft > 0:
             "This one's a freebie. Detective Capilano's notepad is in her breast pocket, {i}always{/i}."
             $ lookedForNotepad = True
 
             play music "music/I Got A Stick.mp3"
+            show prop notepad
             show yougot
             yougot "A notepad that you already had!"
             hide yougot
+            
             play music "music/Grand Dark Waltz Moderato.mp3"
             
             notepad "Notepad located in breast pocket."
             notepad "Reliable. Keeps important details recorded for later."
+            hide prop
 
             show detective
             sc "Calm down. We haven't even started yet."
             hide detective
+
+            show prop notepad
+            notepad "Notepad very excited to solve mystery."
+            hide prop
             
             jump apartment
         "Look for her {b}Badge{/b}" if not hasBadge and apartmentThingsLeft > 0:
+            
+            show detective_looking
             sc "Where did I leave my badge? I think..."
+            hide detective_looking
+
+            show detective lean
             play sound "sounds/fridge.ogg"
             "Detective Capilano walks to her fridge and opens it."
             play sound "sounds/dishes.ogg"
-            badge "Inside the fridge are mostly cartons of leftover Chinese food takeout and Kokanaut brand beer."
-            badge "On top of a pot of chili oil sits an extremely handsome, official looking badge."
+
+            "Inside the fridge are mostly cartons of leftover spicy takeout noodles and Kokanaut brand beer."
+            "On top of a pot of chili oil sits an extremely handsome, official looking badge."
             "Detective Capilano grabs the {b}Badge{/b}."
             $ hasBadge = True
+            hide detective
             
             play music "music/I Got A Stick.mp3"
+            show yougot
+            show prop badge
             yougot "A badge!"
+            hide yougot
             play music "music/Grand Dark Waltz Moderato.mp3"
 
             badge "It was extremely unprofessional of Detective Capilano to leave her badge in the fridge."
+            hide prop
 
+            show detective lean
             sc "Well, you won't get lost, here."
+            hide detective
 
+            show prop badge
             badge "The cold, cold fridge."
-            
+            hide prop
+
+            show detective lean
             sc "Oh, hey! Score!"
+
             play sound "sounds/wax.ogg"
             "Detective Capilano also takes this opportunity to grab a greasy, wax-paper-wrapped {b}Egg Roll{/b} for the road."
             # you got.... egg roll! 
             $ hasEggRoll = True
+            hide detective lean
 
+            show yougot
+            show prop eggroll
             play music "music/I Got A Stick.mp3"
             yougot "An egg roll!"
             play music "music/Grand Dark Waltz Moderato.mp3"
+            hide prop
+            hide yougot
             
             if hasCueBall:
+                show prop cueball
                 cb "This egg roll has no bearing on the case."
+                hide prop
             
+            show prop badge
             badge "Oh, come on, that was the exact same amount of fanfare I just got. I am a useful tool and that is nothing
-                    more than a greasy deep-fried rice-wrapper stuffed with shredded cabbage."
+                    more than a greasy deep-fried rice-wrapper stuffed with shredded cabbage and some pork."
 
             badge "It doesn't even talk!"
+            hide prop
 
+            show detective lean
             sc "Food never does. Don't know why. I'm glad, though. That'd be uncomfortable."
+            hide detective
             
             $ apartmentThingsLeft = apartmentThingsLeft - 1
 
             if hasCatLuck and apartmentThingsLeft > 0:
-                "Hey, your {b}Magic Cue Ball{/b} is in the fridge!"
+                "Hey, look! Your {b}Magic Cue Ball{/b} is in the fridge!"
 
             jump apartment
         "Go back to the fridge and have a {b}Beer{/b}" if hasBadge and not isHydrated and apartmentThingsLeft > 0:
+
+            show prop badge
             badge "Detective Capilano. I respect your lack of deference to professionalism but you just woke up."
+            hide prop
+
+            show detective shrug
             sc "Aw, come on - I'm thirsty and I don't have time to make a coffee."
+            hide detective
+            
+            show prop badge
             badge "Have water, then. You are an officer of the law and I won't have you day-drinking on the job."
+            hide prop
+
+            show detective pout
             sc "Water tastes like {i}nothing{/i}."
+            hide detective
+            
+            show prop badge
             badge "It's good for you."
+            hide prop
+
+            show detective shrug
             sc "Okay. I guess."
+            hide detective
+            
             "Detective Capilano has a long, refreshing drink of regular-ass water, directly from the tap."
 
             $ isHydrated = True
             $ apartmentThingsLeft = apartmentThingsLeft - 1
             
+            show yougot
+            show prop water
             play music "music/I Got A Stick.mp3"
             yougot "Hydrated!"
             play music "music/Grand Dark Waltz Moderato.mp3"
+            hide yougot
+            hide prop
             
             jump apartment
         "Look for her {b}Cat{/b}" if not hasCatLuck:
@@ -1276,6 +1397,8 @@ label apartment:
                 "Untroubled by pedestrian concerns of {i}timing{/i}, Detective Capilano cruises out of her home a mere fifteen minutes late."
             else:
                 "Time's up - Detective Capilano has to get on the road {i}now{/i} if she's going to make it on time."
+            
+            hide bgoverlay
             jump car
 
 label car:
