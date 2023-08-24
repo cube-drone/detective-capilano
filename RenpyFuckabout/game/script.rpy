@@ -1105,7 +1105,7 @@ label apartment:
             hide yougot
             play music "music/Grand Dark Waltz Moderato.mp3"
 
-            badge "It was extremely unprofessional of Detective Capilano to leave her badge in the fridge."
+            badge "It was extremely unprofessional of Detective Capilano to leave me in the fridge."
             hide prop
 
             show detective lean
@@ -1139,9 +1139,7 @@ label apartment:
                 hide prop
             
             show prop badge
-            badge "Oh, come on, that was the exact same amount of fanfare I just got. I am a useful tool and that is nothing
-                    more than a greasy deep-fried rice-wrapper stuffed with shredded cabbage and some pork."
-
+            badge "I am an officer of the law and you give the same amount of fanfare to some shredded cabbage wrapped in rice paper? The {i}audacity{/i}."
             badge "It doesn't even talk!"
             hide prop
 
@@ -1197,84 +1195,131 @@ label apartment:
             jump apartment
         "Look for her {b}Cat{/b}" if not hasCatLuck:
             "The {i}top priority{/i}, right now, is getting some Zip time in."
-            sc "Hey there, buddy!"
-            "Zip affectionately bops Detective Capilano with his head. Can't start a case without some Zip love. 
+
+            show zip upsidedown 
+            "Zip curls around to demand some belly rubs. Can't start a case without some Zip love. 
                 Them's the crime rules."
+            
+            sc "Hey there, buddy!"
+            
             play sound "sounds/meow.ogg" volume 0.5
             z " ~ ~ miau! ~ ~ :3"
+            show zip
             "Zip is usually content to sit at the window and watch the day go by while Detective Capilano works."
-            
+
             "Detective Capilano found Zip on her first week on the force. He's almost 18 years old now - ancient, 
                 in cat years."
             "He's content to wait the day out here, watching out the window for his own perps, 
-                but leaving the house without giving Zip a little chin scritch is bad luck."
+                but leaving the house without giving Zip a little rub behind the ears is bad luck."
             
             play sound "sounds/purr.ogg"
             z "{i}( * happy rumbling * ) :3 {/i}"
             $ hasCatLuck = True
             $ lookedForZip = True
+            hide zip
             
             if hasBadge and apartmentThingsLeft > 0:
                 "Zip gets up and dashes behind the television."
+                show prop cueball
                 "While he's back there, he knocks a dusty old cueball out, which rolls into the middle of the living room."
                 badge "This is the {b}Magic Cueball{/b}."
+                hide prop
             
             jump apartment
         "Look for her {b}Car Keys{/b}" if not hasCarKeys and apartmentThingsLeft > 0:
             
-            carkeys "Detective Capilano goes hunting around for her car keys. I don't say it, yet."
-            carkeys "She checks underneath the couch cushions. I don't say it, yet."
-            sc "I wonder where my car keys are?"
-            carkeys "I still don't say it."
-            sc "Do you know where my car keys are?"
-            carkeys "Have you checked your butthole?"
-            sc "(irritated) No, I have not."
-            carkeys "Since you're asking me - you better check up that butthole."
-            sc "I can hear you, you little goon."
-            carkeys "You'll never find me! I am irretrievable! I am {i}the wind{/i}. I am {b}the night{/b}. "
-            sc "Yeah, there you are."
+            show prop carkeys
+            carkeys "You'll never find me, hag!"
+            carkeys "Wench! Strumpet!"
+            hide prop
 
+            show detective_looking
+            sc "I can hear you, you little goon."
+            hide detective_looking
+            
+            show prop carkeys
+            carkeys "You'll never find me! I am irretrievable! I am {i}the wind{/i}. I am {b}the night{/b}. "
+            hide prop
+            
+            show detective lean
+            sc "Yeah, there you are."
+            hide detective
+
+            show prop carkeys
             carkeys "You found me." 
             carkeys "Fuck."
+            hide prop
 
             if hasBadge:
+                show prop badge
                 badge "I don't understand why you have to be so salty all the time."
+                show prop carkeys
                 carkeys "Here's what {i}you{/i} sound like: meh meh meh, meh meh meh meh."
+                hide prop
             
             if hasBelt:
+                show prop belt
                 belt "Language, keys. This is a woman of taste and class."
+                show prop carkeys
                 carkeys "Piss off, leatherboy."
+                show prop belt
                 belt "... I would be angrier at you if I did not like the sound of \"leatherboy\" so much. 
                             Keep calling me that, it is definitely working for me."
+                show prop carkeys
+                carkeys "I hate you."
+                hide prop
             
+            show yougot
+            show prop carkeys
             play music "music/I Got A Stick.mp3"
             yougot "Foulmouthed Car Keys!"
             play music "music/Grand Dark Waltz Moderato.mp3"
+            hide prop
+            hide yougot
             
             if hasCueBall:
+                show prop cueball
                 cb "These won't help you, your car won't start anyways and the traffic around the crime scene is impassable."
+                hide prop
             elif hasBadge:
+                show prop badge
                 badge "Detective Capilano's car is very old, it might not be of any help."
+                show prop carkeys
                 carkeys "Oh, and what do {i}you{/i} bring to the table?"
+                show prop badge
                 badge "I command {i}respect{/i}."
+                hide prop
             
             $ hasCarKeys = True
             $ apartmentThingsLeft = apartmentThingsLeft - 1
             jump apartment
         "Look for her {b}Belt{/b}" if not hasBelt and apartmentThingsLeft > 0:
             "It's between the couch cushions. Detective Capilano must have taken it off in the night."
+            show detective lean
             sc "Good thing I found this! Wouldn't want my pants to fall down at an inopportune time during the case!"
+            hide detective 
+
+            show prop belt
             belt "Oh, yes, oui, that is exactly what I am great at, mon cherie. Touching your body. Coming on. Coming... off."
+            hide prop
 
+            show detective irritated
             sc "You're a wierd little guy, belt."
+            hide detective
 
+            show prop belt
             belt "Come, now. Touch me to your waist. Let our erotic dance {i}begin{/i}."
+            hide prop
 
             $ hasBelt = True
 
+            show yougot
+            show prop belt
             play music "music/I Got A Stick.mp3"
             yougot "Belt!"
             play music "music/Grand Dark Waltz Moderato.mp3"
+            hide prop
+            hide yougot
             
             $ apartmentThingsLeft = apartmentThingsLeft - 1
                 
@@ -1283,29 +1328,42 @@ label apartment:
 
             "It's a terrible habit, but Detective Capilano can get pretty cranky without her cigarettes."
             "She quickly retrieves a fresh pack from a carton she keeps above the fridge."
+            show detective lean
             sc "Oh, thank god."
+            hide detective
 
+            show prop cigarettes
             cigarettes "Hello, Detective. We meet again."
 
             cigarettes "We love you."
+            hide cigarettes
 
             sc "Weird."
 
+            show prop cigarettes
             cigarettes "Come on, give us a little kiss."
             
+            show yougot
             play music "music/I Got A Stick.mp3"
             yougot "Emphysema!"
             play music "music/Grand Dark Waltz Moderato.mp3"
+            hide yougot
             
             $ hasCigarettes = True
             $ apartmentThingsLeft = apartmentThingsLeft - 1
+            hide prop
             
             if hasCueBall:
+                show prop cueball
                 cb "Put down the cigarettes. Your lung damage is getting to the point where it's nearly irreversible."
 
+                show prop cigarettes
                 cigarettes "She knows. She doesn't care. Our love is too strong."
+                hide prop
 
+                show detective irritated
                 "Detective Capilano changes her mind and puts the cigarettes back down."
+                hide detective
 
                 $ hasCigarettes = False
             
@@ -1313,23 +1371,34 @@ label apartment:
 
         "Look for her {b}Umbrella{/b}" if not lookedForUmbrella and apartmentThingsLeft > 0:
             $ lookedForUmbrella = True
+            show detective_looking
             "Detective Capilano looks around her apartment to try and find her umbrella - it's raining out, 
                 probably a good thing to grab."
             "No dice, it's nowhere to be found."
             "There's only one thing that she can try: her umbrella call."
+            hide detective_looking
+
             # cupping her hands to her mouth
+            show detective umbrella
             sc "Ella! Ella! Eh! Eh! Eh!"
             "This is the only language that umbrellas speak."
             sc "Ella! Ella! Eh! Eh! Eh!"
+            hide detective
+
+            show detective_looking
             "Unfortunately, her umbrella doesn't answer. Dang."
+            hide detective_looking
             
             if hasCueBall:
+                show prop cueball
                 cb "You left your umbrella at the precinct, yesterday. No matter how much you look for it, in your apartment, you won't find it."
+                hide prop
             
             jump apartment
         "Look for her {b}Gun{/b}" if not hasGun and apartmentThingsLeft > 0:
             "Detective Capilano ambles over to her end table. Moving aside some personal detritus, she fishes out
                 a Chef's Special, a Smith & Cross Model 38 snub-nosed pistol."
+            show prop gun
             "This is Detective Capilano's off-duty pistol: her service pistol and its holster are still in her locker at the precinct."
             "Detective Capilano has both a service pistol and an off-duty pistol because she needs constant access to a fast-draw, concealed, lethal weapon."
             "Does this make her sound like a bit of a coward? It {i}should{/i}."
@@ -1343,6 +1412,7 @@ label apartment:
             play music "music/I Got A Stick.mp3"
             yougot "A gun!"
             play music "music/Grand Dark Waltz Moderato.mp3"
+            hide prop
 
             $ apartmentThingsLeft = apartmentThingsLeft - 1
 
