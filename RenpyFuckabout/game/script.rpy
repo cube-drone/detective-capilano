@@ -477,7 +477,13 @@ image detective_looking:
     pause 0.5
     repeat
 
-
+image detective_akira:
+    "detective akira 1.png"
+    pause 1
+    "detective akira 2.png"
+    pause 1
+    "detective akira 3.png"
+    pause 1
 
 define hasTie = False
 define hasBadge = False
@@ -1856,8 +1862,11 @@ label beresford:
 
     if hasBike:
         play sound "sounds/bike.ogg"
-        "Look, the art isn't ready, yet, but I need you to imagine Detective Capilano entering the scene 
-            while doing the Akira bike slide on a children's bike"
+        scene bg default
+        play sound "sounds/bike.ogg"
+        show detective_akira
+        "Detective Capilano enters the scene."
+        hide detective_akira
     else:
         "Detective Capilano walks casually on to the scene."
 
