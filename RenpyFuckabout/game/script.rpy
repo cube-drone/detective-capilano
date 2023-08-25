@@ -293,8 +293,10 @@ define notepad = Character("Notepad",
     callback=notepad_voice,
 )
 define cb = Character("Magic Cue Ball",
-    what_font="fonts/RobotoSlab-Medium.ttf",
+    what_color=color("#ffffff"),
+    who_color=color("#ffffff"),    
     who_font="fonts/RobotoSlab-Bold.ttf",
+    what_font="fonts/RobotoSlab-Medium.ttf",
 )
 define phone = Character("Phone",
     what_color=color("#fdffd9"),
@@ -1425,6 +1427,7 @@ label apartment:
             
             play music "music/Cueball.mp3"
 
+            show prop badge
             badge "A Magic 8-Ball makes predictions about the future, but the limited nature of
                 the technology at play means that the predictions are, at best, inaccurate
                 and not terribly specific."
@@ -1435,21 +1438,32 @@ label apartment:
             badge "Detective Capilano brings the ball into play on particularly difficult cases:
                 it always helps her solve the case, but its use comes at a terrible cost."
             badge "Be careful, though: having the Ball will ruin the fun of solving a murder."
+            hide badge
             menu:
                 "Yes, grab the {b}Magic Cueball{/b}":
                     $ hasCueBall = True
+                    show detective
                     sc "I'm late, I could use a little umph."
+                    hide detective
 
+                    show prop cueball
                     cb "I'm glad you decided to bring me along. This will be a complete breeze, now."
-                    cb "You should also find your gun, even if it makes you late. It's in your end table."
+                    cb "You should also find your {b}gun{/b}, even if it makes you late. It's in your end table."
                     cb "It's important."
+                    $ apartmentThingsLeft = apartmentThingsLeft - 1
+                    hide prop
                 "No, not this time.":
+                    show detective
                     sc "I can solve this one on my own, thanks."
+                    hide detective
                     play music "music/Grand Dark Waltz Moderato.mp3"
+
             jump apartment 
         "Stay a little late and grab a few more things" if apartmentThingsLeft == 0 and not isLate:
             "Look, this case is too important to take on without a full inventory. Smunders can just hold his damn horses."
+            show smunders
             ws "What? These horses are out of control! I can't hold them all!"
+            hide smunders
             "Okay, even if Smunders can't hold his damn horses, he'll have to {i}try{/i}."
             $ apartmentThingsLeft = apartmentThingsLeft + 2
             $ isLate = True
@@ -1499,33 +1513,43 @@ label car:
         play sound "sounds/car_dead.ogg"
         car "I don't think I have it in me. Something's wrong. I can feel it."
 
+        show prop carkeys
         carkeys "Come on, man, without you I don't have much to offer!"
+        hide prop
 
-        "She turns the keys a little extra hard."
+        "Detective Capilano turns the keys a little extra hard."
 
         play sound "sounds/car_really_dead.ogg"
         sc "Car? Are you okay?"
         sc "... Car?"
 
+        show prop carkeys
         carkeys "... I think it's done for. Welp, at least I still unlock your front door. Shit."
+        hide prop
 
         if hasCueBall:
+            show prop cueball
             cb "The transmission is completely shot."
             cb "This car will require a full engine rebuild in order to ever move again. It might as well be scrap metal."
+            hide prop
 
         "This car isn't going anywhere. Detective Capilano is going to have to find an alternative means of conveyance."
 
-        "Detective Capilano wasn't sure whether to mourn. The objects seem to have distinct personalities
+        "Detective Capilano isn't sure whether to mourn. The objects seem to have distinct personalities
                     but they don't seem to have much in the way of internality."
 
         "But - hey, while she's here, might as well grab her {b}Gum{/b} out of the glove compartment."
         # you got.... gum!
 
+        show yougot
+        show prop gum
         play music "music/I Got A Stick.mp3"
         yougot "Chewing gum!"
         play music "music/Grand Dark Waltz Allegretto.mp3"
+        hide yougot
 
         gum "Hi there! Put me in your mouth!"
+        hide prop
 
         "Food doesn't talk, but gum isn't food. It's just a stick of chewable rubber. I don't know {i}who{/i} makes these rules."
         
@@ -1568,7 +1592,9 @@ label car:
                 yougot "A {b}Tonko L'il Funboy{/b} children's bicycle!"
                 play music "music/Grand Dark Waltz Allegretto.mp3"
                 "Detective Capilano quickly scrawls a note in her notepad and affixes it to the bike rack."
+                show prop notepad
                 notepad "Bike needed for official police business, not stolen. Will return shortly. Thank you citizen."
+                hide prop
                 $ hasBike = True
                 bike "Let's go! I want to blow this popsicle stand!"
     
@@ -1650,6 +1676,7 @@ label beresford:
     with hpunch
     parm "- HEY, YOU GUYS ARE REALLY HELPING, I'M SURE THE HONKING WILL CLEAN UP THE CRASH FASTER -"
     hide paramedic
+    stop ambient_2
 
     "The junior police officer returns."
 
@@ -1739,7 +1766,7 @@ label beresford:
         hide paramedic
 
         show jemby cigarette
-        trfc "Yeah."
+        trfc "Police officer."
         hide jemby
 
         show paramedic
@@ -1748,6 +1775,14 @@ label beresford:
 
         show jemby cigarette
         trfc "How do you mean?"
+        hide jemby
+
+        show paramedic
+        parm "Actually, you know what, let's talk about something else."
+        hide paramedic
+        
+        show jemby cigarette
+        trfc "No, no, I want to hear how you think a police officer is the opposite of a paramedic."
         hide jemby
 
         show paramedic
@@ -1768,37 +1803,22 @@ label beresford:
         trfc "... I'm not sure what you're getting at."
         hide jemby
 
-        show paramedic eyebrow
-        parm "It's your job to threaten people with violence. Shoot them, sometimes."
-        hide paramedic
-
-        show jemby cigarette
-        trfc "Yeah, bad people."
-        hide jemby
-
-        show paramedic eyebrow
-        parm "Are they all bad people, though?"
-        hide paramedic
-
-        show jemby cigarette
-        trfc "Well, I wouldn't shoot them if they weren't bad."
-        hide jemby
-
         "The fire is getting pretty bad."
 
         show paramedic nonplussed
-        parm "Ah, so you're the decider, here. "
-        
-        parm "Good thing you have that comprehensive knowledge of the law and
-            philosophy and human psychology and lie detection, "
-            
-        parm "so that you can know who's bad, and {b}shoot them{/b}."
+        parm "It's fine, nevermind."
         hide paramedic
 
         show jemby cigarette
-        trfc "Well, {i}I've{/i} never shot anyone."
+        trfc "Do you have a problem with the police?"
+        hide jemby
 
-        trfc "Anyways, I'm not the one who makes the decisions. I just enforce {i}the law{/i}."
+        show paramedic nonplussed
+        parm "..."
+        hide paramedic
+
+        show jemby cigarette
+        trfc "I just enforce {i}the law{/i}. Don't see what your problem could be with that."
         hide jemby
 
         show paramedic eyebrow
@@ -1822,6 +1842,7 @@ label beresford:
         "The junior traffic cop flicks his cigarette."
         hide jemby
 
+        scene bg car crash fire 4
         play sound "sounds/explosion.ogg"
         with vpunch
         with hpunch
@@ -1829,7 +1850,6 @@ label beresford:
 
         $ carExploded = True
 
-        scene bg car crash fire 4
         show jemby holy shit
         trfc "Holy shit!"
         hide jemby
@@ -1866,10 +1886,12 @@ label beresford:
     sc "Detective Susan Capilano."
 
     if hasBadge:
+        show prop badge
         "Detective Susan Capilano flashes her badge, establishing beyond a shadow of a doubt that she is,
             in fact, a real cop, and not a feral hobo."
         
         badge "Hello, young man."
+        hide prop
 
         show jemby
         trfc "Wait, {i}the{/i} Detective Susan Capilano?"
