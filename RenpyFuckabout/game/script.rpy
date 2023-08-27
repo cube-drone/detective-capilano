@@ -1870,29 +1870,43 @@ label beresford:
     else:
         "Detective Capilano walks casually on to the scene."
 
+    show detective kickass
+    sc "Detective on the scene!"
+
     if hasGum:
         sc "I'm here to kick ass and chew bubblegum, and I'm all out of ass."
 
-        play sound "sounds/pop.ogg"
+        show detective kickass bubble
         "Detective Capilano blows a bubble."
+        play sound "sounds/pop.ogg"
+        hide detective
     elif hasCigarettes:
-        "Detective Capilano pulls a cigarette out of the packet and hangs it on her lip, like some kind
-            of action movie star. Cool."
+        show detective cigarette
+        "Detective Capilano pulls a cigarette out of the packet and hangs it on her lip."
+        "I think she imagines that it looks very cool."
+        hide detective
     else:
+        show detective wave
         "Detective Capilano waves like a nerd."
         sc "Hi everybody!"
-        if isLate: 
-            scene bg car crash fire 4
-        else:
-            scene bg car crash
+        hide detective
     
+    show detective damp left
     "All of this would seem a lot cooler if Detective Capilano wasn't absolutely drenched."
+    hide detective
+
+    if isLate: 
+        scene bg car crash fire 4
+    else:
+        scene bg car crash
 
     show jemby serious
     trfc "Who are you?"
     hide jemby
 
+    show detective
     sc "Detective Susan Capilano."
+    hide detective
 
     if hasBadge:
         show prop badge
@@ -1906,21 +1920,27 @@ label beresford:
         trfc "Wait, {i}the{/i} Detective Susan Capilano?"
         hide jemby
 
+        show detective sheepish
         sc "(sheepishly) that's me, yeah."
+        hide detective
 
         show jemby
         trfc "We studied one of your cases in basic training."
         hide jemby
 
+        show detective smug
         "Detective Capilano is visibly smug about this."
 
         sc "Was it \"The Case of the Jade Monkey\"? \"The Case of the Sizzling Sazerac\"? \"Death Lends a Hand\"?"
+        hide detective
 
         show jemby serious
         trfc "It was \"The Case of the Mishandled Evidence Leading To a Full Acquittal\"."
         hide jemby
 
+        show detective deflated
         "This deflates Detective Capilano somewhat."
+        hide detective
     else:
         show jemby serious
         trfc "... a detective? Really? Cool, cool cool cool."
@@ -1952,22 +1972,39 @@ label beresford:
         trfc "Yeah, she checks out. A detective from the station."
         hide jemby
 
+        show paramedic eyebrow
+        parm "Okay."
+        hide paramedic
+
     if hasGun:
+        show prop gun
         gun "He doesn't respect you. I can smell it. Shoot him. Shoot him right in his stupid face."
+        hide prop gun
         menu: 
             "Shoot him. Shoot him right in his stupid face.":
                 if hasCueBall:
+                    show prop cueball
                     cb "You can't. That's not how this goes."
+                    hide prop
+                    "Detective Capilano changes her mind."
                 else:
                     jump shooting_game_over                
             "He can live.":
+                show prop gun
                 gun "Aww. Why did you even bring me if you aren't going to kill some people."
+                hide prop
                 if hasBadge: 
+                    show prop badge
                     badge "I don't like you hanging out with gun, he's a psychopath."
+                    hide prop badge
                 else:
-                    badge "I don't like you hanging out with gun, he's a psychopath."
+                    show prop notepad
+                    notepad "Gun, psychopath, concerning."
+                    hide prop
 
+    show detective suspicious
     sc "So, what's the situation, here?"
+    hide detective
 
     if isLate:
         show jemby
@@ -1984,13 +2021,17 @@ label beresford:
         trfc "Yeah, that was a really consequential five minutes!"
         hide jemby
 
+        show detective deflated
         sc "... oh, no."
+        hide detective
 
         show jemby
         trfc "You're not going to get any information out of that body or that car, now."
         hide jemby
 
+        show detective
         sc "I can ask you a few questions, though - would that be okay?"
+        hide detective
 
         show jemby
         trfc "Of course - uh, but, keep in mind that we've got a mounting clean-up and traffic situation that's just
@@ -2001,7 +2042,9 @@ label beresford:
     trfc "The car crash, over here - I think it was staged."
     hide jemby
 
+    show detective
     sc "Staged?"
+    hide detective
 
     show jemby cinder
     trfc "I found a cinder block next to the gas pedal."
@@ -2017,7 +2060,9 @@ label beresford:
     trfc "{i}Don't listen to him baby, I'm gonna call you Cindy.{/i}"
     hide jemby
 
+    show detective
     sc "Hm, okay."
+    hide detective
     
     show jemby
     trfc "And look at the positioning of the car, here - "    
@@ -2041,7 +2086,7 @@ label beresford:
         control - it seems like they just took a straight line from that alley, across the road, directly into
         this pole, without flinching."
 
-    trfc "That would be consistent with the theory that the driver was unconscious or dead, and the cinder block
+    trfc "I think the driver was already dead, and the cinder block
         was doing the driving."
     
     sc "Obviously that's all suspicious as hell."
@@ -2053,49 +2098,65 @@ label beresford:
     else:
         scene bg car crash
 
+    show detective notes point
     sc "That's some clever sleuthing, there, gumshoe."
+    hide detective
 
-    show jemby
+    show jemby smug
     "Jemby looks smug."
     hide jemby
 
+    show detective notes
     "Detective Capilano looks at the car for a moment and jots down some notes."
+    hide detective
 
+    show prop notepad
     notepad "'88 Cadillero Allstar. Got your game on. Go, play."
+    hide prop
 
     show jemby
     trfc "Expensive vehicle?"
     hide jemby
 
+    show detective notes
     sc "Oh yeah. They're popular mid-life-crisis-mobiles among bank managers and upper management types."
 
     sc "Heated leather seats, V-12 engine, hundreds of horses, they even come with cup-holders. The works."
+    hide detective
 
     show jemby
     trfc "Imagine: being able to put a cup down in your car without it tipping over."
     hide jemby
 
+    show detective shrug
     sc "I know, it seems like an impossible dream, but the engineers at Cadillero have cracked it."
+    hide detective
 
     show jemby
     trfc "Magical."
     hide jemby
 
     if hasCueBall:
+        show prop cueball
         cb "Here's the scoop. The body belonged to a man named Timothy Victrola. He was killed by one 
                 Hank Maxhank, by strangulation. He's a private detective who works a short distance from here."
         cb "The only thing you need to close this case is some information I'll feed you and access to his office."
         cb "That young man has the victim's wallet, you'll need to grab his identification."
+        hide prop
 
+        show detective
         sc "Hey, do you have any ID for the victim? I'll need it to inform his family members."
+        hide detective
 
+        show jemby wallet
         "The junior traffic cop holds up a wallet in a plastic bag."
 
-        show jemby
         trfc "Before I thought it was a homicide investigation I nabbed it, yeah."
         hide jemby
         
+        show detective
         sc "Good man. Let me take a look at that."
+        hide detective
         
         scene bg wallet
 
@@ -2107,7 +2168,9 @@ label beresford:
             
 
     if not isLate and not hasCueBall:
+        show detective
         sc "Can I see the body?"
+        hide detective
 
         show jemby
         trfc "It's kinda gruesome - but yeah."
@@ -2116,13 +2179,17 @@ label beresford:
         scene bg car crash right
         "They walk over to the car's window."
 
+        show detective faceplam
         sc "Wow. That's... incredibly graphic."
+        hide detective
 
         show jemby
         trfc "I'm sure as a homicide detective you've seen it all."
         hide jemby
 
+        show detective pout
         sc "I've definitely seen some things but I'm going to level with you: car crash victims are... up there, y'know?"
+        hide detective
 
         show jemby
         trfc "Oh, I know. There are a {i}lot{/i} of car crashes."
@@ -2133,20 +2200,27 @@ label beresford:
         hide paramedic
 
         if hasBike:
+            show detective pout
             sc "Honestly, I'm feeling a little better about my decision to bike here, right now."
+            hide detective
 
             show paramedic eyebrow
             parm "Oh, no, cars hit bikes all the time. If anything, that's much worse. 
                 You ever see a guy tangled up in a wheel-well?"
             hide paramedic
 
+            show detective
             sc "Once, but it was a murder investigation. Hot tip: don't piss off bus drivers. 
                 Especially don't piss them off if you're 
                 planning a bicycle marathon."
 
+            show detective pout
             sc "(shudders) That was a {i}mess{/i}."
+            hide detective
 
+        show detective
         sc "Do you have some gloves I could borrow?"
+        hide detective
 
         show jemby
         trfc "Fresh out."
@@ -2156,30 +2230,38 @@ label beresford:
         parm "I've got some. Here, take these."
         hide paramedic
         
+        show detective gloves
         play sound "sounds/snap.ogg"
         "Detective Capilano puts on the gloves."
 
         sc "What is that {i}smell{/i}?"
+        hide detective
 
         show paramedic eyebrow
         parm "Dead guy?"
         hide paramedic
 
+        show detective gloves
         sc "No, it's... something different. Anyways - "
+        hide detective
 
+        show detective notes
         sc "Male, young, white, dark hair. Sports clothing - looks like an expensive Yuyuyuzu tracksuit."
         $ hasSportsClothing = True
 
         sc "I figured a car this expensive would have belonged to someone older, this young man can't possibly be over 25."
 
         sc "Okay, look at this - under the head, here, on the neck."
+        hide detective
 
         show jemby
         trfc "Wow, that's a really distinctive bruising pattern. Not from the crash?"
         hide jemby
 
+        show detective suspicious
         sc "It could be, but this looks an awful lot like he was strangled. By two hands, crushing his windpipe, 
             from the front."
+        hide detective
         
         $ hasStrangulation = True
 
@@ -2191,7 +2273,9 @@ label beresford:
         parm "Neat?"
         hide paramedic
 
+        show detective notes point
         sc "Now, down here - look at his wrist. A tan line for a watch - but no watch!"
+        hide detective
 
         $ hasWatchTan = True
 
@@ -2199,83 +2283,115 @@ label beresford:
         trfc "So he wasn't wearing a watch when he died? You've cracked the case, Sherlock!"
         hide jemby
 
+        show detective notes
         sc "Well, why wasn't he wearing it? It's worth noticing, at least."
         
+        show detective notes point
         sc "He's wearing a wedding band - so, married - but why no watch?"
 
+        show detective notes
         sc "I'm pretty sure you were right about this whole car crash being staged - people don't usually
                 get strangled to death post-car-crash. It's just unsportsmanlike."
 
         sc "Oh, and what have we here?"
+        hide detective
 
         "Detective Capilano pulls a hair off of the body."
 
+        show detective hair
         sc "A hair? His hair is dark. This hair is... grey, it looks like. Curious."
 
         "Detective Capilano puts the hair in a plastic evidence baggie."
+        hide detective
 
         $ hasHair = True
         
+        show prop hair
+        show yougot
         play music "music/I Got A Stick.mp3"
         yougot "A Gray Hair!"
         play music "music/Verano Sensual.mp3"
+        hide yougot
+        hide prop
 
+        show detective sniff
         sc "Snif... snif..."
 
         sc "I know what that smell is!"
 
         sc "Hey, for our own safety, let's all back away from the car right now."
+        hide detective
 
         show jemby
         trfc "Huh? Why's that?"
         hide jemby
 
+        show detective concerned
         sc "That smell - I think that's kerosene. Someone's been pouring kerosene all over the backseat of this car."
 
         sc "It's not on fire now but I feel like the tiniest spark could get this whole thing going like a bonfire."
+        hide detective
         
         scene bg car crash squad
 
+    show detective notes point
     sc "Can you get the fire department? I think we'll need them before we continue."
+    hide detective
 
     show jemby
     trfc "Oh, yeah, that's a good idea."
     hide jemby
 
-    "While he jogs to the police cruiser to call for the fire department, Detective Capilano pulls out her 
-        notepad and angles around the car to get a look at the back."
+    show detective notes
+    "While he jogs to the police cruiser to call for the fire department, Detective Capilano and her 
+        notepad angle around the car to get a look at the back."
+    hide detective
 
+    show prop notepad
     notepad "B9Z2M8"
+    hide prop
 
+    show detective notes
     sc "Let's see who that belongs to."
+    hide detective
 
     "Detective Capilano wanders over to the police cruiser."
 
+    show detective notes point
     sc "If you're done with the fire department, could you run these plates? It'd be good to know who the victim was."
+    hide detective
     
     show jemby
     trfc "Way ahead of you. The car's driver, one Timothy Victrola, age 26. Ownership is registered to an Ann Portent,
         who I believe is his spouse."
     hide jemby
 
+    show detective sheepish
     sc "If it's registered to Mrs. Portent, how did you know {i}his{/i} name?"
-
-    "The junior traffic cop holds up a wallet in a plastic bag."
+    hide detective
 
     show jemby wallet
+    "The junior traffic cop holds up a wallet in a plastic bag."
+
     trfc "Before I thought it was a homicide investigation I nabbed his ID."
     hide jemby
     
+    show detective
     sc "Good man. Let me take a look at that."
-        
+    hide detective
+
+    show yougot
+    show prop wallet
     play music "music/I Got A Stick.mp3"
     yougot "The victim's wallet!"
+    hide prop
+    hide yougot
     play music "music/Verano Sensual.mp3"
 
+    show detective gloves
     sc "I have to put those gloves back on."
-        
     play sound "sounds/snap.ogg"
-    "Detective Capilano puts on the gloves."
+    hide detective
 
     scene bg wallet
     "Fishing through the wallet, Detective Capilano finds condoms, a gym membership card, 
@@ -2293,40 +2409,68 @@ label wallet:
     menu:
         "Look at the {b}Condoms{/b}" if not lookedAtCondoms:
             $ lookedAtCondoms = True
+            show prop condoms
+            sc "Condoms."
             notepad "Condoms' expiry date - far in the future. Bought fairly recently." 
+            hide prop
+
+            show detective sunglasses prep
             sc "It looks like somebody..."
+            
             "She pauses, dramatically."
+            hide detective
+
+            show detective sunglasses
             sc "... planned to have sex with someone else."
+            hide detective
+
+            show prop condoms
             condoms "Yeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah!"
+            hide prop
             jump wallet
         "Look at the {b}Gym Membership{/b}" if not lookedAtGymMembership:
             $ lookedAtGymMembership = True
+            show prop gym membership
             play sound "sounds/casino/cardPlace1.ogg"
             "This is from the campus gym at Frances Dicken University."
             "\"Fitness Dicken U\""
+            hide prop
+
             if hasBelt:
+                show prop belt
                 belt "Heheheheheh." 
+                hide prop
                 if hasBadge:
+                    show prop badge
                     badge "Perv."
+                    hide prop
             
+            show prop gym membership
             sc "Gym membership. He seems in pretty good shape, I guess that tracks."
             play sound "sounds/casino/cardPlace1.ogg"
+            show prop gym membership back
             "On the back of the gym membership card is a hastily scrawled {b}phone number{/b}."
             sc "Huh. Is this the number for the gym, maybe?"
+            show prop gym membership
             "No, the number for the gym is listed on the membership card and it doesn't match."
+            hide prop
             
+            show detective suspicious
             sc "Maybe his wife? Curious."
+            hide detective
             jump wallet
         "Look at the {b}Credit Card{/b}" if not lookedAtCredit:
             $ lookedAtCredit  = True
             play sound "sounds/casino/cardPlace2.ogg"
 
-            notepad "Matte black Dining Club Card, name: \"Timothy Victrola\" "
+            show prop credit
+            notepad "Matte black MisterCard, name: \"Timothy Victrola\" "
             notepad "Heavier than a usual credit card, might be made with actual metal."
             if hasBadge:
                 badge "The name and account number are embossed on - this is necessary for the carbon-paper imprint machine   
                     used by retailers to be able to quickly copy the details on the card."
             sc "Wow, credit card."
+            hide prop
             
             show jemby
             trfc "Must be a real fancy boy."
@@ -2335,12 +2479,13 @@ label wallet:
             jump wallet
         "Look at the {b}Money{/b}" if not lookedAtMoney:
             $ lookedAtMoney = True
+            show prop cash
             play sound "sounds/casino/cardFan1.ogg"
             notepad "Fairly significant wad, high-denomination bills."
-            if hasBadge:
-                "Easily an entire rent payment for Detective Capilano, and more than most people
+            "Easily an entire rent payment for Detective Capilano, and more than most people
                     go casually walking around with."
             "Detective Capilano {i}reluctantly{/i} places the wad of bills into an evidence bag."
+            hide prop
             jump wallet
         "Okay, that's done" if lookedAtGymMembership:
             jump beresford_2
@@ -2356,22 +2501,28 @@ label beresford_2:
     trfc "Learn anything useful from the wallet?"
     hide jemby
 
+    show detective shrug
     sc "Not sure."
 
     sc "Ok! I'm just going to go poke around that alley."
+    hide detective
 
     show jemby
     trfc "The alley over there?"
     hide jemby
 
+    show detective
     sc "Yeah - I think you'd agree that if this car drove in a straight line from anywhere, it would have been
             from over there, right?"
+    hide detective
 
     show jemby
     trfc "Yup. What are you looking for?"
     hide jemby
 
+    show detective
     sc "I'll know it when I see it."
+    hide detective
 
     jump alley
 
@@ -2384,15 +2535,19 @@ label alley:
     play music "music/Grand Dark Waltz Trio Allegro.mp3"
 
     if hasBadge:
+        show prop badge
         badge "No sign of life, here - whoever staged this car crash is long gone."
+        hide prop
 
     if hasCigarettes:
+        show prop cigarettes
         cigarettes "Hey, you're alone in an alley. Smoke one of us."
         sc "Not right now."
         cigarettes "Come on. You've been doing great. You deserve one."
         sc "... ok, sure."
         "Detective Capilano lights a cigarette."
         cigarettes "Talk to you again in ten minutes, buddy."
+        hide prop
 
     "There's a fairly prominent dumpster that would be the obvious receptacle for any large and/or incriminating trash."
 
@@ -2419,7 +2574,9 @@ label dumpster:
 
     "Opening the lid, Detective Capilano is hit by a powerful wave of pungent kerosene fumes."
 
+    show detective sniff
     sc "Woof."
+    hide detective 
 
     "It's not like dumpsters usually smell like roses, but this has absolutely a different kind of pungent, 
         gas-station stank to the \"rotting food funk\" that she expected."
@@ -2460,7 +2617,19 @@ label dumpster:
         badge "Detective Susan Capilano has a lot of scars from the line of duty, and a surprising number of them 
                     are not from scuffles or fights, but from activities just like this. Lots of broken glass in dumpsters."
     
-    "No dice, though. There's nothing else in this dumpster but trash."
+    "Detective Capilano digs through the trash."
+    "This is incredibly tedious, and we're going to skip by minutes of exciting trash sifting, but
+        to help establish how irritating this is for the detective, I'm gonna monologue unnecesarily for a bit."
+    "What to monologue about?"
+    "Hey, let's talk about this game. Did you know that it contains over 200 hand-drawn images?"
+    "I've been working on it in my spare time for more than two months. Simple as it may seem, a lot of slow and boring work
+        went into this game."
+    "Not boring like \"sifting through trash at a crime scene\", mind you."
+    "I could have been playing Cities Skylines, but instead, here I am, making a pretty forgettable mystery game."
+    "Hey, if you like it, let me know! It would mean a lot to me. At least I wouldn't feel like I wasted my time."
+    "If you don't like it, let me know anyways. I'm really just looking for some kind of proof that someone interacted with the game at all."
+
+    "Anyways, that's been enough time. The Detective has thoroughly been through this trash and there's not a clue to be had in here. There's nothing else in this dumpster but trash."
 
     if hasBelt:
         "There's a fire exit hanging above the dumpster, but Detective Capilano is just a little
@@ -2468,6 +2637,7 @@ label dumpster:
 
         sc "If I had something long and rope-like, I could loop it around that ladder and pull it down."
 
+        show prop belt
         belt "Oh! Oh! Let me be at your service, madame! I can be of assistance!"
 
         sc "Okay, pants, I need you to hold for just a moment while I do something clever with this belt."
@@ -2485,12 +2655,11 @@ label dumpster:
             clues."
 
         belt "Do not forget to reattach me to your beautiful waist."
+        hide prop
 
-        # sc rolls her eyes
+        sc "Gross."
         
-        sc "Huh. Would you look at that?"
-
-        $ hasDressShirt = true
+        $ hasDressShirt = True
 
     elif isHydrated:
         "Detective Capilano could use a bathroom break. One of these alleyway doors must lead into a restaurant 
@@ -2506,7 +2675,7 @@ label dumpster:
         sc "A whole restaurant, just for chili?"
 
         "The restaurant is busy with patrons, each of them holding steaming bowls of chili in 
-            what appears to be bread bowls. There's a stack of take-out menus near the back
+            what appear to be bread bowls. There's a stack of take-out menus near the back
             door."
         
         "Detective Capilano notes that the chili is also very reasonably priced, especially
@@ -2517,10 +2686,14 @@ label dumpster:
         sc "Okay, I guess I can kinda see the appeal."
 
         if hasBadge:
+            show prop badge
             badge "At this point Detective Capilano puts two and two together, and comes to an awful realization
                     about the potential state of the bathroom in this restaurant."        
+            hide prop
         if hasBelt:
+            show prop belt
             belt "That bathroom is going to be so, so gross."
+            hide prop
 
         "Nature calls, though - she'll have to brave it. She was just rooting around in a dumpster, 
             this won't be too bad."
@@ -2539,8 +2712,9 @@ label dumpster:
         "Welp."
         
     if hasDressShirt:
-        sc "Would you look at this?"
+        sc "Huh, would you look at this?"
 
+        show prop dress shirt
         "Detective Capilano has found a men's dress shirt, soaked in kerosene."
 
         notepad "Soaked in kerosene. Murderer? Victim?"
@@ -2563,20 +2737,25 @@ label dumpster:
         sc "Did you... see a murder? Did someone kill someone that you saw?"
 
         dressshirt "What's {i}murder{/i}? Is it a kind of fabric? Like chiffon?"
+        hide prop
 
         if hasBelt: 
+            show prop belt
             belt "I think I can get through to it. You know, I've spoken to some clothes in my time."
 
             sc "Sure, give it a shot."
 
             belt "Hey, was your enrobant involved in a tearing?"
 
+            show prop dress shirt
             dressshirt "Yeah! My enrobant got to be a scarf! For a man wearing soft cotton!"
 
             sc "A scarf?"
 
+            show prop belt
             belt "You know, wrapped around the neck?"
             
+            show prop dress shirt
             dressshirt "He was such a nice tight scarf that the soft cotton man laundrypiled."
 
             if not hasStrangulation:
@@ -2584,27 +2763,41 @@ label dumpster:
                 $ hasStrangulation = True
             else:
                 notepad "Circles around \"strangulation\"."
+            hide prop
 
         if hasBelt: 
+            show prop notepad
             notepad "Able to get up to fire escape. Very tall? Very agile?"
+            hide prop
 
     if isHydrated and not hasBelt:
         "The Detective wanders further into the restaurant, holding the shirt in her hands."
 
+        show big chili henk
         bch "Hey - can I help you?"
+        hide big
 
+        show detective smug
         sc "I just wanted to start by telling you - chili restaurant - incredible idea."
+        hide detective
 
+        show detective sniff
         sc "The smell in here - incredible! And - is that fresh baked bread?"
+        hide detective
 
+        show big chili henk
         bch "Yeah, we bake our bowls every morning. Sourdough."
+        hide big
 
         if hasBadge:
             # she should... always have her badge, because you need the badge to GET HYDRATED
             # but, hey, I could add more hydration options in the early game, so this gets an "if"
+            show prop badge
             "The Detective takes a moment to show off her badge."
             sc "I'm Detective Susan Capilano with the Northwestica Police Department."
+            hide prop
 
+        show detective deflated
         sc "I found this shirt in the bathroom - I was wondering if you had seen anybody come through
                 wearing this shirt."
 
@@ -2613,29 +2806,49 @@ label dumpster:
         sc "Or someone who rushed out of here rapidly from the back door?"
         
         sc "Big guy?"
+        hide detective
 
-        bch "I'm sorry - nothing out of the ordinary today."
+        show big chili henk
+        bch "I'm sorry, the only thing out of the ordinary today is a big car fire happening right out the front door."
+        hide big 
 
         if hasGun:
+            show prop gun
             gun "A likely story. Maybe a little bit of vitamin \"bullet to the face\" would convince him."
+            hide prop
             menu: 
                 "Murder the chili-vendor in cold blood to establish dominance":
                     if hasCueBall:
+                        show prop cueball
                         cb "You can't. That's not how this goes."
+                        hide prop
+                        "Detective Capilano changes her mind."
                     else:
                         jump shooting_game_over                
                 "He can live.":
+                    show prop gun
                     gun "I swear, you could not be a bigger pussy if you tried."
+                    hide prop
 
+        show big chili henk
         bch "Is this about that big car fire happening out front?"
+        hide big
 
+        show detective faceplam
         sc "Yes. Yes it is."
+        hide detective
 
+        show detective umbrella 
         sc "While I'm here, can I get a #5, to go?"
+        hide detective
 
+        show big chili henk
         bch "Of course."
+        hide big
 
         $ hasChili = True
+        "Detective Capilano heads out of the restaurant, chili order and dress shirt in hand, and back in to the alley."
+        scene bg alley oop
     
     "Well, that's about all of the exploration that this alley has to offer... except, one thing."
 
@@ -2645,6 +2858,7 @@ label stick_menu:
     
     scene bg alley oop
     
+    show prop stick
     "Propped up near the dumpster door is a wooden stick. "
     
     "Even from here, Detective Capilano can tell that this stick has absolutely no bearing on the case."
@@ -2665,17 +2879,22 @@ label stick_menu:
                 "Ignore worthless stick":
                     jump alley_done
         "Ignore worthless stick":
+            hide prop
             jump alley_done
 
 label stick:
 
     play music "music/I Got A Stick Feat James Gavins.mp3"
+    show yougot
 
     yougot "A stick!"
 
     yougot "Oh yeah! You got a stick!"
 
     yougot "A really, really useless stick!"
+
+    hide yougot
+    hide prop
 
     play music "music/Grand Dark Waltz Trio Allegro.mp3"
 
@@ -2717,7 +2936,9 @@ label ann_office:
     annp "You are soaking wet. Don't stand on the rug, please, it's a genuine Calypsan."
     hide ann
 
+    show detective damp
     sc "Oh, I'm sorry."
+    hide detective
 
     if not hasCueBall:
         show ann disgust
@@ -2725,7 +2946,9 @@ label ann_office:
                 that you smell of gasoline and garbage."
         hide ann
             
+        show detective deflated
         sc "Actually, kerosene and dumpster, ma'am. It's been a busy afternoon."
+        hide detective
 
     if hasBike:
         play sound "sounds/bike.ogg"
@@ -2738,7 +2961,9 @@ label ann_office:
         annp "My security team tells me that you are in a hurry to speak with me."
         hide ann
 
+    show detective
     sc "I'm Detective Susan Capilano, with the Northwestica Police Department."
+    hide detective
 
     if hasBadge:
         "She takes a moment to flash her badge, adding some credulity to her statement."    
@@ -2751,61 +2976,78 @@ label ann_office:
     annp "Ann Portent, acting CEO of Megamax News."
     hide ann
 
+    show detective hand up
     sc "Nice to meet you."
+    hide detective
 
     show ann
     annp "I'm sure that it is. May I ask what, {i}exactly{/i} the problem is?"
     hide ann
     
+    show detective somber
     "Detective Capilano adopts a look that is both serious and morose, the Bad News Look that police officers
         have to learn."
 
     sc "This is going to be difficult, but - is this your husband? Timothy Victrola?"
 
+    show detective somber id
     "Detective Capilano hands Mrs. Portent a plastic bag containing the ID from the crime scene."
+    hide detective
 
     show ann
     annp "Yes, that's my Tim."
     hide ann
 
+    show detective somber
     sc "I'm... sorry to have to tell you this, but he's been found, dead, this morning."
+    hide detective
 
     show ann shock
-
     annp "And you're ... sure it was him?"
     hide ann
 
+    show detective somber
     sc "We'll need you to identify the body but we're pretty certain that it was, indeed, him."
+    hide detective
 
     show ann sad
     "Ann Portent has a demeanor as cold and professional as hardened steel, but this visibly rattles
         her, if just for a moment."
     hide ann
     
+    show detective somber
     sc "I'm sorry."
+    hide detective
 
     show ann shock
     annp "But... he was so young! What happened?"
     hide ann
 
-    sc "He was found dead in his car this morning, in an event that was clearly staged to look like a car crash.
-            But we have reason to believe that this may have been a homicide."
+    show detective somber
+    sc "He was found dead in his car this morning, in an event that was clearly staged to look like a car crash."
+    sc "We have reason to believe that this may have been a homicide."
+    hide detective
     
     show ann angry
-
     annp "Ah, so then would I be right to assume that you are a homicide detective for the city?  
             And you have some questions for me?"
     hide ann
 
     if hasCueBall:
+        show prop cueball
         cb "You don't need her to answer any questions. I will answer any questions you have."
+        hide prop
 
+        show detective somber
         sc "I actually don't have any questions for you. I was just here to let you know that I'll 
                 be investigating the case, and I'll stay in touch."
+        hide detective
         
         jump ann_problems
     else: 
+        show detective somber
         sc "Yes. Very sharp, Mrs. Portent."
+        hide detective
 
         show ann hand
         annp "Well, I'm an open book."
@@ -2816,6 +3058,7 @@ label ann_office:
 define askedWhereabouts = False
 define askedAlibi = False
 define askedAgeDifference = False
+define askedPhoneNumber = False
 define askedCondoms = False
 define askedHair = False
 define askedFinances = False
@@ -2918,7 +3161,17 @@ label ann_questions:
             notepad "Ann {i}does{/i} seem genuinely quite fond of her husband."
 
             jump ann_questions
+        "Ask about {b}Phone Number{/b}" if not askedPhoneNumber:
+            $ askedPhoneNumber = True
+            "Detective Capilano shows Ann the number on the back of the gym membership."
 
+            sc "Have you ever seen this phone number?"
+
+            annp "No, that's not one of mine."
+
+            "Interesting. Let's call it later and see if that's the case."
+
+            jump ann_questions
         "Ask about the {b}Condoms{/b}" if askedAgeDifference and hasCondoms and not askedCondoms:
             $ askedCondoms = True
 
@@ -5942,6 +6195,8 @@ label shooting_game_over:
     stop ambient
     stop ambient_2
     play music "music/Ethernight Club.mp3"
+
+    show prop gun
     
     play sound "sounds/gunshot.ogg"
 
@@ -5970,8 +6225,10 @@ label shooting_game_over:
     play sound "sounds/gunshot.ogg"
 
     " "
+    hide prop gun
 
     jump game_over
 
 label game_over:
+    scene default
     " "
