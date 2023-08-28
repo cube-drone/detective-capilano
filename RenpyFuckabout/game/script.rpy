@@ -485,6 +485,24 @@ image detective_akira:
     "detective akira 3.png"
     pause 1
 
+image detective_victory:
+    "detective umbrella.png"
+    pause 0.4
+    "detective umbrella 2.png"
+    pause 0.4
+    "detective umbrella flip.png"
+    pause 0.4
+    "detective umbrella flip 2.png"
+    pause 0.4
+    repeat
+
+image detective_jerk:
+    "detective pensive over jerk.png"
+    pause 0.3
+    "detective pensive over jerk 2.png"
+    pause 0.3
+    repeat
+
 define hasTie = False
 define hasBadge = False
 define isHydrated = False
@@ -595,7 +613,20 @@ label start:
             hide smunders
 
     show chief angry
-    ha "Unfortunate. Anyways - why are you in my office?"
+    ha "Unfortunate. How about sound? Were we able to get any of that?"
+    hide chief
+
+    show smunders clipboard
+    ws "Good news on that front, we have quite a bit of sound. I might even go so far as to
+            suggest headphones."
+    hide smunders
+
+    show chief
+    ha "Well, that's good, at least."
+    hide chief
+     
+    show chief angry
+    ha "Anyways - why are you in my office?"
     hide chief
 
     show smunders
@@ -2932,6 +2963,9 @@ label ann_office:
     show ann
     "The woman sitting at the desk is in her fifties, a thin, stern, angular looking woman in an immaculate
         high-collared dress. This woman looks like she's made of iron."
+
+    "Detective Capilano is a little surprised at the obvious and significant age difference between Ann 
+        and her husband, the victim: it might more more than a 20 year age gap between the two."
     
     annp "You are soaking wet. Don't stand on the rug, please, it's a genuine Calypsan."
     hide ann
@@ -3073,13 +3107,17 @@ label ann_questions:
     menu: 
         "Ask about {b}Whereabouts{/b}" if not askedWhereabouts:
             $ askedWhereabouts = True
+            show detective notes
             sc "When was the last time you saw your husband?"
+            hide detective
 
             show ann
             annp "Early this morning, we had breakfast together. This would have been at - 6AM?"
             hide ann
 
-            sc "Quite early indeed."
+            show detective notes point
+            sc "Early."
+            hide detective notes
 
             show ann
             annp "We had smoothies together. Tim said that he had \"something to take care of\" which,     
@@ -3094,39 +3132,53 @@ label ann_questions:
             annp "Tim would hit the gym after breakfast most mornings."
             hide ann
 
+            show detective notes
             sc "And what did {i}you{/i} do after that?"
+            hide detective
 
             show ann hand
             annp "I've spent the whole morning at work. You can confirm that with my secretary, should you wish,
                     she's been with me the entire time."
             hide ann
+
             jump ann_questions
         
         "Ask about {b}Alibi{/b}" if not askedAlibi and askedWhereabouts:
             $ askedAlibi = True
 
+            show detective notes
             sc "So, you're saying that your gateman saw you while Tim was verifiably still alive - "
 
+            show detective notes point
             sc "And you have people who can vouch for your whereabouts the rest of the day."
+            hide detective
+            
 
             show ann
             annp "Yes."
             hide ann
 
+            show detective notes
             sc "If I were trying to build a case against you, Mrs. Portent - and I assure you, I'm not -
                     that would make it very difficult."
+            hide detective
             
             show ann
             annp "...ok. Well, I'm glad that's settled."
             hide ann
 
+            show prop notepad
             notepad "... concrete alibi."
+            hide prop
 
             jump ann_questions
 
         "Ask about the {b}Age Difference{/b}" if not askedAgeDifference:
             $ askedAgeDifference = True
+
+            show detective notes
             sc "I don't mean to pry, but there's a fairly significant age difference between you and your husband."
+            hide detective
 
             show ann
             annp "Oh, yes."
@@ -3156,29 +3208,35 @@ label ann_questions:
                     if you know what I mean."
             hide ann
             
+            show detective irritated
             "Susan Capilano is happy to report that she does not know what Ann means."
+            hide detective
             
+            show prop notepad
             notepad "Ann {i}does{/i} seem genuinely quite fond of her husband."
+            hide prop
 
             jump ann_questions
         "Ask about {b}Phone Number{/b}" if not askedPhoneNumber:
             $ askedPhoneNumber = True
-            "Detective Capilano shows Ann the number on the back of the gym membership."
+            show detective somber id
+            "Detective Capilano shows Ann the phone number on the back of Timothy's gym membership."
 
-            sc "Have you ever seen this phone number?"
+            sc "Have you ever seen this phone number? Or this handwriting?"
+            hide detective
 
+            show ann angry
             annp "No, that's not one of mine."
-
-            "Interesting. Let's call it later and see if that's the case."
+            hide ann
 
             jump ann_questions
         "Ask about the {b}Condoms{/b}" if askedAgeDifference and hasCondoms and not askedCondoms:
             $ askedCondoms = True
 
-            condoms "Ask about us! Are we gonna get some? She's hot!"
-
+            show detective notes
             sc "This is going to seem incredibly personal and not terribly appropriate, but I promise that
                     it's relevant: did you and Mr. Victrola use contraception?"
+            hide detective
 
             show ann disgust            
             annp "I ... really don't see how that's any of your business, but no."
@@ -3192,12 +3250,15 @@ label ann_questions:
                     in-vitro fertilization if things didn't... coalesce, in the next few years."
             hide ann
             
+            show prop notepad
             notepad "Curious. Why would Timothy have freshly-purchased condoms in his wallet, then?"
+            hide prop
 
             jump ann_questions
 
         "Ask about the {b}Grey Hair{/b}" if hasHair and not askedHair:
             $ askedHair = True
+            show detective smug
             sc "This isn't about the case, but - just between you and me - you know, my wife - 
                     beautiful woman - but vain - she's starting to complain that my 
                     old salt and pepper mop ages me."
@@ -3205,9 +3266,11 @@ label ann_questions:
             "Detective Capilano is unmarried. This wife is nothing more than a ruse to extract information."
 
             sc "You're so put together, I was wondering if you might have some tips on hair color I could use."
+            hide detective
 
             show ann
             annp "Oh, my - I didn't want to comment on your hair - but, if your wife brought it up - "
+            annp "Your hair is a complete disaster - rat's nest, visible greys, split ends, the works."
 
             show ann hand
             "Mrs. Portent produces, as if by magic, a business card, and hands it to Detective Capilano."
@@ -3221,30 +3284,41 @@ label ann_questions:
                     they'd make a special exception for you. You know - emergency, and all."
             hide ann
 
-            "Detective Capilano is already mentally crumpling up the business card and tossing it into a 
-                wastebasket."
-            
             if hasCarKeys:
+                show prop carkeys
                 carkeys "Sseven can go pound dirt."
+                hide prop
+            
+            if hasBelt:
+                show prop belt
+                belt "Blasphemy! Ms. Capilano is stunning with her natural hair color!"
+                hide prop
 
             if hasBadge:
-                badge "The grey in your hair makes her look distinguished."
+                show prop badge
+                badge "The grey in your hair makes you look distinguished!"
+                hide prop
             
-            notepad "Ann could {i}absolutely{/i} be the source of an errant grey hair -
-                        with her hair having been done recently, there might be a better candidate, though."
+            show prop notepad
+            notepad "Ann {i}could{/i} be source of gray hair."
+            hide prop
             
             jump ann_questions
 
         "Ask about {b}Finances{/b}" if not askedFinances:
             $ askedFinances = True
+            show detective notes
             sc "You seem to be doing pretty well for yourself."
+            hide detective
 
             show ann
             annp "Oh, very. News is a booming industry, Detective Capilano."
             hide ann
 
+            show detective notes point
             sc "In cases of marriages of, uh, wildly differing means - uh, what I'm trying to say is,   
                     if your relationship with Mr. Victrola were to end acrimoniously - "
+            hide detective
             
             show ann
             annp "I see what you're getting at, Detective Capilano - a relationship on the rocks and I'm
@@ -3262,72 +3336,115 @@ label ann_questions:
                     washing up the river - he stood to inherit quite a fortune in that case."
             hide ann
             
-            notepad "No financial incentive for her to kill him."
+            show prop notepad
+            notepad "No clear financial incentive."
+            hide prop
             
             jump ann_questions
         "Ask about {b}Fidelity{/b}" if not askedFidelity:
             $ askedFidelity = True
+            show detective notes
             sc "This is just a standard question that we ask in homicide cases involving couples, but, would
                     you have any reason to believe that your husband might be {i}cheating{/i} on you?"
+            hide detective
             
             show ann
             annp "Absolutely out of the question. I know, beyond a shadow of a doubt, that Tim could not possibly 
                     be cheating on me."
             hide ann
             
+            show detective notes point
             sc "Oh? I ask this question fairly often and I {i}rarely{/i} hear anybody {i}that{/i} certain."
+            hide detective
 
             show ann
             annp "I'd prefer not to go into the details, but I am 100 percent confident that we're {b}in the clear{/b} 
                     on that matter."
             hide ann
 
+            show prop notepad
             notepad "Curious. Fidelity could {i}easily{/i} be called into question."
-            notepad "Why is she so sure that Timothy was {b}in the clear{/b}?"
+            notepad "Why so sure that Timothy was {b}in the clear{/b}?"
+            hide prop
 
             jump ann_questions
         "Ask about {b}Strength{/b}" if hasStrangulation and not askedStrength:
             $ askedStrength = True
+            show detective notes
             sc "Grief is a tough process, but do you know what always helps me navigate it?"
+            hide detective
 
             play music "music/Farting Around.mp3"
+            show detective armwrestle
             sc "A friendly bout of arm wrestling."
+            hide detective
 
             show ann armwrestle
             annp "You're on, noodle-arms."
+            hide ann
 
             with hpunch
+            show detective armwrestle
             sc "HNNNNNNNGH"
+            hide detective
 
             with hpunch
+            show ann armwrestle
             annp "HNNNNNNGHGHG"
+            hide ann
 
             with hpunch
+            show detective armwrestle
             sc "HNNNGGHGHGHGHGG"
+            hide detective
 
             with hpunch
+            show ann armwrestle
             annp "HNNNNGGHGHG"
+            hide ann
             
             with hpunch
+            show detective armwrestle
             sc "HNNNGGHGHGHGHGGGHGHGHG"
+            hide detective
 
+            show ann armwrestle
             annp "HNNGG"
+            hide ann
 
+            show detective wave
             sc "Ha ha! I win!"
-
+            hide detective
+                
+            show detective_victory
+            play sound "sounds/airhorn.ogg"
             "Detective Capilano's victory dance is a little bit too long and aggressive."
 
             if hasBadge: 
+                show detective_victory
+                play sound "sounds/airhorn.ogg"
                 badge "Detective Capilano."
+                play sound "sounds/airhorn.ogg"
                 badge "Detective Capilano, stop!"
+                play sound "sounds/airhorn.ogg"
                 badge "Stop this right now Detective Capilano!"
+                play sound "sounds/airhorn.ogg"
                 badge "Okay, aside from brutally dunking on a grieving widow, what have we accomplished, here?"
 
+            hide detective_victory
+
+            show prop notepad
             notepad "Not strong enough to strangle Timothy to death."
+            hide prop
 
             if askedAlibi:
-                badge "We already have an alibi for her - doesn't this seem needlessly thorough?"
+                if hasBadge:
+                    show prop badge
+                    badge "We already have an alibi for her - doesn't this seem needlessly thorough?"
+                    hide prop
+                show prop notepad
                 notepad "Also fun to arm wrestle."
+                hide prop
             
             play music "music/Ethernight Club.mp3"
             
@@ -3335,13 +3452,17 @@ label ann_questions:
         "Ask about {b}Dress Shirt{/b}" if hasDressShirt and not askedDressShirt:
             $ askedDressShirt = True
 
+            show detective notes
             sc "What was Tim wearing when you saw him this morning?"
+            hide detective
 
             show ann
             annp "A baby-blue Yuyuyuzu track-suit, over a plain white undershirt."
             hide ann
 
+            show detective notes confused
             sc "Yuyuyuzu?"
+            hide detective
 
             show ann
             annp "Soft, comfortable, high-end athletic clothing for housewives, househusbands 
@@ -3349,18 +3470,24 @@ label ann_questions:
             hide ann
 
             if hasBelt:
+                show prop belt
                 belt "Gross. Timothy could have died with some {i}style{/i}. A nice belt and some slacks, maybe."
                 belt "Ask her about the dress shirt we found!"
+                hide prop
 
+            show detective notes
             sc "Was he fond of formal-wear?"
+            hide detective
 
             show ann
             annp "Oh, no. I've had some lovely shirts and suits made for him, but aside from dates and 
                 special occasions, I don't think I've ever seen him wear them."
             hide ann
 
+            show detective notes
             sc "When you had shirts made for him - were there any details that would identify those
                     clothes as uniquely his?"
+            hide detective
 
             show ann hand
             annp "Yes, actually - he had a long torso and short arms, so all of his shirts have their
@@ -3368,14 +3495,18 @@ label ann_questions:
                     a toddler when his shirt arms are too long."
             hide ann
 
+            show prop dress shirt
             "Between those two details, Detective Capilano thinks that she can rule out Tim as 
                 the owner of the shirt she found in the alleyway."
+            hide prop
 
             jump ann_questions
         "Ask about {b}Watch{/b}" if hasWatchTan and not askedWatchTan:
             $ askedWatchTan = True
 
+            show detective notes
             sc "Did Timothy wear a watch?"
+            hide detective
 
             show ann
             annp "Oh, yes. As a wedding gift I bought him a Painblanc Sub-Mariner with a military strap 
@@ -3386,27 +3517,35 @@ label ann_questions:
             hide ann
 
             if not hasBelt:
+                show detective notes confused
                 sc "A ... Paulblart Submarine? I'm not familiar with that brand of watch. I'm not a watch enthusiast -"
+                hide detective
 
                 show ann
                 annp "Horologist"
                 hide ann
 
+                show detective notes confused
                 sc "I'm not a, uh, fortune teller, either."
+                hide detective
 
                 show ann
                 annp "No, a horologist is a fan of {i}watches{/i}."
                 hide ann
 
+                show detective notes confused
                 sc "{i}Which{/i} horologist is a fan of watches?"
+                hide detective
 
                 show ann idiot
                 annp "{b}All of them{/b}."
                 hide ann
 
+                show detective notes
                 sc "Well, that's a strange coincidence."
 
                 sc "Anyhow, as I was saying - not familiar with a Paulblart Submarine - is it a very expensive watch?"
+                hide detective
 
                 show ann
                 annp "Well, that's a relative question."
@@ -3417,29 +3556,37 @@ label ann_questions:
                         it's not an unusually expensive one."
                 hide ann
             else: 
+                show prop belt
                 belt "A Painblanc Sub-Mariner? That's an unbelievably expensive watch."
 
                 belt "This lady has incredible style. Can you... leave me with her?"
+                hide prop
 
             jump ann_questions
 
         "Ask about {b}Gym{/b}" if askedWhereabouts and not askedGym:
             $ askedGym = True
 
+            show detective notes
             sc "You said that Tim goes to the gym most mornings?"
+            hide detective
 
             show ann
             annp "Yes, the Frances Dicken University gym. "
             hide ann
 
+            show detective notes point
             sc "Is he a student there?"
+            hide detective
 
             show ann
             annp "Not currently - he finished his Master's in Fine Arts last year - but that's still
                     one of the closer, nicer gyms near us."
             hide ann
             
+            show detective notes
             sc "I'm sure with your resources you could put a gym in your own home."
+            hide detective
 
             show ann
             annp "There's a rock-climbing wall at the gym - you need a partner for that. Plus, he likes
@@ -3447,8 +3594,10 @@ label ann_questions:
                     Lots of friends there."
             hide ann
             
+            show detective notes point
             sc "Friends, you say? I'm going to want to interview some of them about all of this, if you
                     could tell me anything about them."
+            hide detective
             
             show ann
             annp "Well, there's his personal trainer - red-haired fellow. Fiery temper. I think his name's
@@ -3458,7 +3607,6 @@ label ann_questions:
             
             show ann disgust
             annp "Then, there's his climbing instructor, {b}Becky{/b}."
-            hide ann
 
             "She says the name {i}Becky{/i} with the kind of cold iciness one would reserve for a
                 bitter rival."
@@ -3469,23 +3617,25 @@ label ann_questions:
             hide ann
             
             if askedFidelity:
+                show detective notes point
                 sc "You mentioned, earlier, how confident you were that Tim {i}isn't{/i} cheating on you."
+                hide detective
 
                 show ann
-                annp "Oh, I {i}am{/i}. If you'll forgive the car metaphor, I am a Cadillero S-Class Super-Luxury - 
-                        that doesn't mean I can't feel
-                        a little irritated that I see him spending so much of his time with a little sports coupe."
-
-                annp "They are, however, {i}simply climbing partners{/i}, I'm certain."
+                annp "They are {i}simply climbing partners{/i}, I'm certain."
                 hide ann
             
+            show detective notes
             sc "So would you say you were {i}concerned{/i} about their close relationship?"
+            hide detective
 
             show ann hand
             annp "Yes, but I managed to overcome it."
             hide ann
 
+            show prop notepad
             notepad "How did Ann get over her jealousy about Becky?"
+            hide prop
             
             jump ann_questions
         "Okay, that's enough questions." if askedFidelity and askedGym and askedWatchTan:
@@ -3524,9 +3674,10 @@ label ann_problems:
     hide ann
     
     if hasBadge: 
+        show prop badge
         badge "She wants {i}blood{/i} and she has significant resources. 
                     When you find the killer, it might be wise to consider protective custody."
-    
+        hide prop
 
     show ann mussed
     annp "But - for my own peace of mind - I have a private security company that I'd like you to work
@@ -3534,8 +3685,10 @@ label ann_problems:
     hide ann
     
     if hasCueBall:
+        show prop cueball
         cb "This is Hank Maxhank's company. You'll need to pretend that you don't want her to 
                 ask him to join the case."
+        hide prop
 
     show ann mussed
     annp "While I'm sure that the police department has {i}ample{/i} resources for every high-profile 
@@ -3548,15 +3701,19 @@ label ann_problems:
         hide ann
 
         play sound "sounds/bike.ogg"
+        show detective sheepish
         sc "Actually, it's a Tonko L'il Funboy."
+        hide detective
 
         show ann mussed
         annp "And that's... better?"
         hide ann
 
+        show detective sheepish
         sc "They're actually quite a bit cheaper. Twillmann is a luxury brand for white collar families. 
                 Fenders, brakes, they've got the whole package. Now, a Tonko, that's just 
                 a clump of steel bars hastily welded together and painted a bright color."
+        hide detective
         
         show ann hand
         annp "My point."
@@ -3566,15 +3723,19 @@ label ann_problems:
         annp "You did, I'll note, cruise up to my office damp and smelling of kerosene and trash."
         hide ann
     
+    show detective irritated
     sc "The Northwestica Police Department is usually fairly resistant to, uh, outside involvement in our cases?"
+    hide detective
 
     show ann mussed
     annp "Balderdash. I'll speak to your chief. I'm sure that the prospect of having the most prominent news outlet   
             in the city covering this case {i}sympathetically{/i} will be enough to {i}move the needle{/i}."
     hide ann
 
+    show detective irritated
     sc "I'd really prefer if you didn't - I have a {i}method{/i} for cases and I tend to prefer to work 
             alone. If you wouldn't mind."
+    hide detective
     
     show ann mussed
     annp "I {b}would{/b} mind. My man is absolutely the {b}best private detective in the business{/b}, and his company, 
@@ -3582,12 +3743,18 @@ label ann_problems:
     hide ann
 
     if hasCarKeys:
+        show prop carkeys
         carkeys "I'd like to propose a close partnership with my whole ass."
+        hide prop
 
+    show detective irritated
     "She's not going to drop this. Detective Capilano may have to work with an independent security company. Eugh."
+    hide detective
     
     if hasGun and not hasCueBall:
+        show prop gun
         gun "How dare you question us! We have a {b}process.{/b}. Shoot her. Shoot her {b}now{/b}."
+        hide prop
         menu: 
             "Ann Portent must die.":
                 jump shooting_game_over                
@@ -3601,7 +3768,9 @@ label ann_problems:
     hide ann
 
     if not hasCueBall:
+        show detective faceplam
         sc "Oh, if I may ask - is there a phone in the lobby that I can use? I have a few calls of my own to make."
+        hide detective
 
         show ann mussed
         annp "There's a bank of payphones near the entrance."
@@ -3611,7 +3780,9 @@ label ann_problems:
     annp "Oh - and just one more thing."
     hide ann
         
+    show detective
     sc "Yes?"
+    hide detective
 
     # rage
     show ann angry
@@ -3631,7 +3802,9 @@ label ann_problems:
     annp "I - can't - you - "
     hide ann
 
+    show detective suspicious
     sc "I'll, uh, let myself out."
+    hide detective
 
     if hasCueBall:
         jump introducing_hank
@@ -3644,20 +3817,26 @@ label lobby:
 
     "Detective Capilano walks down the hallway, headed for the payphones."
 
+    # serious pensive music
     play music "music/Sincerely.mp3"
     if hasCigarettes:
-        # serious pensive music
-        "Detective Capilano takes a moment to have a break with one of her cigarettes."
-
+        show prop cigarettes
         cigarettes "We're terrible for you, but we're great for building dramatic tension."
+        hide prop
+
+        show detective pensive cigarette
+        "Detective Capilano takes a moment to have a break with one of her cigarettes."
     else: 
-        # clown music
+        show detective_looking
         "Detective Capilano fumbles around in her pants for a cigarette, but she forgot to bring them."
         "To be honest, it was really going to add some gravitas to this moment."
+        hide detective_looking
         if hasGum:
+            show detective pensive gum
             play sound "sounds/pop.ogg"
             "Instead she's just going to have a pensive gum moment. Gum. What kind of detective story has a gum moment?"
         else:
+            show detective pensive
             "Instead she's just going to have a regular pensive moment, without a halo of cigarette smoke
                 to drive home the dramatic pathos."
 
@@ -3684,21 +3863,30 @@ label lobby:
     "Happiness is a loan, Detective Capilano thinks to herself."
     
     "Loss is inevitable, the universe always collects its debts. Happiness is alone."
+    hide detective
 
     play music "music/Farting Around.mp3"
 
+    show detective pensive over
     sc "Could you shut up? There's a murder here that needs investigating."
 
     "Okay, geez, I was trying to build a moment, there."
 
     "It's character building!"
-    
-    "Detective Capilano makes a \"jerking off\" motion with her hands and rolls her eyes."
 
+    "This is a serious work of art!"
+    hide detective 
+
+    show detective_jerk
+    "Detective Capilano makes a \"jerking off\" motion with her hands and rolls her eyes."
+    hide detective_jerk
+
+    show detective pensive over
     sc "We're not here to have a very serious time where we look pensive and monologue in front of a window
             in the rain. We're here to solve a mystery. Get your head in the game!"
 
     "Okay, okay."
+    hide detective
     jump payphones
 
 # running joke: something bad happens to smunders?
@@ -3709,26 +3897,31 @@ label payphones:
     
     scene bg payphones
 
-    "Detective Capilano takes some time with the payphones to check up on a few leads from that conversation."
+    "Detective Capilano takes some time with the payphones to check up on a few leads."
 
-    phone "Mrs. Portent's doorman verifies that he saw Ann leave, then Tim, separately, in two different cars."
+    "Mrs. Portent's doorman verifies that he saw Ann leave, then Tim, separately, in two different cars."
 
+    show prop notepad
     notepad "Ann's alibi confirmed."
+    hide prop
 
-    phone "The gym verifies that Tim is an active member, and has a check-in for him, this morning, at 8:00 AM."
+    "The gym verifies that Tim is an active member, and has a check-in for him, this morning, at 8:00 AM."
 
+    show prop notepad
     notepad "Check gym."
-
     notepad "Time of death: 8:00 AM (Tim arrives at gym)  - 12:30 AM (Call to precinct)"
+    hide prop
     
-    phone "Detective Capilano calls the number on the business card she found. It's picked up by the answering
+    "Detective Capilano calls the number on the business card she found. It's picked up by the answering
         machine of a Becky. This must be the Becky from the gym! With the good hair!"
 
     "It's her {b}home{/b} phone number. Scandalous!"
 
+    show prop notepad
     notepad "Cheating with Becky. Good hair."
+    hide prop
 
-    phone "Detective Capilano also takes a moment to check in with headquarters, confirming that she will, in fact,
+    "Detective Capilano also takes a moment to check in with headquarters, confirming that she will, in fact,
         be forced to work with an external consultant."
     
     "It would, of course, have been possible to include these telephone conversations in their entirety, but
