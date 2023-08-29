@@ -217,7 +217,7 @@ define annp = Character("Ann Portent",
     callback=hit_voice,
     what_slow_cps=40
 )
-define pat = Character("Pat Haring", 
+define pat = Character("Pat \"Red\" Haring", 
     what_font="fonts/Anton-Regular.ttf", 
     who_font="fonts/Anton-Regular.ttf",
     what_color=color("#82ff00"), # kiro, himbo energy
@@ -3946,13 +3946,16 @@ label introducing_hank:
     # he looks like Noah Bennett from Heroes, but older.
 
     hm friendly "Hello - Detective Capilano, I presume? Hank Maxhank, Private Investigator."
-    hide hank
 
     "Capilano reaches over to shake his hand."
+    hide hank
 
     if hasCueBall:
+        show prop cueball
         cb "This is the guy."
+        hide prop
     else:
+        show hank friendly
         if hasStrangulation:
             "She gives it an unusual amount of juice - she's testing something - Hank has a grip like a vice."
 
@@ -3960,20 +3963,30 @@ label introducing_hank:
             "She holds on to the handshake a little too long - just long enough to inspect the shirt's cuffs.
                 French cuffs with a monogrammed cufflink."
 
+            hide hank
+            show prop dress shirt
             dressshirt "Cuff buddies!"
+            hide prop
         
+        hide hank
+
+        show detective sniff
         "His cologne is overpowering. Fruity, musky, smokey, a weird hit of pineapple - and he has put entirely 
             too much on. It's like getting punched in the face with fragrance."
 
         "Sitting in a car with this man is going to be a challenge - well, I suppose it could distract
             from Detective Capilano's current scent of kerosene and trash-fire."
+        hide detective
     
+    show detective
     sc "Nice to meet you. Detective Susan Capilano, Northwestica PD."
+    hide detective
 
     show hank
     hm "This is short notice, so I'm a little short on case details - could you fill me in?"
     hide hank
 
+    show detective notes
     sc "Okay - here's a quick summary of the case, so far:"
 
     if hasCueBall:
@@ -3982,21 +3995,30 @@ label introducing_hank:
         sc_fast "Timothy Victrola had breakfast with his wife at approximately 6:00 AM, left for the gym at 8:00 AM,
             and was found, murdered, in his Cadillero AllStar at 12:30 PM, by Junior Officer Jemby Nichols."
 
-    sc_fast "Our Junior Officer pointed out the signs that the car had been tampered with, clearly indended
+    sc_fast "Our Junior Officer pointed out the signs that the car had been tampered with, clearly intended
         to fly under it's own power into traffic and explode, thanks to a cinder block and some kerosene."
         
     sc_fast "Your client and the victim's wife, one Mrs. Ann Portent, has hired you to assist me in
         bringing the killer to justice."
+    hide detective
 
     show hank friendly
     hm "Now, I assume you haven't done any serious investigation or found any clues, yet?"
     hide hank
 
     # narrows eyes suspiciously
+    show detective irritated
     sc "... not particularly."
+    hide detective
 
     if hasCarKeys:
+        show prop carkeys
         carkeys "Find your own damn clues, assbutt."
+        hide prop
+    else:
+        show detective irritated
+        "She has some but she doesn't trust Hank with them yet."
+        hide detective
 
     show hank smug
     hm "It's good that Mrs. Portent called me. While I'm certain that you're a - {i}professional{/i} - "
@@ -4004,21 +4026,25 @@ label introducing_hank:
 
     if not hasBelt:
         play music "music/Dance of the Tuba Plum Fairy.mp3"
+        show detective boxies
         "Detective Capilano's pants, after a full day of straining to keep up, fully beltless,
             choose this exact moment to finally give up and fall to the ground."
+        show detective boxies embarrassed
         "That's right, this is the callback. Detective Capilano should have grabbed her belt,
             back in the apartment, and now she's paying the terrible price."
         "Everyone in the entire lobby pretends not to see Detective Capilano's boxer shorts with 
             little hearts on them."
+        "A wealthy older woman in a mink stole, nearby, gasps and faints. High society is scandalized."
+        "A small child points and laughs."
+        show detective
         "She frantically scrambles to regain some dignity, pulling the pants back up and giving
             the pants a little twist-and-fold to try and keep them in place."
+        hide detective
 
-        wd "Well, I never!"
-        
+        show hank smug
         "Hank Maxhank doesn't miss a beat, he continues: "
     
-        show hank smug
-        hm "While I'm certain that you're a professional, the private sector has access to certain 
+        hm "While I'm certain that you're a, um, {i}professional{/i}, the private sector has access to certain 
                 {i}enhanced resources{/i} that you just don't get when you're working for the public."
         play music "music/On Hold For You.mp3"
     else:
@@ -4029,39 +4055,55 @@ label introducing_hank:
     hm friendly "Here, hop in my car, I'll take you to our offices and give you the tour."
     hide hank
 
+    show detective concerned
     sc "How far is that?"
+    hide detective
 
     show hank expository
     hm "Oh, it's maybe a 20 minute drive from here."
     hide hank
 
     if hasCueBall:
+        show detective
         sc "Wonderful. Let's go."
+        hide detective
         jump hank_office
 
+    show detective smug
     sc "I was wondering if we could maybe hit Timothy's gym, first. There are some people there
             who I'd like to ask a few questions."
+    hide detective
 
     show hank sure why not
     hm "The university gym? Sure, that's just on the way to my office."
     hide hank
 
+    show detective smug
     sc "Yeah, that's the one."
+    hide detective
         
     if hasBike:
         play sound "sounds/bike.ogg"
+        show detective suspicious
         sc "Uh, we'll need to get my bike in the trunk."
+        hide detective
 
         show hank confused
         hm "Your... bike? You biked here? That explains why you're so wet."
         hide hank
         
-        # sc taps her nose
-        sc "Nothing gets by you. We'll have this case solved in no time."
     else:
-        show hank friendly
-        hm "I'll put a towel down for you. Let's roll."
+        show hank confused
+        hm "You're... soaked."
         hide hank
+        
+    show detective damp
+    sc "Nothing gets by you. We'll have this case solved in no time."
+    hide detective
+        
+    show hank friendly
+    hm "I'll put a towel down for you. Let's roll."
+    hide hank
 
     jump gym
 
@@ -4086,46 +4128,63 @@ label gym:
         hm "Why do they have so many olympic length swimming pools in here?"
         hide hank
 
+        show detective deflated
         sc "I don't know."
+        hide detective
 
         show hank expository
         hm "This reminds me of the gym at my old alma mater."
         hide hank
 
         if hasCarKeys:
+            show prop carkeys
             carkeys "This self-important asshat really wants you to ask him about his university."
+            hide prop
 
+            show detective concerned
             sc "Your old alma mater?"
+            hide detective
 
             show hank friendly
             hm "Yeah, I'm a Willems State man, myself."
+            hm "I was captain of the rowing team."
             hm expository "Goooooooooo fighting megnolas!"
             hide hank
 
+            show detective concerned
             sc "... Isn't \"megnola\" considered a racial slur, nowadays?"
+            hide detective
 
             show hank no
-            hm "No, no, it's a term of endearment."
+            hm "It's been our team's logo for over thirty years. Can't argue with tradition like that."
             hide hank
 
             # suspicious
+            show detective irritated
             sc "..."
+            hide detective
 
             show hank accusatory
             hm "Did you go to university, Detective Capilano?"
             hide hank
 
+            show detective irritated
             sc "You know, it's strange, I don't really know."
+            hide detective
 
             show hank confused
             hm "You don't know? Like, you're not sure if the school you attended was actually a university?"
             hide hank
 
+            show detective
             sc "Sure, let's say it's that."
+            hide detective
 
             
+        show detective notes
         sc "While we're here, there are two people who I would like to talk to: {b}Pat, or Patty or Petey or Something{/b}, 
             Tim's personal trainer, and {b}Becky With The Good Hair{/b}, Tim's climbing partner."
+        hide detective
 
     menu:
         "Talk to {b}Pat, or Patty, or Petey, or Something{/b}" if not talkedToPat:
@@ -4141,7 +4200,9 @@ label pat:
     "It does not take too much wandering around the gym to find a fiery red-headed man shouting
         exercise instructions at a man squatting with a medicine ball."
     
+    show detective
     sc "Hello - are you Pete?"
+    hide detective
 
     show pat
     pat "Pat - I'm Pat. But, uh, everyone calls me \"Red\"."
@@ -4151,7 +4212,9 @@ label pat:
         a sling."
     hide pat
 
+    show detective
     sc "I'm Detective Capilano, from the Northwestica PD - and this is Hank Maxhank, private investigator."
+    hide detective
 
     show hank no
     hm "Hi."
@@ -4161,13 +4224,20 @@ label pat:
     pat "What's this about? I'm with a client."
     hide pat
 
-    "The client is a sweaty, doughy looking student, currently struggling to do his medicine ball squats."
+    show softserve steve
+    "The client is a sweaty, doughy looking man, currently struggling to do his medicine ball squats."
+    hide softserve
 
+    show detective
     sc "Would you mind if we interrupted this session for a bit to talk to Pat, here?"
+    hide detective
 
+    show softserve steve
     client "Oh, thank god."
 
-    "The young man skitters away."
+    "The doughy man leaves."
+    hide softserve
+    with moveoutleft
 
     show pat
     pat "This had better be important: he owes me dozens more squats."
@@ -4186,13 +4256,19 @@ label pat:
 
     show pat serious bam bam bam
     pat "You're a little close to my face, there, bud."
+    hide pat
 
+    show detective damp
     "Pat looks at Detective Capilano, who is still very damp from the rain."
+    hide detective
 
+    show pat serious bam bam bam
     pat "You know, the gym has towels you could probably use."
     hide pat
 
+    show detective damp
     sc "I'll keep that in mind - but before any toweling, I'd like to ask you about a Mr. Timothy Victrola."
+    hide detective
 
     show pat bump
     pat "Oh! Timbo! He's my BOY."
@@ -4203,7 +4279,9 @@ label pat:
     pat "We meet up a few times a week to work on his delts, his quads, his lats, his squats, his dips, and his alts."
     hide pat
             
+    show detective somber
     sc "I'm sorry to say this, but - Timothy Victrola has been found dead, just today."
+    hide detective
 
     show pat serious
     pat "... oh."
@@ -4255,25 +4333,33 @@ label pat_questions:
             pat "Uh, yeah, a couple of thousand dollars. It was for my business."
             hide pat
 
+            show detective notes
             sc "Your... business?"
+            hide detective
 
             show pat
             pat "Oh, this is good - I wanted to start a pet store slash tattoo parlour."
             hide pat
 
+            show detective notes point
             sc "That seems like too many concepts in one place."
+            hide detective
 
             show pat
             pat "I'd call it \"Pat's Cats and Tats\"."
             hide pat
 
+            show detective smug
             sc "That's a pretty solid joke. Ha. So what was the business, {i}really{/i}?"
+            hide detective
 
             show pat
             pat "I ... I'm not sure if I understand. That was it."
             hide pat
 
+            show detective suspicious
             sc "Wait, really? You actually tried to open a pet adoption center, and tattoo parlour?"
+            hide detective
 
             show pat
             pat "Yeah."
@@ -4288,25 +4374,33 @@ label pat_questions:
                     time you leave you're definitely going to want to buy a cat, or a hat, or both, right?"
             hide pat
 
+            show detective notes point
             sc "Do you have any tattooing experience?"
+            hide detective
 
             show pat
             pat "Not as such, but I figured I could learn as I went."
             hide pat
 
+            show detective faceplam
             sc "How about experience with animals?"
+            hide detective
 
             show pat
             pat "We had a family dog when I was a kid."
             hide pat
 
+            show detective faceplam
             sc "Have you run a business before?"
+            hide detective
 
             show pat
             pat "Well, I run the gym's concession bar sometimes."
             hide pat
 
+            show detective notes
             sc "And it didn't work out?"
+            hide detective
 
             show pat
             pat "I couldn't even get the business license. Something about health codes."
@@ -4339,7 +4433,9 @@ label pat_questions:
 
         "Ask about {b}Tattoo{/b}" if not askedTattoo:
             $ askedTattoo = True
+            show detective notes
             sc "Can I see that tattoo you have on your bicep?"
+            hide detective
 
             show pat flex
             pat "Of course."
@@ -4361,9 +4457,9 @@ label pat_questions:
 
             "5. Aftercare is key! Not only will an infection hurt, it will also badly damage the final appearance of the tattoo!"
 
-            "Detective Capilano's TATTOO TIPZ are brought to you by the patchy, blotchy dolphin that she had drunkenly tattooed on her calf when she was 23."
+            "Detective Capilano's TATTOO TIPZ are brought to you by the patchy, blotchy dolphin that she had drunkenly tattooed on her calf when she was much, much younger."
 
-            "This is only important to note because it seems like Pat, also, did not follow Detective Capilano's TATTOO TIPZ: this looks like the result of a rash decision."
+            "This is only important to note because it seems like Pat, also, did not follow Detective Capilano's TATTOO TIPZ: this is definitely the result of a rash decision."
 
             pat "It means \"strength\"."
             hide pat
@@ -4378,19 +4474,25 @@ label pat_questions:
             "Detective Capilano is relatively certain that this symbol actually means \"meat\". She has the tact not to mention it, though."
             hide pat
 
+            show detective notes
             sc "Strength? You must be very strong, then."
+            hide detective
 
             show pat
             pat "Oh, I am! That's why I got the tattoo - so that people would {i}know{/i}."
             hide pat
 
+            show detective notes
             sc "But only people who can read the character."
+            hide detective
             
             show pat
             pat "But I translate it for everybody else, so they know what it means."
             hide pat
 
+            show detective faceplam
             sc "Ah, thus forming a foolproof system for letting people know that you are strong. A property that you otherwise wouldn't be able to telegraph."
+            hide detective
 
             show pat
             pat "Pretty much!"
@@ -4400,7 +4502,9 @@ label pat_questions:
         
         "Ask about {b}Job{/b}" if not askedJob:
             $ askedJob = True
+            show detective notes
             sc "What do you do, here, for the gym?"
+            hide detective
 
             show pat
             pat "Oh, I take every shift they'll give me. I'm a personal trainer, I run classes,
@@ -4428,9 +4532,11 @@ label pat_questions:
             hide pat
 
             jump seamus
-        "Look Pat in the {b}Eyes{/b}":
+        "Look Pat in the {b}Eyes{/b}" if not askedEyes:
             $ askedEyes = True
+            show detective irritated
             "Detective Capilano looks Pat deep in the eyes, trying to get a fix on him as a person."
+            hide detective
 
             show pat
             pat "Staring contest? Let's go!"
@@ -4472,6 +4578,7 @@ label pat_questions:
             pat "HEY, SOFT SERVE! COME OVER HERE AND TELL THEM ABOUT MY ARM!"
             hide pat
 
+            show softserve steve
             "The client from earlier walks back."
 
             client "His arm? Yeah, uh, I didn't want to do any more lunges so I bet him that
@@ -4481,14 +4588,19 @@ label pat_questions:
             "He gestures at the door. It's damaged, slightly."
 
             client "He really threw himself at it trying to get it open. Dislocated his shoulder."
+            hide softserve
 
             show pat
             pat "He's a lot stronger than he looks."
             hide pat
 
+            show detective faceplam
             sc "That's a pull door."
+            hide detective
 
+            show softserve steve
             client "Yeah, I won the bet."
+            hide softserve
 
             jump pat_questions
         "Ask about {b}Alibi{/b}" if not askedAlibi:
@@ -4553,7 +4665,9 @@ label pat_questions:
             jump pat_questions
 
         "Okay, we're done here." if askedPatDebts and askedArm:
+            show detective
             sc "Okay, big guy, I think we're done, here."
+            hide detective
 
             show pat
             pat "Nice talkin' to you two!"
@@ -4605,10 +4719,76 @@ image seamus_animated:
     pause 0.568
     repeat
 
+image seamus_uh_oh:
+    "seamus.png"
+    pause 0.284
+    "seamus 2.png"
+    pause 0.284
+    "seamus 3.png"
+    pause 0.284
+    "seamus 4.png"
+    pause 0.284
+    "seamus 5.png"
+    pause 0.284
+    "seamus 6.png"
+    pause 0.284
+    "seamus 7.png"
+    pause 0.284
+    "seamus 10.png"
+    pause 0.284
+    "seamus 8.png"
+    pause 0.284
+    "seamus 9.png"
+    pause 0.284
+    "seamus 2.png"
+    pause 0.284
+    "seamus 3.png"
+    pause 0.284
+    "seamus 4.png"
+    pause 0.284
+    "seamus 6.png"
+    pause 0.284
+    "seamus.png"
+    pause 0.284
+    "seamus 5.png"
+    pause 0.284
+    "seamus 10.png"
+    pause 0.284
+    "seamus 4.png"
+    pause 0.284
+    "seamus 8.png"
+    pause 0.284
+    repeat
+
+define seamusCount = 0
+
 label seamus:
+    $ seamusCount += 1 
     scene bg vending machine
     play music "music/Club Seamus.mp3"
     show seamus_animated
+    if seamusCount > 1:
+        "You watch Seamus dance, again. You can't help it. It's spectacular."
+    if seamusCount == 2:
+        "This is something you can't take your eyes off of. There is only Seamus. There is only... {i}dance.{/i}"
+    if seamusCount == 3:
+        "There's nothing you can do. You are mesmerized. The mystery can wait. Everything can wait. You must watch Seamus."
+    if seamusCount == 4:
+        "You start to wonder if its possible to be too obsessed with one man's dancing, but of course you cannot."
+    if seamusCount == 5:
+        "Seamus's dance starts to interfere with the stability of reality itself. The dance is too powerful, even,
+            for the game to contain."
+        
+        show seamus_uh_oh
+    if seamusCount == 6:
+        "You a8re sTarting To bmEocome CONCERNED"
+        show seamus_uh_oh
+        "Seamus's dancYe starts to interfeyre with the stability of reality itself. The dance is too powerful, even,
+            for the game to contain.OA"
+        show seamus_uh_oh
+    if seamusCount >= 7:
+        jump seamus_game_over
+
     "Seamus is currently dancing like nobody is watching next to a vending machine."
 
     "Literally nobody is around. Seamus is doing this for Seamus."
@@ -4618,28 +4798,54 @@ label seamus:
     "My god. It's beautiful."
     
     "Stunning."
+
+    if seamusCount == 3:
+        "Mellifluous"
+    if seamusCount == 3:
+        "Brandtacular"
+    if seamusCount == 4:
+        "Marvelous"
+    if seamusCount == 5:
+        "Dangerous"
     
     "Incredible."
+
+    if seamusCount == 6:
+        "Spl981ndiferou8s"
+        with pixellate
 
     "Magnificent."
 
     "Spellbinding."
 
-    show hank idk
-    hm "Can we... move this along?"
-    hide hank
+    if seamusCount < 2:
+        show hank idk
+        hm "Can we... move this along?"
+        hide hank
 
-    sc "Another minute, Hank."
+        sc "Another minute, Hank."
 
-    "Yeah! Another minute!"
+        "Yeah! Another minute!"
 
-    show hank what
-    hm "Come on."
-    hide hank
+        show hank what
+        hm "Come on."
+        hide hank
 
-    sc "Okay."
+        sc "Okay."
+    if seamusCount == 2:
+        "something in his dance commands you"
+        "Seamus is the dance commander"
+        "giving out the order for fun"
+        "and he's the only one"
+        "who gives the orders here, alright?"
+        "keep watching"
+    if seamusCount > 2:
+        "Seamus is growing more powerful with each passing glance."
+    if seamusCount > 5:
+        "It's starting to concern you."
 
     hide seamus_animated
+    hide seamus_uh_oh
     scene bg gym
     play music "music/Late Night Radio.mp3"
 
@@ -4649,12 +4855,15 @@ label seamus:
 label pat_complete:
 
     if hasBadge:
+        show prop badge
         badge "He knows less than anyone we have ever questioned."
+        hide prop
 
     show hank
     hm "He was in significant debt to the victim and he has no alibi during the time of the murder." 
     hide hank
 
+    show detective
     sc "Yeah. I want to say he's a harmless lunkhead, but we can't eliminate him yet, can we?"
 
     if hasStrangulation:
@@ -4662,6 +4871,7 @@ label pat_complete:
     if hasDressShirt:
         "Getting out of a dress shirt in a hurry in that sling seems like it would have been a challenge
             for Pat - and he doesn't seem like the type to own a nice dress shirt, anyways."
+    hide detective
     
     jump gym
 
@@ -4671,7 +4881,9 @@ label becky:
     hm "The {i}climbing instructor{/i}? Really grasping at straws, aren't we, Detective?"
     hide hank
 
+    show detective
     sc "I'm nothing if not thorough, Mr. Maxhank."
+    hide detective
     
     scene bg climbing wall
 
@@ -6419,6 +6631,45 @@ label shooting_game_over:
 
     " "
     hide prop gun
+
+    jump game_over
+
+label seamus_game_over:
+    show seamus_animated
+    show seamus_uh_oh
+    "Oh, no82."
+    with pixellate
+    
+    "The dance i8 UNFONTROLLablly COR--0RUPTING THE GAM'ee's f1IKLES"
+    with pixellate
+    with hpunch
+    with hpunch
+    with hpunch
+    with hpunch
+    with hpunch
+    with hpunch
+    with hpunch
+
+    "Seamus has overwritteN tHe resad82st of the ISme's files!"
+    with pixellate
+    with wiperight
+    with irisin
+    with slideawayleft
+
+    "YOU BE9GIN TO DANCE11 IN REA11L LIF)E. YOU, PERSON PLAY91ING THE GAME! YOU DANCE ALS00! SEAMUS COMMANDS IT! W118TH HIS BODY!"
+    
+    "THERE IS ONLY SEAMUS!"
+    with pixellate
+    with wipeleft
+    with vpunch
+    with vpunch
+    with vpunch
+    
+    "LET THE SINGULARITY BEGIN!"
+    with pixellate
+    with squares
+    with vpunch
+    with vpunch
 
     jump game_over
 
