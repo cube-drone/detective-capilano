@@ -4228,6 +4228,19 @@ label pat:
     "The client is a sweaty, doughy looking man, currently struggling to do his medicine ball squats."
     hide softserve
 
+    if not hasBelt and isHydrated:
+        show detective
+        sc "You know, you look almost exactly like a man I met earlier today."
+        hide detective
+
+        show softserve steve
+        client "Asset re-use."
+        hide softserve
+
+        show detective
+        sc "Ah."
+        hide detective
+
     show detective
     sc "Would you mind if we interrupted this session for a bit to talk to Pat, here?"
     hide detective
@@ -4908,27 +4921,37 @@ label becky:
     "Becky smells like soap and fresh shampoo."
     hide becky
 
+    show detective
     sc "I'm Detective Capilano, from the Northwestica PD - and this is Hank Maxhank, PI."
+    hide detective
 
     show hank no
     hm "Hi."
     hide hank
 
     if hasBadge:
+        show prop badge
         "Detective Capilano flashes her badge."
         badge "Salutations."
+        hide prop
     else:
+        show becky
         becky "Police, huh? Can you prove it?"
+        hide becky
 
+        show detective notes
         sc "Give me a second."
 
-        "Detective Capilano grabs a napkin and a pen and scrawls something down."
+        "Detective Capilano scrawls something down in her notepad."
 
         sc "Detective Capilano, Northwestica PD."
+        hide detective
 
+        show detective badj
         "She flashes a hastily scrawled obviously-concocted paper badge that says \"BADJ\" on it."
 
         "Becky nods. Seems legit."
+        hide detective
 
         if hasCarKeys:
             carkeys "Fuckin' nailed it."
@@ -4937,36 +4960,48 @@ label becky:
     becky "Wait, you're PD and he's a PI? How does {i}that{/i} work?"
     hide becky
 
+    show detective suspicious
     sc "We're still working out the details."
+    hide detective
 
     show becky
     becky "You're very ... damp."
     hide becky
 
+    show detective damp
     sc "Noted."
 
+    show detective somber
     sc "We have bad news for you - about a client of this gym. Timothy Victrola."
+    hide detective
 
     # clasping her hands over her mouth
     show becky gasp
     becky "Oh, no."
     hide becky
 
+    show detective somber
     sc "I'm sorry to have to be the bearer of bad news, but we believe that he may have been murdered."
+    hide detective
     
     show hank expository
     hm "To {i}death{/i}."
     hide hank
 
+    show detective irritated
     sc "Thank you, Hank."
 
+    show detective notes
     sc "Can you confirm that you were Mr. Victrola's climbing instructor?"
+    hide detective
 
     show becky gasp
-    becky "Yeah - I am." 
+    becky "Yeah - I am - uh, {i}was{/i}." 
     hide becky
     
+    show detective notes
     sc "So, how long was Timothy coming to climbing practice with you?"
+    hide detective
 
     show becky
     becky "About six months."
@@ -4984,66 +5019,94 @@ label becky_questions:
     menu: 
         "Ask about {b}Smell{/b}" if not askBeckySmell:
             $ askBeckySmell = True
+            show detective sniff
             "It's strange that Becky smells like soap and fresh shampoo."
 
             sc "Seems like a lot of exertion, all this climbing. You seem fresh as a daisy, though."
+            hide detective
 
             show becky
             becky "Well, my shift only started at one - I had a shower before work. "    
             hide becky
 
+            show detective notes
             "To wash off rain, blood, and kerosene? Or just to freshen up?"
 
-            sc "Oh. What were you doing this morning?"
+            sc "What were you doing this morning?"
+            hide detective
 
             show becky
             becky "A friend dropped me off at the university this morning, she clocks in earlier than I do,
                     so I took a walk around the quad and then settled into the library for some homework."
             hide becky
             
+            show detective notes point
             sc "A walk? Today? Wouldn't you get wet?"
+            hide detective
 
             show becky
             becky "The outer ring of the quad is covered, so no."
             hide becky
 
+            show detective notes
             sc "Then, after that?"
+            hide detective
 
             show becky
             becky "I came back to the gym, showered, and changed into my work clothes. Then I started work."
             hide becky
 
+            show prop notepad
             notepad "Weak alibi. No eyewitnesses until 1:00. Dry all day."
+            hide prop
 
             jump becky_questions
 
         "Ask about {b}Strength{/b}" if not askBeckyStrength:
             $ askBeckyStrength = True
+            show detective notes
             sc "Climbing gym - that's really impressive. You climb this wall?"
+            hide detective
 
             show becky
             becky "Among others, yes."
             hide becky
 
-            sc "How hard is this wall? Like, on a scale from one to ten?"
+            show detective notes
+            sc "How hard is this wall?"
+            hide detective
+
+            show becky 
+            becky "It's actually pretty soft - it's gently padded so that it's harder to hurt yourself if you slam in to it."
+            hide becky
+            
+            show detective faceplam
+            sc "I meant how hard is it to {i}climb{/i}? On a scale from one to ten?"
+            hide detective 
 
             show becky fifteen
             becky "Actually, if you're climbing, it's a scale from one to fifteen."
             hide becky
 
+            show detective notes point
             sc "Why is that?"
+            hide detective
 
             show becky no
             becky "Well, fifteen is {i}five harder{/i} than ten." 
-            show becky
+            hide becky
 
+            show detective faceplam
             sc "Well, yes, but then you could have just made {i}ten{/i} the hardest."
+            hide detective
 
             show becky fifteen
             becky "But fifteen is {b}five harder{/b}."
             hide becky
 
+            show detective 
             sc "Wait, how did you do that thing with your hands?"
+            hide detective
             
             show becky no
             becky "What thing?" 
@@ -5065,17 +5128,21 @@ label becky_questions:
             "Detective Capilano looks up at the harder path. There don't seem to be enough
                 orange handholds for a person to actually be able to climb up this way."
 
+            show detective notes point
             sc "It looks like in order to get up that way, you'd have to be able to pull
                     up your entire body-weight, one handed."
+            hide detective
 
             show becky guns
             becky "Oh, yeah. I can do it."
-            hide becky
 
             if hasStrangulation: 
                 "Her grip strength must be incredible."
+            hide becky
 
+            show detective notes point
             sc "Could Timothy?"
+            hide detective
 
             show becky
             becky "No, he was never in the kind of shape where he could climb a thirteen.
@@ -5083,14 +5150,18 @@ label becky_questions:
                 enough - and he weighs a lot more than I do."
             hide becky
 
+            show prop notepad
             notepad "Becky much, {b}much{/b} stronger than Timothy."
+            hide prop
 
             jump becky_questions
 
         "Ask about {b}Danger{/b}" if not askBeckyDanger:
             $ askBeckyDanger = True
+            show detective notes
             sc "Would you say there are a lot of climbing accidents on the wall? It seems
                     like someone could get really hurt doing this."
+            hide detective
 
             show becky
             becky "Oh, it's very safe, if you're adhering to the safety protocols."
@@ -5100,8 +5171,10 @@ label becky_questions:
             becky "But everyone who climbs checks their equipment regularly."
             hide becky
             
+            show detective notes point
             sc "So if you wanted to hurt a fellow climber, you'd just have to sabotage the equipment? 
                     How hard would that be?"
+            hide detective
 
             show becky
             becky "Oh, not hard at all - their life is in your hands in some sense, while you're belaying for them.
@@ -5119,19 +5192,25 @@ label becky_questions:
             hm "No, a car accident. I don't know why we're talking about this at all."
             hide hank
 
+            show detective suspicious
             sc "I was just curious about climbing. I've been thinking of trying it myself, and I was wondering
                     how safe it is."
+            hide detective
             
             show hank
             hm "Great use of our time."
             hide hank
             
+            show prop notepad
             notepad "Becky could hurt Timothy very easily."
+            hide prop
 
             jump becky_questions
         "Ask about {b}Murder{/b}" if not askBeckyMurder:
             $ askBeckyMurder = True
+            show detective notes point
             sc "I just have one question - "
+            hide detective
 
             show hank straightening
             hm "Let me take this one."
@@ -5155,48 +5234,77 @@ label becky_questions:
             hm "She's got me there, hoss. It's airtight."
             hide hank
 
+            show detective irritated
             sc "Could you not call me hoss?"
+            hide detective
 
             jump becky_questions
 
         "{b}Seduce{/b} Becky" if hasBelt and not askBeckySeduce:
             $ askBeckySeduce = True
 
+            show prop belt
             belt "This woman is beautiful. You must make her yours."
+            hide prop
 
             if hasBadge:
+                show prop badge
                 badge "She's a suspect in an active murder case. Keep it in your pants, belt."
+                hide prop
                 
+            show prop belt
             belt "Unf unf unf."
+            hide prop
 
+            show prop condoms
             condoms "We agree."
+            hide prop
 
             if hasBadge:
+                show prop badge
                 badge "You wouldn't even be involved!"
+                hide prop
 
+                show prop condoms
                 condoms "We get excited easily!"
+                hide prop
 
             if hasGun:
+                show prop gun
                 gun "Show her the gun. Women who are afraid for their lives are more {i}pliable{/i}."
+                hide prop
                 
                 if hasBadge:
-                    badge "Like I said, sociopath."
+                    show prop badge
+                    badge "Like I said, that gun is a horrifying sociopath."
                     
+                    show prop gun
                     gun "I ought to shoot you for saying that."
+                    hide prop
             
+            show prop notepad
             notepad "She's easily 20 years younger than you, don't be gross."
+            hide prop
 
+            show prop belt
             belt "Love knows no age barrier."
+            hide prop
 
+            show prop notepad
             notepad "It absolutely does."
+            hide prop
 
+            show detective
             sc "I think that the notepad is right."
+            hide detective
 
             show hank confused
             hm "... You ... think that the notepad is right?"
             hide hank
 
+            show detective smug
             sc "Oh, I - uh - made a note here about what I was going to have for dinner, and I agreed with it."
+            hide detective
 
             show hank friendly
             hm "... you're an odd duck, aren't you, detective." 
@@ -5206,20 +5314,26 @@ label becky_questions:
 
         "Ask about {b}Cheating{/b}" if not askBeckyCheating:
             $ askBeckyCheating = True
+            show detective notes point
             sc "Your relationship with Tim - could you talk about that?"
+            hide detective
 
             show becky irritated
             becky "What relationship? I was his climbing instructor."
             hide becky
 
+            show detective notes
             sc "You know, it's strange - I was wondering if you could help me explain this - 
                     he had your phone number in his wallet at time of death."
+            hide detective
 
             show becky no
             becky "Probably to set up appointments with the gym?"
             hide becky
 
+            show detective notes confused
             sc "Your home phone number."
+            hide detective
 
             # shrug
             show becky shrug
@@ -5232,45 +5346,52 @@ label becky_questions:
 
             show becky shrug
             becky "Yeah, maybe he did."
-            hide becky
 
             "Detective Capilano {i}knows{/i} that there's more going on here, but it's going
                 to take more pressure to get her to crack."
+            hide becky
             
             show hank friendly
             hm "I'm sure this is very personal for you, we'll drop it."
-            hide hank
 
             "We will?"
+            hide hank
 
+            show prop notepad
             notepad "Hank interfering. Ditch Hank."
+            hide prop
 
             jump becky_questions
 
         "Ditch {b}Hank{/b}" if askBeckySmell and askBeckyStrength and askBeckyDanger and askBeckyCheating:
             "Hank is cramping Detective Capilano's style."
             
+            show becky
             "Detective Capilano has a plan to chat with Becky alone, for a bit."
             
             "Becky doesn't appear to have a purse with her, or any pockets."
+            hide becky
 
-            if hasBelt:
-                belt "See, this is why you want {i}belted{/i} pants with some {i}capacity{/i}."
-
+            show detective
             sc "Becky, this is just a standard procedural thing we have to do, but could I take a quick look
                     at your identification?"
+            hide detective
 
             show becky shrug
             becky "I don't have it with me, it's in my locker."
             hide becky
 
+            show detective straightening
             sc "Okay, let's go."
+            hide detective
 
             show becky shrug
             becky "Right now?"
             hide becky
 
+            show detective straightening
             sc "Yeah, right now."
+            hide detective
 
             jump beckyLocker
 
@@ -5297,7 +5418,9 @@ label beckyLocker:
 
     "They walk in to the locker room."
 
+    show detective embarrassed
     sc "Wow, what gratuitous and excessive college nudity we're looking at right now."
+    hide detective
 
     show becky
     becky "Why are those two having a pillow fight? Did they bring those from home?"
@@ -5316,87 +5439,103 @@ label beckyLocker:
 
     show becky
     becky "This is my locker."
-    hide becky
 
     "Becky opens the locker. Inside is a purse and a change of clothes."
+    hide becky
 
+    show prop hoodie
     "She rifles through the purse to find her identification - but while she's doing this,
         Detective Capilano reaches over and grabs her change of clothes."
+    hide prop
 
     show becky irritated
     becky "Hey - "
     hide becky
 
+    show prop hoodie
     sc "I can't help but notice that this is a large, baby-blue Yuyuyuzu hoodie."
 
     "Detective Capilano checks the tag."
 
     sc "In a men's XL. Huh. With... short arms."
 
-    "The other thing that Detective Capilano notes is that Becky's change of clothes is bone dry."
+    "The other thing that Detective Capilano notes is that Becky's change of clothes is {b}bone dry{/b}."
+    hide prop
 
+    show detective
     sc "Have you been out in the rain at all today?"
+    hide detective
 
+    show prop hoodie
     yuyuyuzu "No, I haven't. We got to go jogging around the quad this morning, though!"
+    hide prop
 
     show becky irritated
     becky "I already told you, no - the quad's covered, so I stayed dry."
     hide becky
 
+    show detective suspicious
     sc "You know, it's strange - Timothy was wearing a shirt just like this when he died.
             Same brand, and size, and everything."
+    hide detective
 
     show becky
     becky "Oh, this {i}is{/i} his shirt."
     hide becky
 
+    show detective suspicious
     sc "In your locker?"
+    hide detective
 
     show becky blank
     becky "I was ... {i}borrowing{/i} it."
     hide becky
 
-    sc "It can't possibly be the same one that's headed to the morgue right now."
-
-    show becky shrug
-    becky "... he had a few of this shirt. You know, in case of stains, or sudden accidents."
-    hide becky
-
-    sc "Or losing them at the gym?"
-
+    show detective notes
     sc "So, you have his sweater. You said earlier that your relationship was -"
+    hide detective
 
     show becky
     becky "Strictly professional, yes. He just - left it behind."
     hide becky
 
+    show detective notes confused
     sc "Odd of you to have kept it rather than returning it to him."
+    hide detective
 
     show becky shrug
     becky "Sure, but that's what happened. You, uh, needed to see my identification?"
     hide becky
 
+    show detective notes
     sc "Yes, please."
+    hide detective
 
     show becky id
     becky "Here."
     hide becky
 
+    show detective notes
     sc "\"Rebecca Segsihan\", Age 24 - wait, this isn't a driver's license. It's just a student card."
+    hide detective
 
     show becky id
     becky "I never got my driver's license. I can't afford a car, anyways - what would be the point 
         of even learning?"
     hide becky
     
+    show detective shrug
     sc "Well, you might drive {i}someday{/i}."
+    hide detective
 
     show becky shrug
     becky "I can learn {i}then{/i}, seems like."
     hide becky
     
+    show detective sheepish
     sc "There's just one more bit of information I need - could you write down your phone number for me?
             We might have some more questions for you, later."
+    hide detective
 
     play sound "sounds/writing.ogg"
 
@@ -5414,10 +5553,12 @@ label beckyLocker:
     becky "... wait, don't you already have my phone number? You told me that Timothy had it in his wallet."
     hide becky
 
+    show detective somber id
     sc "Yes, but now I can compare the two. What do you know - would you look at this? A perfect match."
 
     sc "I'm extremely curious to discover how Mr. Victrola looked up your name in a phone directory,
             then wrote down your phone number in {b}your{/b} handwriting. What a talented young man."
+    hide detective
     
     show becky blank
     becky "That's a bit of a dirty trick."
@@ -5427,25 +5568,35 @@ label beckyLocker:
 
     "I'm going to interrupt, here. Yes. Becky should absolutely be talking to a lawyer. Everyone we've talked to
         should have been talking to a lawyer. You should always, ALWAYS have a lawyer."
+    "This is a story with a well-meaning sleuth who always solves the case {i}correctly{/i} - you have no 
+        such guarantee in real life."
+    "Even with that established, Detective Capilano is going to lie, here, and tell Becky \"No\". - but it's
+        bad advice."
     
+    show detective smug
     sc "It shouldn't be necessary - we're just having a friendly chat. You're not even formally a suspect."
 
     "Yet. Not formally a suspect yet."
+    hide detective
 
     show becky shrug
     becky "So maybe I wrote down the number for him. I don't remember."
     hide becky
 
+    show detective straightening
     sc "That seems like it would indicate a more than merely professional relationship."
+    hide detective
 
     show becky irritated
     becky "Even so - nothing happened."
     hide becky
 
+    show detective irritated
     "Detective Capilano does not believe her, but it doesn't seem like this line of questioning
         is going to lead any further."
 
     sc "Well, I guess we've stood around this locker room long enough. Shall we go?"
+    hide detective
 
     show becky
     becky "Sure."
@@ -5458,11 +5609,13 @@ label beckyLocker:
     becky "Where's your friend?"
     hide becky
 
+    show detective shrug
     sc "I'm not sure. I figured he'd be waiting out here for us."
-
-    "Hank walks out of the men's locker room."
+    hide detective
 
     show hank conspiratorial
+    "Hank walks out of the men's locker room."
+
     hm "Oh - sorry, I just had to drop a few kids off at the pool."
     hide hank
 
@@ -5470,23 +5623,34 @@ label beckyLocker:
     "Becky grimaces."
     hide becky
 
+    show detective irritated
+    sc "Wow."
+
+    show detective
     sc "I think we've tormented poor Ms. Segsihan enough for one day, wouldn't you say?"
+    hide detective
 
     show hank friendly
     hm "Oh, yes."
     hide hank
 
-    "As Becky walks away, Detective Capilano pulls some of the condoms out of the wallet and points them at her."
+    "Becky walks away."
+
+    show prop condoms
+    "As Becky walks away, Detective Capilano pulls some of the condoms out of Timothy's wallet and points them at her."
 
     sc "Have you seen her before?"
 
     condoms "Yeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah"
+    hide prop
 
     show hank confused
     hm "Are you... talking to those... condoms?"
     hide hank
 
+    show detective embarrassed
     sc "Absolutely not, I'm just engaging in my {i}process{/i}."
+    hide detective
 
     scene bg gym
 
@@ -5494,15 +5658,15 @@ label beckyLocker:
 
 
 label locker:
-    play music "music/Grand Dark Waltz Trio Allegro.mp3"
 
-    scene bg locker room
 
     show hank
     hm "I have a hunch about that Pat fellow. Something about his alibi rubbed me the wrong way."
     hide hank
 
+    show detective
     sc "Oh?"
+    hide detective
 
     show hank accusatory
     hm "Let's check out his locker in the locker rooms."
@@ -5527,15 +5691,21 @@ label locker:
 
         "Detective Capilano looks uncomfortable with this."
 
+    play music "music/Grand Dark Waltz Trio Allegro.mp3"
+    scene bg locker room men
     "The two of them walk into the men's locker room, finding Pat's locker in the back."
 
+    show detective
     sc "Patsy Haring."
+    hide detective
 
     show hank friendly
     hm "This is the one. And wouldn't you know, the lock is already open!"
     hide hank
 
+    show detective suspicious
     sc "(supiciously) Lucky break."
+    hide detective
 
     "Hank opens the locker."
 
