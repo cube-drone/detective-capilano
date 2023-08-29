@@ -532,9 +532,144 @@ define hasDressShirt = False
 label start:
     $ quick_menu = False
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene bg traffic jam
+
+    "Scene of the crash:"
+    
+    play ambient_2 "ambient/honk.ogg" volume 0.4    
+
+    play music "music/Verano Sensual.mp3"
+
+    "Traffic, lots of it. There's been a car crash."
+
+    "Some traffic obstructions are up: one lane of traffic has opened to allow cars to flow through slowly,
+        although sharing one lane in both directions is not nearly enough to clear the traffic."
+
+    "This is a major throughfare and a huge snarl."
+
+    "Furious honking. Road rage brewing."
+    
+    scene bg car crash
+
+    "A junior police officer and a paramedic are gathered around a car that has very badly crashed."
+
+    show paramedic
+    parm "Call it - he's dead."
+    hide paramedic
+
+    show jemby serious
+    trfc "Oh, no. You - barely even got in there, are you sure?"
+    hide jemby
+
+    show paramedic eyebrow
+    parm "Are you new here, kid? The steering wheel's gone clean through his chest. He's not gonna walk that off."
+
+    parm "It's going to take an act of god and a spatula to get this guy out of here."
+    hide paramedic
+
+    # trfc finds something suspicious
+    show jemby serious
+    trfc "This is... very strange, for a traffic accident."
+    hide jemby
+
+    show paramedic eyebrow
+    parm "What do you mean?"
+    hide paramedic
+
+    show jemby lean
+    "The junior police officer reaches down."
+    hide jemby
+
+    show jemby cinder
+    trfc "Well, for one, most people in traffic accidents aren't driving with a pet cinder block 
+        next to their gas pedal."
+    trfc "I think it might have been... {i}murder most foul{/i}." 
+    hide jemby
+
+    show paramedic
+    parm "Oh, for the love of shit. You think this was a {b}homicide{/b}? Because you found a {b}rock{/b}?"
+    hide paramedic
+
+    show jemby
+    trfc "It could be. I'm gonna call it in."
+    hide jemby
+
+    show paramedic
+    parm "Can I start bagging this guy up?"
+    hide paramedic
+
+    show jemby
+    trfc "No, we can't touch anything. It's all {i}evidence{/i} now."
+    hide jemby
+
+    show paramedic nonplussed
+    parm "This is {i}unbelievably inconvenient{/i}."
+    hide paramedic
+    
+    scene bg car crash squad
+    "The junior police officer heads to the squad car."
+    
+    #angry
+    show paramedic
+    with hpunch
+    parm "- I'M SURE THE HONKING WILL CLEAN UP THE CRASH FASTER -"
+    hide paramedic
+    stop ambient_2
+
+    "The junior police officer returns."
+
+    show paramedic
+    parm "How long does this usually take? I've got to bag up the body, and the traffic department's already
+        giving us dirty looks about clearing this road."
+    hide paramedic
+    
+    show jemby
+    trfc "I don't know, this is the first time I've requested a detective. Dispatch says that they should have
+        someone out in five minutes or so."
+    hide jemby
+
+    show paramedic
+    parm "I hope they're here {i}soon{/i}."
+    hide paramedic
+    
+    show jemby
+    trfc "..."
+    hide jemby
+
+    show paramedic
+    parm "..."
+
+    parm "So... we just wait?"
+    hide paramedic
+
+    show jemby serious
+    trfc "Yeah."
+    hide jemby
+
+    show paramedic
+    parm "It's really wet out today."
+    hide paramedic
+    
+    show jemby serious
+    trfc "It sure is."
+    hide jemby
+
+    show paramedic
+    parm "Why the sunglasses, then?"
+    hide paramedic
+
+    show jemby serious
+    trfc "I think they give me an air of authority."
+    hide jemby
+    
+    show paramedic eyebrow
+    parm "..."
+
+    parm "... I hope they send somebody quickly."
+    hide paramedic
+    jump precinct
+
+label precinct:
 
     scene bg precinct ext
 
@@ -1647,8 +1782,6 @@ image jemby_light:
     repeat
 
 label beresford:
-    # we jump back in time a little bit here, to Traffic Cop Jemby discovering some stuff at the crime
-    #  scene and calling it in to the station
     scene bg traffic jam
 
     "Scene of the crash:"
@@ -1656,67 +1789,7 @@ label beresford:
     play ambient_2 "ambient/honk.ogg" volume 0.4    
 
     play music "music/Verano Sensual.mp3"
-
-    "Some traffic obstructions are up: one lane of traffic has opened to allow cars to flow through slowly,
-        although sharing one lane in both directions is not nearly enough to clear the traffic.
-        This is a major throughfare and a huge snarl."
-
-    "Furious honking sounds issue forth from the trapped citizenry."
     
-    scene bg car crash
-
-    "A junior police officer and a paramedic are gathered around a car that has very badly crashed."
-
-    show paramedic
-    parm "Call it - he's dead."
-    hide paramedic
-
-    show jemby serious
-    trfc "Oh, no. You - barely even got in there, are you sure?"
-    hide jemby
-
-    show paramedic eyebrow
-    parm "Are you new here, kid? The steering wheel's gone clean through his chest. He's not gonna walk that off."
-    hide paramedic
-
-    # trfc finds something suspicious
-    show jemby serious
-    trfc "This is... very strange, for a traffic accident."
-    hide jemby
-
-    show paramedic eyebrow
-    parm "What do you mean?"
-    hide paramedic
-
-    show jemby lean
-    "The junior police officer reaches down."
-    hide jemby
-
-    show jemby cinder
-    trfc "Well, for one, most people in traffic accidents aren't driving with a pet cinder block 
-        next to their gas pedal."
-    hide jemby
-
-    show paramedic
-    parm "You think this was a homicide?"
-    hide paramedic
-
-    show jemby
-    trfc "It could be. I'm gonna call it in."
-    hide jemby
-    
-    scene bg car crash squad
-    "The junior police officer heads to the squad car."
-    
-    #angry
-    show paramedic
-    with hpunch
-    parm "- HEY, YOU GUYS ARE REALLY HELPING, I'M SURE THE HONKING WILL CLEAN UP THE CRASH FASTER -"
-    hide paramedic
-    stop ambient_2
-
-    "The junior police officer returns."
-
     show paramedic
     parm "How long does this usually take? I've got to bag up the body, and the traffic department's already
         giving us dirty looks about clearing this road."
@@ -1734,6 +1807,9 @@ label beresford:
 
     parm "So... we just wait?"
     hide paramedic
+
+    scene bg car crash squad
+    stop ambient_2
 
     show jemby serious
     trfc "Yeah."
@@ -5659,7 +5735,6 @@ label beckyLocker:
 
 label locker:
 
-
     show hank
     hm "I have a hunch about that Pat fellow. Something about his alibi rubbed me the wrong way."
     hide hank
@@ -5675,21 +5750,27 @@ label locker:
     if hasBadge: 
         badge "Tell him no. That's not okay."
 
+        show detective irritated
         sc "We can't just go poking around in people's lockers without a search warrant."
+        hide detective
 
         show hank conspiratorial
         hm "Well, perhaps you can't, but I'm a private citizen."
         hide hank
 
+        show detective irritated
         sc "Which means that if you open one of these lockers, I can and {i}should{/i} arrest you 
                 for breaking and entering."
+        hide detective
     
         show hank shrug
         hm "But if we just {i}look{/i} at the contents of some open lockers on public property,
                 that's okay, right?"
         hide hank
 
+        show detective irritated
         "Detective Capilano looks uncomfortable with this."
+        hide detective
 
     play music "music/Grand Dark Waltz Trio Allegro.mp3"
     scene bg locker room men
@@ -5707,15 +5788,18 @@ label locker:
     sc "(supiciously) Lucky break."
     hide detective
 
+    show hank
     "Hank opens the locker."
 
     "Inside is a wet jacket and some crumpled clothes, as well as a small plastic plant."
 
     "Nestled in the damp clothes is a shining object."
+    hide hank
 
     play sound "sounds/snap.ogg"
-
-    "Hank Maxhank puts on some gloves."
+    show detective gloves
+    sc "Let's get rummaging!"
+    hide detective
 
     show hank accusatory
     hm "Look at this."
@@ -5725,22 +5809,30 @@ label locker:
 
     if hasGun:
         hide hank
+        show prop gun
         gun "A friend!"
         gun "He's holding a gun, you should probably shoot him. Just putting that out there."
+        hide prop
         show hank got gun
 
     hm "A murder weapon."
 
     if hasStrangulation:
+        hide hank
+        show prop notepad
         "Timothy Victrola wasn't shot, he was strangled."
+        hide prop
+        show hank got gun
 
     hm "We'll take that to the ballistics lab at my office - I bet it has been fired today."
     hide hank
 
+    show detective concerned
     sc "Well, that's pretty damning - here, I'll bag it and you keep poking around in there."
 
     "While Hank is distracted by the locker, Detective Capilano empties the bullets from the revolver into her 
         hand, counts them (three), and pockets them."
+    hide detective
 
     show hank got watch
     "Hank reaches in to the locker and fishes out a watch."
@@ -5757,12 +5849,19 @@ label locker:
     hm "Ann Portent & Timothy Victrola. Their names are engraved on the back."
     hide hank
 
+    show detective irritated
     sc "That's an obvious plant."
+    hide detective
 
     show hank got plant
     "Hank Maxhank pulls the small plastic plant out of the locker."
 
     hm "I'm not sure what this has to do with the case, to be honest."
+    hide hank
+
+    show detective
+    sc "Anything else in there?"
+    hide detective 
 
     show hank got book
     "Hank reaches in and finds one more thing... a small red booklet."
@@ -5773,15 +5872,19 @@ label locker:
 
     hide hank
 
+    show detective hand up
     sc "Uh, that's classic children's book \"Harold Poopsy the Balloon Bear\"."
     sc "You probably shouldn't just assume that every red-colored book you encounter 
             is communist literature." 
+    hide detective
 
     show hank what    
     hm "Nevertheless, I think we've got Pat dead to rights."
     hide hank
 
+    show detective concerned
     sc "Well, then - let's get that gun to your lab. See what we find."
+    hide detective
 
     show hank friendly
     hm "Okay - let's get to the car."
@@ -5792,7 +5895,9 @@ label locker:
         hm "Unless you want to take your bicycle."
         hide hank
 
+        show detective irritated
         sc "You could ride on the basket!"
+        hide detective
 
         show hank
         hm "It's still raining pretty hard out there."
