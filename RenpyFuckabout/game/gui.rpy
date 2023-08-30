@@ -26,7 +26,7 @@ init python:
 define gui.accent_color = u'#00cc99'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = u'#272727'
+define gui.idle_color = u'#dddddd'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
@@ -61,7 +61,7 @@ define gui.text_font = "DejaVuSans.ttf"
 define gui.name_text_font = "DejaVuSans.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "fonts/RobotoSlab-Medium.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 35

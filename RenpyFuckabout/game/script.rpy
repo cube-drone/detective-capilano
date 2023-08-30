@@ -5851,6 +5851,7 @@ label locker:
     show detective concerned
     sc "Well, that's pretty damning - here, I'll bag it and you keep poking around in there."
 
+    show detective gun empty
     "While Hank is distracted by the locker, Detective Capilano empties the bullets from the revolver into her 
         hand, counts them (three), and pockets them."
     hide detective

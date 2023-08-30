@@ -23,7 +23,7 @@ define gui.show_name = False
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "Sept-2023"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -33,12 +33,12 @@ define gui.about = _p("""
     
     cube-drone.com
     
-    @cube-drone@mastodon.social
-
     Music care of Kevin MacLeod,
     https://incompetech.com/music/royalty-free/music.html
 
     SFX care of kenney.nl and freesound.org
+
+    Made with Ren'Py.
 
 """)
 
