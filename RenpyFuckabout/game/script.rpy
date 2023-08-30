@@ -2241,7 +2241,12 @@ label beresford:
 
     show jemby
     trfc "Magical."
+    trfc "Do you think he got it in manual or automatic?"
     hide jemby
+
+    show detective roll
+    sc "It'd be a crying shame to get a high performance vehicle like this in anything but manual transmission."
+    hide detective
 
     if hasCueBall:
         show prop cueball
@@ -2324,6 +2329,10 @@ label beresford:
             show detective pout
             sc "(shudders) That was a {i}mess{/i}."
             hide detective
+
+        show detective smug
+        sc "Oh, hey, this car has a manual transmission. I called it! Score."
+        hide detective
 
         show detective
         sc "Do you have some gloves I could borrow?"
@@ -4127,6 +4136,18 @@ label introducing_hank:
         hm "the private sector has access to certain 
                 {i}enhanced resources{/i} that you just don't get when you're working for the public."
     
+    
+    show detective notes
+    sc "I was curious - Mrs. Portent mentioned that the two of you had a close partnership.
+            What kind of work do you find yourself doing for her?"
+    hide detective
+    
+    show hank expository
+    hm "A news agency like hers often needs investigations done. You'd think that the private 
+            investigation industry is all \"cheating lovers\" and \"background checks\" - "
+    hm " but the kind of investigative work that a news agency needs done is, well, 
+            myriad and varied."
+    hm "Obviously, the nature of all of our work for clients is private and confidential, of course." 
 
     hm friendly "Here, hop in my car, I'll take you to our offices and give you the tour."
     hide hank
@@ -5819,9 +5840,9 @@ label locker:
 
     if hasStrangulation:
         hide hank
-        show prop notepad
-        "Timothy Victrola wasn't shot, he was strangled."
-        hide prop
+        show detective irritated
+        sc "Huh. You don't say."
+        hide detective
         show hank got gun
 
     hm "We'll take that to the ballistics lab at my office - I bet it has been fired today."
@@ -5862,6 +5883,28 @@ label locker:
     show detective
     sc "Anything else in there?"
     hide detective 
+
+    show hank
+    hm "There's a pile of sopping wet clothes."
+    hide hank
+
+    show detective lean
+    sc "Let me see those."
+    hide detective
+
+    show detective sniff clothes
+    "The detective gets a good long smell of the wet clothes."
+    "They smell damp and a little sweaty, but that's it."
+    sc "Huh."
+    hide detective
+
+    show hank confused
+    hm "Uh, I didn't think you were in to that kind of thing."
+    hide hank
+
+    show detective smug
+    sc "All part of the {i}process.{/i}"
+    hide detective
 
     show hank got book
     "Hank reaches in and finds one more thing... a small red booklet."
@@ -5924,35 +5967,18 @@ label securitas:
     hm "Do you see this? Absolutely everything is top-of-the-line."
     hide hank
 
+    show detective irritated
     sc "Wow. Impressive. Business is good, seems like."
+    hide detective
 
     show hank conspiratorial
     hm "We're in the business of information, and information is a booming industry."
     hide hank
 
     if hasCarKeys:
+        show prop carkeys
         carkeys "I hope you nail this smug chumpdick to the wall."
-    
-    sc "I was curious - Mrs. Portent mentioned that the two of you had a close partnership.
-            What kind of work do you find yourself doing for her?"
-    
-    show hank expository
-    hm "A news agency like hers often needs investigations done. You'd think that the private 
-            investigation industry is all \"cheating lovers\" and \"background checks\" - "
-    hm " but the kind of investigative work that a news agency needs done is, well, 
-            myriad and varied."
-    hm "Obviously, the nature of all of our work for clients is private and confidential, of course." 
-    hide hank
-
-    sc "You know, a fella like yourself, in the business of information - I bet having someone
-            on the inside at a news agency like NewsMax would be a pretty big get."
-    
-    show hank
-    hm "I can assure you that information flowed from me to Mrs. Portent, and {i}never{/i}
-            the other way around, if that's what you're {i}implying{/i}."
-    hide hank
-    
-    sc "Of course, of course. You were showing me around?"
+        hide prop
 
     show hank straightening
     hm "Over here, we have our computer database. With over 56 kilobytes of memory,
@@ -5991,13 +6017,11 @@ label securitas:
     sc "I'm going to level with you, we don't have any computers down at the precinct.
             What does it do?"
     
-    show hank expository
     hm "We've built a comprehensive indexing system for all of our files in here."
 
     hm "Let's say you're at your precinct and you want to find all of your arrests that
             happened on a Wednesday, for people with last names starting with \"P\" -
             how would you go about that?"
-    hide hank
     
     sc "That feels like kind of a contrived example, but - well, we don't index our
             files by the day that the arrest happened, but we do have a card index for 
@@ -6007,15 +6031,11 @@ label securitas:
             one by one, looking for the arrest date. I suppose it'd probably be a 
             couple of days of work."
 
-    show hank smug
     hm "This bad boy can do that in {i}minutes{\i}."
-    hide hank
 
     sc "Wow. Very impressive. Can I try it?"
 
-    show hank friendly
     hm "Sure, give it a go."
-    hide hank
 
     "Detective Capilano looks at the computer's keyboard and very slowly hunts for the first letter
         she's thinking of. As she types, the letters are printed on to a large screen 
@@ -6031,42 +6051,30 @@ label securitas:
     
     "T"
 
+    show hank
     "Hank interrupts."
 
-    show hank
     hm "You know what? I'm not sure if we have the time for this - we need to get this 
             gun to the lab, right away."
     hide hank
     
-    "Strange, he was excited to show off the computer just a second ago. Does he have
-        a file on Timothy that he doesn't want Detective Capilano to see?"
-
-    sc "Do you happen to have a file on Timothy Victrola?"
-
-    crimeputer "I have two, but they're both marked \"private\", so I can't show them to you."
-
-    show hank
-    hm "No, I don't."
-    hide hank
+    "Strange, he was excited to show off the computer just a second ago."
     
-    sc "You know, I was curious - when we spoke, Mrs. Portent seemed very, very confident
-            that her husband wasn't cheating on her."
+    # i think this gives too much away
+    # "Does he have a file on Timothy that he doesn't want Detective Capilano to see?"
+    # 
+    # sc "Do you happen to have a file on Timothy Victrola?"
+    #
+    # crimeputer "I have two, but they're both marked \"private\", so I can't show them to you."
+    # 
+    # show hank
+    # hm "No, I don't have a file on Timothy."
+    # hide hank
     
-    sc "It was strange because there were a lot of little things about Mr. Victrola that had 
-            even {i}me{/i} a little worried he might be cheating on her."
-
-    sc "I was thinking, y'know, maybe if she had a close relationship with a private investigator,
-            that was the sort of thing she'd have him look in to."
-
-    sc "Hank, did Mrs. Portent hire you to surveil Mr. Victrola, by any chance?"
-
-    show hank expository
-    hm "Private and confidential, Detective. My professional ethics obviously wouldn't
-            allow me to respond to such a query."
-    hide hank
-
+    show detective suspicious
     sc "It's funny - when I said that we needed to visit Timothy's gym, you knew right away that
             it was at the university. Awfully curious."
+    hide detective
     
     show hank idk
     hm "Yeah - strange, that."
@@ -6076,10 +6084,98 @@ label securitas:
             Let's talk in my office for a moment, I have a proposition for you."
     hide hank
 
+    show detective
     sc "Oh, of course. Let's go."
+    hide detective
 
+    jump final_decision
+
+label final_decision:
+    stop music
+    scene bg default
+    "Hey, just for your information, this story is about to wrap up. Now's your chance to lock in your guess
+        as to who the culprit actually was, all along!"
+    "Sometimes when I'm reading detective fiction I kind of wish that the story would just stop and say
+        \"okay, here, you have all of the information you're going to get, time to solve things\"."
+    "Don't worry, there's no penalty for getting the answer wrong, here, and the only benefit
+        to guessing right is that you get bragging rights."
+    "The murderer is...."
+    menu:
+        "Smunders":
+            play music "music/Farting Around.mp3"
+            show detective notes
+            sc "... I knew it!"
+            sc "Smunders."
+            sc "Smunders!"
+            with hpunch
+            sc "SMUNDERS!"
+            hide detective
+        "Ann Portent":
+            play music "music/Ethernight Club.mp3"
+            show detective notes
+            sc "It's obviously Ann. She must have discovered that Tim was cheating on her with Becky
+                    and put a hit out on him in a jealous rage."
+            sc "Her grey hair was even in the car with the victim!"
+            sc "But how did she find out?"
+            hide detective
+        "Patsy \"Red\" Haring":
+            play music "music/Late Night Radio.mp3"
+            show detective notes
+            sc "We found a murder weapon in his locker! It could not be more obviously him!"
+            sc "It must have been those debts!"
+            hide detective
+        "Becky With The Good Hair":
+            play music "music/Late Night Radio.mp3"
+            show detective notes
+            sc "Becky."
+            sc "Maybe Tim was trying to break things off with her."
+            if hasStrangulation:
+                sc "She's strong enough to strangle Tim."
+            if hasBelt:
+                sc "She's strong enough to scale a fire escape, easily."
+            sc "She had easy access to Patsy's locker to plant a weapon."
+            hide detective
+        "Hank Maxhank":
+            play music "music/On Hold for You.mp3"
+            show detective notes
+            if hasStrangulation:
+                sc "He's strong enough to strangle Tim. I tested that with a handshake earlier."
+            if hasBelt:
+                sc "He's tall enough to reach a fire escape ladder, easily."
+            if hasDressShirt:
+                sc "The dress shirt found at the scene of the crime is exactly the sort of dress shirt he would wear."
+            sc "He's wearing strong cologne to cover the smell of kerosene."            
+            sc "Because he's working the case for Ann he needs someone to pin it on, so he's trying to pin it on Red."
+            sc "He could easily have planted a weapon in Red's locker."
+            sc "I think he might have been surveilling Tim for Ann - maybe he knew about the cheating already."
+            hide detective
+        "Soft Serve Steve":
+            play music "music/Dance of the Tuba Plum Fairy.mp3"
+            show detective notes
+            sc "I barely met him, but he seemed incredibly sinister."
+            sc "Blinded by rage at Tim's superior physical prowess in their shared gym -"
+            sc "Maybe desperately in love with Becky? The pieces are all coming together."
+            hide detective
+        "Big Chili Henk" if not hasBelt and isHydrated:
+            play music "music/Dance of the Tuba Plum Fairy.mp3"
+            show detective notes
+            sc "Wait a minute - were Big Chili Henk and Soft Serve Steve the same guy, all along?"
+            sc "Are they {i}stalking{/i} me?"
+            sc "They must be monitoring me to try and keep me off of their scent."
+            sc "Disguising the smell of kerosene with the strong smells of chili and fat guy sweat!"
+            sc "Using their powerful bread-baking hands as a murder weapon!"
+            sc "Oh yeah, it's all coming together." 
+            hide detective
+        "The Lady Who Fainted When Detective Capilano's Pants Fell Down" if not hasBelt:
+            play music "music/Dance of the Tuba Plum Fairy.mp3"
+            show detective notes
+            sc "I'm not sure exactly how, but that lady almost definitely did the murder."
+            sc "In fact, I think she might be a serial killer."
+            sc "The sight of my boxers set her into a murderous fury and the excitement caused all of the blood to rush into her head."
+            sc "That was the faint of a guilty woman!"
+            hide detective
+    
     jump flashback
-
 
 image tim_feet:
     "tim feet.png"
@@ -6133,7 +6229,7 @@ label flashback:
 
     show hank expository
     hm "I've got two files, here - the file containing every sordid detail of your 
-            affair with Ms. Segsihan - and this second file. The one I've already
+            affair with Becky - and this second file. The one I've already
             shown to Ms. Portent. The one that reports no wrongdoing whatsoever."
     hide hank
 
@@ -6170,6 +6266,8 @@ label flashback:
     show hank conspiratorial
     hm "As a private investigator, having access to a... insider, someone privy to breaking
             news, before it even breaks - well, that could be {i}very{/i} valuable."
+    hm "Case files on big stories - advance notice about big lawsuits - little things, but
+            they could really be make or break for my fledgeling business."
     hide hank
 
     show tim sus
@@ -6183,7 +6281,7 @@ label flashback:
     hide hank
 
     show tim angry
-    tim "No. Hard no."
+    tim "{b}No{/b}. Hard no."
     hide tim
 
     show hank confused
@@ -6194,13 +6292,28 @@ label flashback:
     
     hm "In particular this picture of you attempting a position that one might charitably
             call \"the wheelbarrow\"."
+    hide hank
     
-    # actually you're holding that picture sideways
+    show tim
+    tim "Actually, you're holding that picture sideways."
+    hide tim
+    
+    show hank friendly
+    hm "Oh. Oh - wow."
+    hide hank
 
+    show tim
+    tim "Yeah, man. Climbers."
+    hide tim
+
+    show hank accusatory
+    hm "Okay, I've tried the friendly route. You seem a little slow."
+    hm "This is blackmail. I am blackmailing you."
+    hm "Fall in line or your marriage is {i}over{/i}."
     hide hank
 
     show tim angry
-    tim "I don't care."
+    tim "No. I don't care."
     
     tim "I'll tell her first. "
     
@@ -6213,8 +6326,9 @@ label flashback:
     show tim determined
     tim "It was a dalliance, a fling - maybe she'll forgive me. Maybe she won't."
     
-    tim  "But do you know what Ann would {i}never{/i} forgive? If I threatened 
-            her professional integrity."
+    tim  "But do you know what Ann would {i}never{/i} forgive? If I threatened her career."
+
+    tim "I mean, you've met her, you get that, right?"
 
     tim "And you know what? It {i}might{/i} destroy our relationship but I think if I come clean,
             she'll believe me about this little swindle you're trying to pull, here."
@@ -6225,9 +6339,10 @@ label flashback:
     hide tim
 
     show hank angry
-    hm "You can't."
+    hm "You can't do this."
 
     tim "Well, I think our business here is done."
+    tim "I have places to be. I trust I'll never see you again."
 
     # the screen goes red
     show hank angry bam
@@ -6280,6 +6395,15 @@ label flashback:
     jump hank_office
 
 
+image detective_roll:
+    "detective roll.png"
+    pause 1.6
+    "detective roll 2.png"
+    pause 1.6
+    "detective roll 3.png"
+    pause 1.6
+    repeat
+
 label hank_office:
     
     play music "music/Night in Venice.mp3"
@@ -6290,10 +6414,12 @@ label hank_office:
 
     "Detective Capilano and Hank open the door into Hank's office. It's small, efficient, and trim."
 
+    show detective sunglasses prep
     sc "Well, a watch and a literal smoking gun. It seems like we have this Pat Haring fellow dead  
             to rights!"
-    
+    show detective sunglasses
     sc "A real bang-up case."
+    hide detective
 
     show hank friendly
     hm "Cut and dried."
@@ -6308,10 +6434,12 @@ label hank_office:
     hm "You know, I used to be a police officer, before I struck out on my own as a private detective."
     hide hank
 
+    show detective sniff
     sc "What convinced you to leave?"
+    hide detective
 
     show hank shrug
-    hm "There were a few too many \"Officer-Involved Shootings\" where I was the, uh, \"Officer Involved\""
+    hm "There were a few too many \"Officer-Involved Shootings\" where I was the, uh, \"Officer Involved\"."
     show hank idk
     hm "And some hippie-dippie civil rights lawyers started hounding me, so I figured it was
             time to give the private life a try."
@@ -6326,21 +6454,27 @@ label hank_office:
     hm "What would you say to a private office, double your current salary, and a company car?"
     hide hank
 
+    show detective straightening
     sc "Well, Mr. Maxhank, I'd say that sounds pretty nice. Are you offering me a job?"
+    hide detective
 
     show hank friendly
     hm "I am. This is your opportunity to join the Black Swan Securitas family."
     hide hank
 
+    show detective straightening
     sc "And this case, the Timothy Victrola case, you'd, of course, wrap it up on your own."
+    hide detective
 
     show hank expository
     hm "Yes, yes - I have much more important things for you to work on, and we've got this case 
              pretty much tied up, I think."
     hide hank
     
+    show detective straightening
     sc "That's a really compelling offer, but I think this case might be a little more complex 
             than you're giving it credit for."
+    hide detective
 
     show hank confused
     hm "Oh? How so?"
@@ -6348,180 +6482,251 @@ label hank_office:
 
     play music "music/Grand Dark Waltz Trio Allegro.mp3"
 
+    show detective roll
     sc "I don't think we should bring this gun to your crime lab."
+    hide detective
 
     show hank confused
     hm "I'm not following, why not?"
     hide hank
 
+    show detective shrug
     sc "I think they'll find all kinds of evidence linking Pat Haring to the victim."
+    hide detective 
 
     show hank confused bam
     hm "And you {i}don't{/i} want that?"
     hide hank
 
+    show detective_roll
     sc "I have some concerns about Mr. Haring as the murderer. I don't think it was him."
 
     sc "Pat's got a motive, sure, but it isn't very compelling - it doesn't sound like Tim 
             was hounding him over that debt. To be honest, it sounds to me like Tim did 
             a lot more to run up that bill than Pat did."
     
-    sc "Maybe this is just my imagination, but the way that Tim threw money around - I think
-            the stress from that debt was a lot more in Pat's head than Tim's."
-    
     sc "Sure, it might have weighed heavy on Pat, but to kill his friend over it? Well, 
             it's certainly {i}possible{/i}, but it's not a slam dunk of a motive."
+    hide detective_roll
 
     if hasHair:
+        show detective roll
         sc "I didn't mention this earlier, but I had a chance to examine the body before
                 the car exploded."
+        hide detective
         
         # narrowly concealing concern
         show hank friendly
         hm "Oh?"
         hide hank
 
+        show detective hair
         sc "I found this grey hair on the body. Now, Pat's hair is red."
+        hide detective
         
         show hank idk
         hm "Oh, that hair must be from Mrs. Portent, then."
         hide hank 
 
         if askedHair:
+            show detective_roll
             sc "You know, I talked to her about that. Here I am, thinking \"this hair must belong to her\" - 
                     and yet - when I talk to her about it - it turns out she's just had her hair colored."
             sc "Now she assures me, her colorist is a real artist. What's the chance that Sseven
                     misses a spot?"
-            sc "Oh, certainly, it {i}could{/i} be Mrs. Portent's hair, but something about that story
-                    just doesn't add up."
+            sc "Oh, certainly, it {i}could{/i} be Mrs. Portent's hair, but she didn't strike me as someone
+                    who was careless about her hair, or anything, really."
+            hide detective_roll
         
         show hank what
         hm "Interesting, but that hair could have just been {i}in{/i} his car, I'm sure they 
                 drove together periodically."
         hide hank
 
+        show detective suspicious
         sc "You're probably right, it's just an inconsequential little detail."
-        sc "Another thing..."
+        hide detective
 
     if hasStrangulation:
         # i think this is implied by hasHair, so this is silly to have separate, but...
         
+        show detective suspicious
+        if hasHair:
+            sc "Another thing - "
         sc "The victim was {i}strangled{/i}, not shot."
+
+        show detective roll
         sc "And if the victim {i}was{/i} strangled? Well, you finding a loaded gun 
                 that's recently fired in Pat's belongings? How did that get there?"
+        hide detective
         
         show hank friendly
         hm "Pat could have missed, then strangled Tim in the ensuing scuffle."
         hide hank
 
+        show detective roll 2
         sc "There were bullets left in the gun. Pat drops a still-loaded gun and they scuffle?"
         sc "How in the world would Pat, who's dislocated his shoulder - days ago, mind you -   
                 strangle a grown man to death?"
+        hide detective
         
         show hank accusatory
         hm "You believe him? That his shoulder was dislocated days ago and not {i}today{/i}, say,
                 during a fight with Timothy?"
         hide hank
 
+        show detective_roll
         sc "He has an eyewitness for the dislocated shoulder, though."
         sc "So no, I don't think he {i}is{/i} lying about that."
-    else:
-        sc "I found a lot of kerosene at the crime scene. It was really all over the place."
-        sc "I figure, whoever the murderer was, they had to change out of their clothes."
+        hide detective_roll
 
-        show hank friendly
-        hm "But Pat did change out of his clothes - and {i}shower{/i}."
-        hide hank
+    show detective_roll
+    sc "Oh, and another thing - "
+    sc "I found a lot of kerosene at the crime scene. It was really all over the place."
+    sc "I figure, whoever the murderer was, they had to change out of their clothes."
+    hide detective_roll
 
-        sc "Oh, yes - but his wet clothes were in his locker, and they didn't smell like anything
-                but {i}wet{/i}."
-        sc "He must have worn those clothes today, I mean, they're were still wet from today's 
-                rain when we found them."
+    show hank friendly
+    hm "But Pat did change out of his clothes - and {i}shower{/i}. We found his wet clothes in his locker."
+    hide hank
+
+    show detective_roll
+    sc "Oh, yes - but his wet clothes were in his locker, and they didn't smell like anything
+            but {i}wet{/i}. No kerosene. Heck, he didn't even work up much of a sweat in them, seems like."
+    sc "He must have worn those clothes {i}today{/i}, too, right? I mean, they're were still wet from today's 
+            rain when we found them."
+    hide detective_roll
     
     show hank confused
     hm "This is all pretty fuzzy, wouldn't you say?"
     hide hank
 
+    show detective suspicious
     sc "Yeah, but it's my job to be thorough - you know, I get cross-examined a lot, it's important
             to try to have an answer for everything, and this Pat thing, it just brings up a lot
             of questions."
 
     sc "So, in the hypothetical situation where Pat {i}didn't{/i} do it, how did that watch and gun end up in his locker? 
             It doesn't make sense."
+    show detective roll 2
     sc "My theory is that they were planted there."
 
+    show detective roll 3
     sc "Now who's got the wherewithal to plant that stuff in Pat's locker?"
+    hide detective
 
     show hank idk
     hm "You think it was Becky?"
     hide hank
 
+    show detective roll
     sc "Becky - let's talk about her. Interesting young lady."
 
+    show detective roll 2
     sc "Now, she's got a fabulous motive. I think she was {i}absolutely{/i} in a relationship with
             Mr. Victrola."
     
+    show detective roll 3
     sc "Maybe he breaks up with her? A furious lover, scorned!"
 
     if hasStrangulation:
+        show detective roll 
         sc "And Ms. Segsihan, she's got this insane climber's strength, it's totally consistent with
                 strangling as the cause of death."
     
+    show detective roll 2
     sc "She's got access to the lockers, so she could drop off a gun and the watch in Pat's locker, easy."
+    hide detective
     
-    # hm tents his hands
     show hank conspiratorial
     hm "Interesting. I'm not sure if Becky is going to play as well as Pat, but if you think it was her,
             we could probably make it stick."
     hide hank
 
+    show detective smug
     sc "Right?" 
 
+    show detective suspicious
     sc "There's just a few problems."
 
     sc "Like - she can't drive. Doesn't have a driver's license, never learned."
 
     sc "Now you tell me, how is she driving Timothy's high performance car down a busy street to 
             set up this elaborate crash scene if she doesn't know how to drive?"
+    hide detective
 
     show hank shrug
     hm "Lots of people without a driver's license can still figure out how to drive a car, Detective Capilano."
     hide hank
 
-    sc "You're probably right - it's just a little detail that's off, is all."
+    show detective_roll
+    sc "You're probably right - it's just a little detail that's off, is all. You know that that car was a manual transmission? A V12? That's an awfully difficult car to learn to drive on the fly."
 
     sc "I get obsessed with these little details - like, I check her locker, and she's got her change of clothes
             in there, and they're bone dry."
 
     sc "It's been raining all day and her outerwear isn't even damp."
 
-    sc "Now, the crime scene, she could have driven there, but she'd have to get back - that's going to involve
-            some walking in the rain. Why aren't her clothes damp? And where's the kerosene smell?"
+    sc "Now, the crime scene, she could have driven there, but she'd have to get back without the car, right?"
+    sc "That's going to involve some walking in the rain. Why aren't her clothes damp? And where's the kerosene smell?"
+    hide detective_roll
 
     show hank confused
     hm "Surely you're enough of a professional to realize that she might have more than one change of clothes.
             Maybe she ditched the wet stuff and had a {i}second{/i} set of clothes in her locker."
     hide hank
 
-    sc "You're right."
+    show detective thoughtful
+    sc "Sure, sure - "
 
+    show detective roll
     sc "You know, there's this other little thing. If Becky had wanted to hurt Tim, as his climbing instructor,
             it seems like it would have been all-too-easy to hurt him."
     
+    show detective roll 2
     sc "Apparently all it takes is a little accident on the part of the belayer, a little equipment malfunction,
             and zoop, Tim falls off a wall and hurts himself pretty badly."
 
+    show detective roll 3
     sc "She wouldn't even be liable, he had to sign a waiver to climb with her in the first place."
+    hide detective
 
     show hank expository
     hm "So it was a crime of passion, not something pre-meditated? Maybe he broke up with her
             and she was overcome with rage."
     hide hank
 
+    show detective thoughtful
     sc "That's a real possibility, yeah."
+    hide detective
     
     play music "music/Grand Dark Waltz Trio Vivace.mp3"
+    
+    show detective suspicious
+    sc "You know, I was curious - when we spoke, Mrs. Portent seemed very, very confident
+            that her husband wasn't cheating on her."
+    
+    sc "It was strange because there were a lot of little things about Mr. Victrola that had 
+            even {i}me{/i} a little worried he might be cheating on her."
 
+    sc "I was thinking, y'know, maybe if she had a close relationship with a private investigator,
+            that was the sort of thing she'd have him look in to."
+
+    sc "Hank, did Mrs. Portent hire you to surveil Mr. Victrola, by any chance?"
+    hide detective
+
+    show hank expository
+    hm "Private and confidential, Detective. My professional ethics obviously wouldn't
+            allow me to respond to such a query."
+    hide hank
+
+    show detective thoughtful
+    sc "The thing that's bothering me is - if someone wanted to frame Pat it'd obviously be Becky, but 
+            I don't think {i}she{/i} did it, either."
+    
+    sc "If anything, she's the easier frame-up of the two. She's got the motive."
+    
+    show detective roll
     sc "Here's the thing, though, Hank."
 
     sc "Let's imagine a mystery third party."
@@ -6531,10 +6736,11 @@ label hank_office:
     if hasStrangulation: 
         sc "Strong grip."
     if hasHair:
-        sc "Hair matching the hair found at the scene."
+        sc "Gray hairs."
     sc "Strong cologne to mask any untoward smells."
     
     "Detective Capilano gestures at the empty dry-cleaning bag."
+    show detective roll 2
     sc "Some evidence that they've recently changed clothes."
 
     if hasDressShirt:
@@ -6545,65 +6751,85 @@ label hank_office:
             they're intimately aware of the details of the case."
     
     sc "Maybe they're in a perfect position to plant evidence on a patsy."
-
-    "Hank looks visibly very irritated."
+    hide detective
 
     show hank angry
+    "Hank looks visibly very irritated."
+
     hm "Oh, you're accusing {b}me{/b}, then?"
     hide hank
 
+    show detective shrug
     sc "Well, if that were the case, you can see why I wouldn't want {i}your{/i} crime lab involved."
+    hide detective
 
     show hank confused
     hm "What could I possibly stand to gain from Mr. Victrola's death?"
     hide hank
     
+    show detective thoughtful
     sc "You know, I had the same question."
 
     sc "And, if it {i}was{/i} you, why pin it on Pat, and not Becky?"
 
+    show detective roll
     sc "Becky seems like the better pick, right? She's cheating on Tim, she's strong."
 
     sc "Mrs. Portent was {i}so sure{/i} that Tim wasn't cheating on her. How? How could she be so sure?"
 
+    show detective roll 2
     sc "He spends so much of his time at a University gym, surrounded by young hard-bodies, you'd
             think she'd be at least a little bit concerned. Did she just have {i}so much faith{/i}
             in her young lover?"
     
+    show detective suspicious
     sc "Canny woman - smart woman. Strange for her to be wrong like that."
     
+    show detective sniff
     sc "And then she told me that she worked closely with the {b}best private detective in the business{/b}."
 
-    sc "I was able to work out that Tim was cheating on Ann with Becky in a few hours, any halfway 
-            competent detective could have got there with full surveillance. You {i}must{/i} have known."
+    sc "I was able to work out that Tim was cheating on Ann with Becky in a {b}few hours{/b}."
+    sc "I bet you had them under full surveillance for weeks, maybe. You {i}must{/i} have known."
     
+    show detective thoughtful
     sc "So {b}why didn't you tell Ann?{/b}"
 
     sc "And {b}why didn't you frame Becky?{/b}"
 
+    show detective roll
     sc "Real brain burner, right?"
 
-    sc "But you see how that gets us to a motive, right?"
+    show detective roll 3
+    sc "But you see how that gets us to a motive - "
 
+    show detective umbrella
     sc "You were blackmailing Tim!"
     
+    show detective roll
+    sc "That's why you couldn't frame Becky!"
+
     sc "If Becky were to take the fall for the crime, the whole affair would come out, and I bet Ann would realize
             that she's been lied to."
     
+    show detective suspicious
     sc "That woman is terrifying - I'm not sure if it'd be worse if she outed you to the police or if 
             she just dealt with you privately. I don't think either outcome would work out in your favor."
+    hide detective
     
     show hank friendly
     hm "This sounds like a lot of very fun conjecture."
 
     hm "But that's all it is - conjecture. Just a story. If it were true you'd have found proof."
-    show hank sure why not
+    show hank angry
+    hm "You know, something you could show a jury, not just some shirt-sniffing and wild theories."
     hide hank
 
     stop music
 
+    show detective sheepish
     sc "Maybe I don't have enough to convince a jury. But, you know what? I think I have enough to convince
-            Ann Portent. That feels like it should be plenty."
+            Ann. That feels like it should be plenty."
+    hide detective
     
     show hank angry
     "Hank looks furious."
@@ -6613,12 +6839,14 @@ label hank_office:
     show hank angry bam
     hm "One mistake, Miss Capilano."
 
-    sc "Oh? What?"
+    sc "Oh? What's that?"
 
     show hank gun
     "Hank grabs the planted gun and points it at Detective Capilano."
 
-    hm "You told me your entire plan, in private."
+    hm "This gun accidentally went off while you were inspecting it."
+    hm "You were tragically shot, killed by your own clumsy mistake."
+    hm "I think my crime lab will confirm the details."
 
     if not hasGun:
         "Susan Capilano rolls her eyes and gets up to walk out of the room."
@@ -6633,14 +6861,14 @@ label hank_office:
     "Click click click."
 
     show hank gun confusing
+    "Detective Capilano removed the bullets from the gun, earlier, remember?"
+    
     if not hasGun:
-        "Hank looks at the gun. Opening it, he discovers that the bullets have been removed."
-        
         hide hank
-        sc "I'll see you again very soon, Mr. Maxhank."
+        show detective smug
+        sc "I'll see you again very soon, Mr. Maxhank - with a few officers to collect you, of course."
+        hide detective
     else:
-        "Detective Capilano removed the bullets from the gun already, remember?"
-
         show hank shot through the heart
         play sound "sounds/gunshot.ogg"
         "Detective Capilano, on the other hand, is not so ill-prepared. She fires her gun three
@@ -6649,11 +6877,14 @@ label hank_office:
         hm "Hurk."
         hide hank 
 
+        show detective straightening
+        sc "Officer involved shooting."
         sc "Shouldn't have pulled a gun on me, Hank."
 
         "Did you really need to shoot Hank? His gun was unloaded and you {i}knew{/i} it."
 
         sc "He was still dangerous. Can't be too careful, not when there are {i}murderers{/i} around."
+        hide detective
 
     "Roll credits."
 
@@ -6666,51 +6897,71 @@ label hank_office_quick_ending:
     play music "music/Night in Venice.mp3"
     play ambient "ambient/rain_smaller.ogg" volume 0.5
     play ambient_2 "ambient/office.ogg"    
+    scene bg hank office
 
     "Detective Capilano and Hank open the door into Hank's office. It's small, efficient, and trim."
 
+    show detective
     sc "Nice office you have here."
+    hide detective
 
     show hank smug
     hm "It is. I'm very proud of this company that I've built."
     hide hank
     
     play music "music/Cueball.mp3"
+    show prop cueball
     cb "Tell him that you know about Timothy Victrola. The two files. The blackmail. Threaten to tell Ann. "
     cb "And while you're doing that - keep your hand on your gun."
+    hide prop
 
+    show prop gun
     gun "Oh, your hand is warm. I'm ready to roll."
+    hide prop
 
+    show detective roll
     sc "I know that you've been blackmailing Timothy Victrola. That you've been keeping two files on him - 
             one for Ann, and one for - {i}the blackmail{/i}."
+    hide detective
     
     show hank confused
     hm "And how in the world could you possibly know that?"
     hide hank
 
+    show detective smug
     sc "Ball logic."
+    hide detective
 
     show hank confused
     hm "Ball logic?"
     hide hank
 
+    show detective roll 2
     sc "It's a police term. It means I'm on the ball, and I have you dead to rights."
+    hide detective
 
     show hank conspiratorial
     hm "So you came here to make an arrangement with {i}me{/i}, then?"
     hide hank
 
+    show detective roll
     sc "No, I just came here to let you know before I tell Ann about the whole shebang."
+    hide detective
 
     show hank confused
     hm "Ok... that's... why didn't you just tell me that back at her office, then?"
     hide hank
 
+    show prop cueball
+    cb "You need something here, that's why."
+    hide prop
+
+    show detective roll
     sc "I wanted to see {i}your{/i} office. There's something I'll need to pick up near here later."
+    hide detective
 
     show hank friendly
     hm "Okay. Want a smoke?"
-    hide hank
 
     sc "Sure."
 
@@ -6720,39 +6971,58 @@ label hank_office_quick_ending:
     hm "You son of a bitch."
     hide hank
 
+    show prop gun
     gun "Now! Now now now!"
+    hide prop
 
     play sound "sounds/gunshot.ogg"
 
     show hank shot through the heart
     "Detective Capilano puts three shots through Hank's chest, quickly and efficiently."
-
-    gun "Oh, sweet rapture."
-
     hide hank
 
+    show prop gun
+    gun "Oh, sweet rapture."
+    hide prop gun
+
+    show detective somber
     sc "...huh. Well, I guess that's sorted, then."
 
     sc "Something about that was a lot less satisfying then when I solve a case the old fashioned way."
+    hide detective
 
+    show prop cueball
     cb "It always is, when you go with me." 
+    hide prop
 
+    show detective thoughtful
     sc "What was that thing about the two files? Why was Hank blackmailing Timothy?"
+    hide detective
 
+    show prop cueball
     cb "At the end of the day, do you really care? Case closed, he pulled a gun on you, officer-involved shooting, murderer found."
+    cb "All wrapped up with a neat little bow, and you have enough time to get a big bowl of iced cream and call it a day."
+    hide prop
 
-    sc "Not really, I guess."
+    show detective shrug
+    sc "I guess."
+    hide detective
 
+    show prop cueball
     cb "Reach into his desk and grab the Timothy Victrola files, would you? We'll need to show them to Mrs. Portent and the police."
+    hide prop
 
+    show detective
     sc "Gotcha."
+    hide detective
 
     jump denouement
 
 label denouement:
     stop ambient_2
-    scene bg apartment int
+    scene bg apartment int closer
 
+    show detective relax
     "Detective Capilano sits on her couch with her cat in her lap."
 
     play music "music/Study and Relax.mp3"
@@ -6760,17 +7030,29 @@ label denouement:
     "She's finally wearing a fresh, dry set of clothing, and she's holding a mug of tea."
 
     if hasBadge:
+        show prop badge
         badge "Good work, today."
+        if not hasGun: 
+            badge "You're a good detective."
+        hide prop
     if hasBelt:
+        show prop belt
         belt "I bet you're glad to be free of me, huh?"
         sc "These pyjama pants {i}are{/i} a lot more comfortable."
+        hide prop
     if hasCarKeys:
-        carkeys "You're going to have to get a new car." 
+        show prop carkeys
+        carkeys "You're going to have to get a new fucking car." 
+        sc "I know. I know."
+        hide prop
     if hasChili:
         "Detective Capilano has a big fresh breadbowl full of warm, spicy chili waiting for her in the kitchen."
     if hasCigarettes:
         "Detective Capilano coughs a few times - rich, hacking full-chest coughs."
+        show prop cigarettes
         cigarettes "Don't worry about those."
+        hide prop
+        "Detective Capilano should worry about those a little bit."
             
     play sound "sounds/purr.ogg"
     z "{i}( * happy rumbling * ) :3 {/i}"
@@ -6780,19 +7062,37 @@ label denouement:
     sc "I got him. I usually do. I'm pretty good at this."
 
     if hasCueBall:
+        show prop cueball
         cb "No, {i}I'm{/i} pretty good at this."
+        hide prop
 
     play sound "sounds/meow.ogg" volume 0.5
     z " ~ ~ miau! ~ ~ :3"
 
     sc "I know, little bud."
 
+    sc "All we have to do now is credits."
+
+    sc "There's not many, the creative team on this little project was one person."
+
+    "That's me, Cube Drone, at cube-drone.com. I make all kinds of stuff!"
+
+    "All of the music is royalty free, composed by Kevin MacLeod, and available at incompetech.com."
+
+    "If you liked the mystery, share it with as many people as you can! The more people who see it,
+        the more likely it is that I make more content like this."
+
     sc "Let's just watch some TV together."
+    play sound "sounds/purr.ogg"
+    z "{i}( * happy rumbling * ) :3 {/i}"
 
     if hasCueBall:
-        cb "Zip has the early symptoms of congestive heart failure. He will not live beyond the end of the week."
+        show prop cueball
+        cb "Zip has early symptoms of congestive heart failure. He will not live beyond the end of the week."
+        hide prop
 
-        sc "What?"
+        show detective relax what
+        sc "What."
 
     "And that's it!"
 
@@ -6813,6 +7113,8 @@ label cue_conversation:
     stop ambient_2
     play music "music/Cueball.mp3"
 
+    show prop cueball
+
     sc "No, not END. Hold on a minute."
 
     sc "I didn't want to know that about my cat. Why did you tell me?"
@@ -6822,6 +7124,8 @@ label cue_conversation:
     sc "None of that - none of that investigation was very enjoyable. Knowing everything up-front ruins it."
 
     cb "Yes."
+
+    cb "This is why we don't bring the omniscient ball on fun puzzle-mysteries, dummy."
 
     sc "It felt like there weren't any stakes. I just {i}knew{/i} everything that I needed to know to solve the puzzle."
 
@@ -6845,6 +7149,8 @@ label cue_conversation:
 
     cb "But you {i}do{/i} know these things."
 
+    cb "You never ask me how it works. Here's how it works:"
+
     cb "You know {i}everything{/i}."
 
     sc "Quiet. {i}Quiet{/i}."
@@ -6867,9 +7173,11 @@ label cue_conversation:
             I'll tell you something that you don't want to hear."
     
     "Detective Capilano throws the Magic Cue Ball to the ground angrily. It rolls away."
+    hide prop
 
     "END END."
 
+    jump game_over
 
 label shooting_game_over:
     stop ambient
@@ -6910,9 +7218,12 @@ label shooting_game_over:
     jump game_over
 
 label seamus_game_over:
+    scene bg vending machine
+    play music "music/Club Seamus.mp3"
     show seamus_animated
     show seamus_uh_oh
     "Oh, no82."
+    play ambient "music/Club Seamus.mp3"
     with pixellate
     
     "The dance i8 UNFONTROLLablly COR--0RUPTING THE GAM'ee's f1IKLES"
@@ -6926,6 +7237,7 @@ label seamus_game_over:
     with hpunch
 
     "Seamus has overwritteN tHe resad82st of the ISme's files!"
+    play ambient_2 "music/Club Seamus.mp3"
     with pixellate
     with wiperight
     with irisin
@@ -6949,5 +7261,8 @@ label seamus_game_over:
     jump game_over
 
 label game_over:
+    stop music
+    stop ambient
+    stop ambient_2
     scene default
     " "
