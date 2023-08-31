@@ -530,6 +530,42 @@ define hasDressShirt = False
 # The game starts here.
 
 label start:
+    jump sound_check
+
+label sound_check:
+    scene bg default
+    play music "music/Loopster.mp3"
+    "Hi!"
+
+    "Before we start this adventure - I want to run a quick sound check."
+
+    "Sound is pretty important in this story. Can you hear it?"
+
+    menu: 
+        "Yep, it's playing right now":
+            jump traffic
+        "No, completely silent.":
+            "Dang."
+    
+    show bg sound
+    "Are you on a mobile device? On mobile devices, I've noticed that you have to click 
+        on the little hamburger menu in the top left corner before sound starts to play."
+
+    "Did that help? CAN YOU HEAR THE SOUND?"
+
+    menu:
+        "I can hear it!":
+            jump traffic
+        "Still nothing.":
+            "Double-dang."
+    
+    "Maybe try loading this on a different browser? Can you hear sound normally? I'm 
+        just going to move the story along as usual, but you're going to miss out
+        on some primo royalty free music."
+    
+    jump traffic
+
+label traffic:
     $ quick_menu = False
 
     scene bg traffic jam
@@ -4131,10 +4167,13 @@ label introducing_hank:
     
         hm "While I'm certain that you're a, um, {i}professional{/i}, the private sector has access to certain 
                 {i}enhanced resources{/i} that you just don't get when you're working for the public."
+        hide hank
         play music "music/On Hold For You.mp3"
     else:
+        show hank smug
         hm "the private sector has access to certain 
                 {i}enhanced resources{/i} that you just don't get when you're working for the public."
+        hide hank
     
     
     show detective notes
@@ -7265,5 +7304,5 @@ label game_over:
     stop music
     stop ambient
     stop ambient_2
-    scene default
+    scene bg default
     " "
